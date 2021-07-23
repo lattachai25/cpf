@@ -1,0 +1,229 @@
+$flaticon-font: "flaticon";
+
+@font-face {
+    font-family: $flaticon-font;
+    src: url("./flaticon.ttf?67aa9051c2d6409944d7343d760d5173") format("truetype"),
+url("./flaticon.woff?67aa9051c2d6409944d7343d760d5173") format("woff"),
+url("./flaticon.woff2?67aa9051c2d6409944d7343d760d5173") format("woff2"),
+url("./flaticon.eot?67aa9051c2d6409944d7343d760d5173#iefix") format("embedded-opentype"),
+url("./flaticon.svg?67aa9051c2d6409944d7343d760d5173#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon-map: (
+    "turkey": "\f101",
+    "turkey-facing-right": "\f102",
+    "turkey-1": "\f103",
+    "deer-silhouette": "\f104",
+    "deer": "\f105",
+    "deer-1": "\f106",
+    "sheep-silhouette": "\f107",
+    "lamb": "\f108",
+    "lamb-1": "\f109",
+    "animal": "\f10a",
+    "beef": "\f10b",
+    "hen": "\f10c",
+    "hen-1": "\f10d",
+    "fish": "\f10e",
+    "fish-1": "\f10f",
+    "shell": "\f110",
+    "oyster": "\f111",
+    "giant-squid": "\f112",
+    "squid": "\f113",
+    "shrimp": "\f114",
+    "shrimp-1": "\f115",
+    "harvest": "\f116",
+    "fruits": "\f117",
+    "apple-black-silhouette-with-a-leaf": "\f118",
+    "apple": "\f119",
+    "cherries-with-stem": "\f11a",
+    "cherries": "\f11b",
+    "peach": "\f11c",
+    "lime": "\f11d",
+    "citrus": "\f11e",
+    "strawberry": "\f11f",
+    "strawberry-1": "\f120",
+    "vegetable": "\f121",
+    "vegetable-1": "\f122",
+    "carrot": "\f123",
+    "carrot-1": "\f124",
+    "beetroot": "\f125",
+    "beetroot-1": "\f126",
+    "onion": "\f127",
+    "onion-1": "\f128",
+    "sweet-potato": "\f129",
+    "sweet-potato-1": "\f12a",
+    "dairy-products": "\f12b",
+    "dairy-products-1": "\f12c",
+    "yogurt": "\f12d",
+    "yogurt-1": "\f12e",
+    "cheese": "\f12f",
+    "cheese-1": "\f130",
+    "butter": "\f131",
+    "peanut-butter-jar": "\f132",
+    "peanut-butter": "\f133",
+);
+
+.flaticon-turkey:before {
+    content: map-get($flaticon-map, "turkey");
+}
+.flaticon-turkey-facing-right:before {
+    content: map-get($flaticon-map, "turkey-facing-right");
+}
+.flaticon-turkey-1:before {
+    content: map-get($flaticon-map, "turkey-1");
+}
+.flaticon-deer-silhouette:before {
+    content: map-get($flaticon-map, "deer-silhouette");
+}
+.flaticon-deer:before {
+    content: map-get($flaticon-map, "deer");
+}
+.flaticon-deer-1:before {
+    content: map-get($flaticon-map, "deer-1");
+}
+.flaticon-sheep-silhouette:before {
+    content: map-get($flaticon-map, "sheep-silhouette");
+}
+.flaticon-lamb:before {
+    content: map-get($flaticon-map, "lamb");
+}
+.flaticon-lamb-1:before {
+    content: map-get($flaticon-map, "lamb-1");
+}
+.flaticon-animal:before {
+    content: map-get($flaticon-map, "animal");
+}
+.flaticon-beef:before {
+    content: map-get($flaticon-map, "beef");
+}
+.flaticon-hen:before {
+    content: map-get($flaticon-map, "hen");
+}
+.flaticon-hen-1:before {
+    content: map-get($flaticon-map, "hen-1");
+}
+.flaticon-fish:before {
+    content: map-get($flaticon-map, "fish");
+}
+.flaticon-fish-1:before {
+    content: map-get($flaticon-map, "fish-1");
+}
+.flaticon-shell:before {
+    content: map-get($flaticon-map, "shell");
+}
+.flaticon-oyster:before {
+    content: map-get($flaticon-map, "oyster");
+}
+.flaticon-giant-squid:before {
+    content: map-get($flaticon-map, "giant-squid");
+}
+.flaticon-squid:before {
+    content: map-get($flaticon-map, "squid");
+}
+.flaticon-shrimp:before {
+    content: map-get($flaticon-map, "shrimp");
+}
+.flaticon-shrimp-1:before {
+    content: map-get($flaticon-map, "shrimp-1");
+}
+.flaticon-harvest:before {
+    content: map-get($flaticon-map, "harvest");
+}
+.flaticon-fruits:before {
+    content: map-get($flaticon-map, "fruits");
+}
+.flaticon-apple-black-silhouette-with-a-leaf:before {
+    content: map-get($flaticon-map, "apple-black-silhouette-with-a-leaf");
+}
+.flaticon-apple:before {
+    content: map-get($flaticon-map, "apple");
+}
+.flaticon-cherries-with-stem:before {
+    content: map-get($flaticon-map, "cherries-with-stem");
+}
+.flaticon-cherries:before {
+    content: map-get($flaticon-map, "cherries");
+}
+.flaticon-peach:before {
+    content: map-get($flaticon-map, "peach");
+}
+.flaticon-lime:before {
+    content: map-get($flaticon-map, "lime");
+}
+.flaticon-citrus:before {
+    content: map-get($flaticon-map, "citrus");
+}
+.flaticon-strawberry:before {
+    content: map-get($flaticon-map, "strawberry");
+}
+.flaticon-strawberry-1:before {
+    content: map-get($flaticon-map, "strawberry-1");
+}
+.flaticon-vegetable:before {
+    content: map-get($flaticon-map, "vegetable");
+}
+.flaticon-vegetable-1:before {
+    content: map-get($flaticon-map, "vegetable-1");
+}
+.flaticon-carrot:before {
+    content: map-get($flaticon-map, "carrot");
+}
+.flaticon-carrot-1:before {
+    content: map-get($flaticon-map, "carrot-1");
+}
+.flaticon-beetroot:before {
+    content: map-get($flaticon-map, "beetroot");
+}
+.flaticon-beetroot-1:before {
+    content: map-get($flaticon-map, "beetroot-1");
+}
+.flaticon-onion:before {
+    content: map-get($flaticon-map, "onion");
+}
+.flaticon-onion-1:before {
+    content: map-get($flaticon-map, "onion-1");
+}
+.flaticon-sweet-potato:before {
+    content: map-get($flaticon-map, "sweet-potato");
+}
+.flaticon-sweet-potato-1:before {
+    content: map-get($flaticon-map, "sweet-potato-1");
+}
+.flaticon-dairy-products:before {
+    content: map-get($flaticon-map, "dairy-products");
+}
+.flaticon-dairy-products-1:before {
+    content: map-get($flaticon-map, "dairy-products-1");
+}
+.flaticon-yogurt:before {
+    content: map-get($flaticon-map, "yogurt");
+}
+.flaticon-yogurt-1:before {
+    content: map-get($flaticon-map, "yogurt-1");
+}
+.flaticon-cheese:before {
+    content: map-get($flaticon-map, "cheese");
+}
+.flaticon-cheese-1:before {
+    content: map-get($flaticon-map, "cheese-1");
+}
+.flaticon-butter:before {
+    content: map-get($flaticon-map, "butter");
+}
+.flaticon-peanut-butter-jar:before {
+    content: map-get($flaticon-map, "peanut-butter-jar");
+}
+.flaticon-peanut-butter:before {
+    content: map-get($flaticon-map, "peanut-butter");
+}

@@ -1,0 +1,173 @@
+@font-face {
+    font-family: "flaticon";
+    src: url("./flaticon.ttf?67aa9051c2d6409944d7343d760d5173") format("truetype"),
+url("./flaticon.woff?67aa9051c2d6409944d7343d760d5173") format("woff"),
+url("./flaticon.woff2?67aa9051c2d6409944d7343d760d5173") format("woff2"),
+url("./flaticon.eot?67aa9051c2d6409944d7343d760d5173#iefix") format("embedded-opentype"),
+url("./flaticon.svg?67aa9051c2d6409944d7343d760d5173#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-turkey:before {
+    content: "\f101";
+}
+.flaticon-turkey-facing-right:before {
+    content: "\f102";
+}
+.flaticon-turkey-1:before {
+    content: "\f103";
+}
+.flaticon-deer-silhouette:before {
+    content: "\f104";
+}
+.flaticon-deer:before {
+    content: "\f105";
+}
+.flaticon-deer-1:before {
+    content: "\f106";
+}
+.flaticon-sheep-silhouette:before {
+    content: "\f107";
+}
+.flaticon-lamb:before {
+    content: "\f108";
+}
+.flaticon-lamb-1:before {
+    content: "\f109";
+}
+.flaticon-animal:before {
+    content: "\f10a";
+}
+.flaticon-beef:before {
+    content: "\f10b";
+}
+.flaticon-hen:before {
+    content: "\f10c";
+}
+.flaticon-hen-1:before {
+    content: "\f10d";
+}
+.flaticon-fish:before {
+    content: "\f10e";
+}
+.flaticon-fish-1:before {
+    content: "\f10f";
+}
+.flaticon-shell:before {
+    content: "\f110";
+}
+.flaticon-oyster:before {
+    content: "\f111";
+}
+.flaticon-giant-squid:before {
+    content: "\f112";
+}
+.flaticon-squid:before {
+    content: "\f113";
+}
+.flaticon-shrimp:before {
+    content: "\f114";
+}
+.flaticon-shrimp-1:before {
+    content: "\f115";
+}
+.flaticon-harvest:before {
+    content: "\f116";
+}
+.flaticon-fruits:before {
+    content: "\f117";
+}
+.flaticon-apple-black-silhouette-with-a-leaf:before {
+    content: "\f118";
+}
+.flaticon-apple:before {
+    content: "\f119";
+}
+.flaticon-cherries-with-stem:before {
+    content: "\f11a";
+}
+.flaticon-cherries:before {
+    content: "\f11b";
+}
+.flaticon-peach:before {
+    content: "\f11c";
+}
+.flaticon-lime:before {
+    content: "\f11d";
+}
+.flaticon-citrus:before {
+    content: "\f11e";
+}
+.flaticon-strawberry:before {
+    content: "\f11f";
+}
+.flaticon-strawberry-1:before {
+    content: "\f120";
+}
+.flaticon-vegetable:before {
+    content: "\f121";
+}
+.flaticon-vegetable-1:before {
+    content: "\f122";
+}
+.flaticon-carrot:before {
+    content: "\f123";
+}
+.flaticon-carrot-1:before {
+    content: "\f124";
+}
+.flaticon-beetroot:before {
+    content: "\f125";
+}
+.flaticon-beetroot-1:before {
+    content: "\f126";
+}
+.flaticon-onion:before {
+    content: "\f127";
+}
+.flaticon-onion-1:before {
+    content: "\f128";
+}
+.flaticon-sweet-potato:before {
+    content: "\f129";
+}
+.flaticon-sweet-potato-1:before {
+    content: "\f12a";
+}
+.flaticon-dairy-products:before {
+    content: "\f12b";
+}
+.flaticon-dairy-products-1:before {
+    content: "\f12c";
+}
+.flaticon-yogurt:before {
+    content: "\f12d";
+}
+.flaticon-yogurt-1:before {
+    content: "\f12e";
+}
+.flaticon-cheese:before {
+    content: "\f12f";
+}
+.flaticon-cheese-1:before {
+    content: "\f130";
+}
+.flaticon-butter:before {
+    content: "\f131";
+}
+.flaticon-peanut-butter-jar:before {
+    content: "\f132";
+}
+.flaticon-peanut-butter:before {
+    content: "\f133";
+}

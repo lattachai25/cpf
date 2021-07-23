@@ -1,0 +1,65 @@
+@font-face {
+    font-family: "flaticon";
+    src: url("./flaticon.ttf?65e1b553b71c5f96b0d8848e72feadff") format("truetype"),
+url("./flaticon.woff?65e1b553b71c5f96b0d8848e72feadff") format("woff"),
+url("./flaticon.woff2?65e1b553b71c5f96b0d8848e72feadff") format("woff2"),
+url("./flaticon.eot?65e1b553b71c5f96b0d8848e72feadff#iefix") format("embedded-opentype"),
+url("./flaticon.svg?65e1b553b71c5f96b0d8848e72feadff#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-cow:before {
+    content: "\f101";
+}
+.flaticon-meat:before {
+    content: "\f102";
+}
+.flaticon-seafood:before {
+    content: "\f103";
+}
+.flaticon-fruits:before {
+    content: "\f104";
+}
+.flaticon-milk:before {
+    content: "\f105";
+}
+.flaticon-milk-1:before {
+    content: "\f106";
+}
+.flaticon-cloche:before {
+    content: "\f107";
+}
+.flaticon-vegetable:before {
+    content: "\f108";
+}
+.flaticon-pig:before {
+    content: "\f109";
+}
+.flaticon-chicken:before {
+    content: "\f10a";
+}
+.flaticon-turkey:before {
+    content: "\f10b";
+}
+.flaticon-lamb:before {
+    content: "\f10c";
+}
+.flaticon-sheep-silhouette:before {
+    content: "\f10d";
+}
+.flaticon-lamb-1:before {
+    content: "\f10e";
+}
+.flaticon-turkey-1:before {
+    content: "\f10f";
+}
