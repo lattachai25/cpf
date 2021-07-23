@@ -267,9 +267,9 @@
                                                     <div class="col-md-4">
                                                         <ul>
                                                             <li class="label">Others</li>
-                                                            <li><a href="/">Processed Foods</a></li>
-                                                            <li><a href="/">Beverage</a></li>
-                                                            <li><a href="/">Confectionary</a></li>
+                                                            <li><a href="/Processedfood">Processed Foods</a></li>
+                                                            <li><a href="/Beverage">Beverage</a></li>
+                                                            <li><a href="/Confectionary">Confectionary</a></li>
                                                         </ul>
                                                     </div>
                                
