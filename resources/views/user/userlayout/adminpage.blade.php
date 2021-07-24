@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="CPFAUSTRALIA - @yield('keywords')">
+    <meta name="description" content="@yield('description')">
+    <meta name="google" content="@yield('google')">
+    <meta name="Facebook" content="@yield('facebook')">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="author" content="Nut Nextcis">
     <link rel="icon" href="favicon.ico">
     <title>CPFAUSTRALIA - @yield('title')</title>
 
@@ -32,11 +38,15 @@
 </head>
 <style>
 
-    nav .navigation-main .floating-menu > ul > li > a.current:after, nav .navigation-main .floating-menu > ul > li > a:after {
+nav .navigation-main .floating-menu > ul > li > a.current:after, nav .navigation-main .floating-menu > ul > li > a:after {
     background-color: #fff !important;
     }
-    nav .navigation-main .floating-menu > ul > li .navbar-dropdown .navbar-box .box-2 {
-    width: 60%;
+    nav .navigation-main .floating-menu > ul > li .navbar-dropdown .navbar-box .box-1 {
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 60% !important;
+}
+nav .navigation-main .floating-menu > ul > li .navbar-dropdown .navbar-box .box-2 {
+    width: 100% !important;
     background-color: #3c3b3a !important;
 }
 
@@ -92,6 +102,7 @@ footer a:hover {
     width: 120px !important;
     height: 120px !important;
 }
+
 </style>
 
 <body>

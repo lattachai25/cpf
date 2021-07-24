@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\About' => $baseDir . '/app/About.php',
     'App\\Apple' => $baseDir . '/app/Apple.php',
     'App\\Beef' => $baseDir . '/app/Beef.php',
     'App\\Beetroot' => $baseDir . '/app/Beetroot.php',
@@ -38,6 +39,7 @@ return array(
     'App\\Http\\Controllers\\CheeseController' => $baseDir . '/app/Http/Controllers/CheeseController.php',
     'App\\Http\\Controllers\\CherriesController' => $baseDir . '/app/Http/Controllers/CherriesController.php',
     'App\\Http\\Controllers\\ConfectionaryController' => $baseDir . '/app/Http/Controllers/ConfectionaryController.php',
+    'App\\Http\\Controllers\\ContactController' => $baseDir . '/app/Http/Controllers/ContactController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\DairyController' => $baseDir . '/app/Http/Controllers/DairyController.php',
     'App\\Http\\Controllers\\FishController' => $baseDir . '/app/Http/Controllers/FishController.php',

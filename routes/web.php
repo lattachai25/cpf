@@ -60,4 +60,5 @@ Route::resource('/Beverage', 'BeverageController');
 Route::resource('/Confectionary', 'ConfectionaryController');
 
 // MENU Contact
-Route::resource('/Contact', 'MeatController');
+Route::resource('/Contact', 'ContactController');
+Route::resource('/About', 'AboutController');

@@ -1,5 +1,9 @@
 @extends('.user.userlayout.adminpage')
 @section('title', 'Fuit Product')
+@section('keywords', 'CPFAUSTRALIA')
+@section('description', 'description CPFAUSTRALIA')
+@section('google', 'google')
+@section('facebook', 'Facebook')
 @section('content')
 
 <div class="wrapper">
@@ -12,7 +16,7 @@
 
                 <!-- === slide item === -->
                 @for($i=1; $i<=4; $i++)
-                <div class="item" style="background-image:url({{ asset('assets/img/0'.$i.'.jpg') }})">
+                <div class="item" style="background-image:url({{ asset('img/Apple/Bravo/BravoApple'.$i.'.jpg') }})">
                     <div class="box">
                         <div class="container text-center">
                         <h2 class="title animated h1" data-animation="fadeInDown">Fuit</h2>
@@ -55,56 +59,21 @@
 
                     <div class="col-md-8">
                         <figure>
-                            <figcaption style="background-image:url({{ asset('assets/img/01.jpg') }})">
-                                <img src="{{ asset('assets/img/01.jpg') }}" alt="" />
-                            </figcaption>
+                            <figcaption style="background-image:url({{ asset('img/Apple/Bravo/Apple_image1.png') }})"></figcaption>
                             <a href="#interiorId1" class="btn btn-clean mfp-open mfp-open-scrollto">Read more</a>
                         </figure>
                     </div>
 
                     <!-- === item === -->
-
+                    @for($i=2; $i<=5; $i++)
                     <div class="col-md-4">
                         <figure>
-                            <figcaption style="background-image:url({{ asset('assets/img/02.jpg') }})">
-                                <img src="{{ asset('assets/img/01.jpg') }}" alt="" />
-                            </figcaption>
+                            <figcaption style="background-image:url({{ asset('img/Apple/Bravo/Apple_image'.$i.'.png') }})"></figcaption>
                             <a href="#interiorId1" class="btn btn-clean mfp-open mfp-open-scrollto">Read more</a>
                         </figure>
                     </div>
-
+                    @endfor
                     <!-- === item === -->
-
-                    <div class="col-md-4">
-                        <figure>
-                            <figcaption style="background-image:url({{ asset('assets/img/03.jpg') }})">
-                                <img src="{{ asset('assets/img/01.jpg') }}" alt="" />
-                            </figcaption>
-                            <a href="#interiorId1" class="btn btn-clean mfp-open mfp-open-scrollto">Read more</a>
-                        </figure>
-                    </div>
-
-                    <!-- === item === -->
-
-                    <div class="col-md-4">
-                        <figure>
-                            <figcaption style="background-image:url({{ asset('assets/img/04.jpg') }})">
-                                <img src="{{ asset('assets/img/01.jpg') }}" alt="" />
-                            </figcaption>
-                            <a href="#interiorId1" class="btn btn-clean mfp-open mfp-open-scrollto">Read more</a>
-                        </figure>
-                    </div>
-
-                    <!-- === item === -->
-
-                    <div class="col-md-4">
-                        <figure>
-                            <figcaption style="background-image:url({{ asset('assets/img/01.jpg') }})">
-                                <img src="{{ asset('assets/img/01.jpg') }}" alt="" />
-                            </figcaption>
-                            <a href="#interiorId1" class="btn btn-clean mfp-open mfp-open-scrollto">Read more</a>
-                        </figure>
-                    </div>
 
                     <!-- ========================  Article info popup - quick view ======================== -->
 
@@ -221,35 +190,35 @@
                             <div id="box-filters" class="box-filters">
 
 
-                                <figure data-filter=".armchair">
+                                <figure data-filter=".apple">
                                     <figcaption>
                                     <i class="flaticon-apple" style="font-size:50px;"></i>
                                         <span>APPLE</span>
                                     </figcaption>
                                 </figure>
 
-                                <figure data-filter=".chair">
+                                <figure data-filter=".cherries">
                                     <figcaption>
                                     <i class="flaticon-cherries" style="font-size:50px;"></i>
                                         <span>CHERRIES</span>
                                     </figcaption>
                                 </figure>
 
-                                <figure data-filter=".bedroom">
+                                <figure data-filter=".stone">
                                     <figcaption>
                                     <i class="flaticon-peach" style="font-size:50px;"></i>
                                         <span>STONE</span>
                                     </figcaption>
                                 </figure>
 
-                                <figure data-filter=".bedroom">
+                                <figure data-filter=".citrus">
                                     <figcaption>
                                     <i class="flaticon-lime" style="font-size:50px;"></i>
                                         <span>CITRUS</span>
                                     </figcaption>
                                 </figure>
 
-                                <figure data-filter=".bedroom">
+                                <figure data-filter=".strawberry">
                                     <figcaption>
                                     <i class="flaticon-strawberry-1" style="font-size:50px;"></i>
                                         <span>STRAWBERRY</span>
@@ -266,17 +235,16 @@
 
                     <!-- === product-item === -->
 
-                    <div class="col-xs-6 col-sm-4 item sofa">
+                    <div class="col-xs-6 col-sm-4 item apple">
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
                                     <a href="#productid1" class="mfp-open">
-                                        <img src="{{ asset('assets/img/01.jpg') }}" alt="" width="360" />
+                                        <img src="{{ asset('img/Apple/Bravo/bravo_logo.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text">
-                                    <h2 class="title h4" style="color: #fff !important;">Green corner</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
+                                <div class="text" style="background: #000000bf;">
+                                    <h2 class="title h4" style="color: #fff !important;">Bravo</h2>
                                 </div>
                             </div>
                         </article>
@@ -284,17 +252,16 @@
 
                     <!-- === product-item === -->
 
-                    <div class="col-xs-6 col-sm-4 item armchair">
+                    <div class="col-xs-6 col-sm-4 item apple">
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
                                     <a href="#productid1" class="mfp-open">
-                                        <img src="{{ asset('assets/img/02.jpg') }}" alt="" width="360" />
+                                        <img src="{{ asset('img/Apple/Bravo/bravo_logo.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text">
-                                    <h2 class="title h4" style="color: #fff !important;">Laura</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
+                                <div class="text" style="background: #000000bf;">
+                                    <h2 class="title h4" style="color: #fff !important;">Bravo</h2>
                                 </div>
                             </div>
                         </article>
@@ -302,17 +269,16 @@
 
                     <!-- === product-item === -->
 
-                    <div class="col-xs-6 col-sm-4 item sofa armchair">
+                    <div class="col-xs-6 col-sm-4 item sofa cherries">
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
                                     <a href="#productid1" class="mfp-open">
-                                        <img src="{{ asset('assets/img/03.jpg') }}" alt="" width="360" />
+                                        <img src="{{ asset('img/Apple/Bravo/bravo_logo.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text">
+                                <div class="text" style="background: #000000bf;">
                                     <h2 class="title h4" style="color: #fff !important;">Nude</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>
                             </div>
                         </article>
@@ -320,17 +286,16 @@
 
                     <!-- === product-item === -->
 
-                    <div class="col-xs-6 col-sm-4 item armchair">
+                    <div class="col-xs-6 col-sm-4 item cherries">
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
                                     <a href="#productid1" class="mfp-open">
-                                        <img src="{{ asset('assets/img/04.jpg') }}" alt="" width="360" />
+                                        <img src="{{ asset('img/Apple/Bravo/bravo_logo.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text">
+                                <div class="text" style="background: #000000bf;">
                                     <h2 class="title h4" style="color: #fff !important;">Aurora</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>
                             </div>
                         </article>
@@ -338,17 +303,16 @@
 
                     <!-- === product-item === -->
 
-                    <div class="col-xs-6 col-sm-4 item bedroom">
+                    <div class="col-xs-6 col-sm-4 item stone">
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
                                     <a href="#productid1" class="mfp-open">
-                                        <img src="{{ asset('assets/img/01.jpg') }}" alt="" width="360" />
+                                        <img src="{{ asset('img/Apple/Bravo/bravo_logo.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text">
+                                <div class="text" style="background: #000000bf;">
                                     <h2 class="title h4" style="color: #fff !important;">Dining set</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>
                             </div>
                         </article>
@@ -356,17 +320,16 @@
 
                     <!-- === product-item === -->
 
-                    <div class="col-xs-6 col-sm-4 item sofa">
+                    <div class="col-xs-6 col-sm-4 item stone">
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
                                     <a href="#productid1" class="mfp-open">
-                                        <img src="{{ asset('assets/img/02.jpg') }}" alt="" width="360" />
+                                        <img src="{{ asset('img/Apple/Bravo/bravo_logo.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text">
+                                <div class="text" style="background: #000000bf;">
                                     <h2 class="title h4" style="color: #fff !important;">Seat chair</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>
                             </div>
                         </article>
@@ -374,17 +337,16 @@
 
                     <!-- === product-item === -->
 
-                    <div class="col-xs-6 col-sm-4 item bedroom">
+                    <div class="col-xs-6 col-sm-4 item citrus">
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
                                     <a href="#productid1" class="mfp-open">
-                                        <img src="{{ asset('assets/img/03.jpg') }}" alt="" width="360" />
+                                        <img src="{{ asset('img/Apple/Bravo/bravo_logo.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text">
+                                <div class="text" style="background: #000000bf;">
                                     <h2 class="title h4" style="color: #fff !important;">Dining set</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>
                             </div>
                         </article>
@@ -392,17 +354,16 @@
 
                     <!-- === product-item === -->
 
-                    <div class="col-xs-6 col-sm-4 item chair">
+                    <div class="col-xs-6 col-sm-4 item citrus">
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
                                     <a href="#productid1" class="mfp-open">
-                                        <img src="{{ asset('assets/img/04.jpg') }}" alt="" width="360" />
+                                        <img src="{{ asset('img/Apple/Bravo/bravo_logo.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text">
+                                <div class="text" style="background: #000000bf;">
                                     <h2 class="title h4" style="color: #fff !important;">Seat chair</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>
                             </div>
                         </article>
@@ -410,18 +371,17 @@
 
                     <!-- === product-item === -->
 
-                    <div class="col-xs-6 col-sm-4 item sofa chair">
+                    <div class="col-xs-6 col-sm-4 item sofa strawberry">
 
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
                                     <a href="#productid1" class="mfp-open">
-                                        <img src="{{ asset('assets/img/04.jpg') }}" alt="" width="360" />
+                                        <img src="{{ asset('img/Apple/Bravo/bravo_logo.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text">
+                                <div class="text" style="background: #000000bf;">
                                     <h2 class="title h4" style="color: #fff !important;">Green corner</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>
                             </div>
                         </article>
@@ -445,9 +405,9 @@
                         <!-- === product gallery === -->
 
                         <div class="owl-product-gallery">
-                            <img src="{{ asset('assets/img/01.jpg') }}" alt="" width="640" />
-                            <img src="{{ asset('assets/img/01.jpg') }}" alt="" width="640" />
-                            <img src="{{ asset('assets/img/01.jpg') }}" alt="" width="640" />
+                            <img src="{{ asset('img/Apple/Bravo/Apple_image5.png') }}" alt="" width="640" />
+                            <img src="{{ asset('img/Apple/Bravo/Apple_image4.png') }}" alt="" width="640" />
+                            <img src="{{ asset('img/Apple/Bravo/Apple_image3.png') }}" alt="" width="640" />
                         </div>
 
                         <!-- === product-popup-footer === -->

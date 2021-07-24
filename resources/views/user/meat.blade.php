@@ -1,5 +1,9 @@
 @extends('.user.userlayout.adminpage')
 @section('title', 'Meat Product')
+@section('keywords', 'CPFAUSTRALIA')
+@section('description', 'description CPFAUSTRALIA')
+@section('google', 'google')
+@section('facebook', 'Facebook')
 @section('content')
 
 <div class="wrapper">
@@ -11,13 +15,19 @@
             <div class="owl-slider owl-slider-fullscreen">
 
                 <!-- === slide item === -->
-                @for($i=1; $i<=4; $i++)
-                <div class="item" style="background-image:url({{ asset('assets/img/0'.$i.'.jpg') }})">
+                @for($i=1; $i<=3; $i++)
+                <div class="item" style="background-image:url({{ asset('img/Brochure/'.$i.'.jpg') }})">
                     <div class="box">
                         <div class="container text-center">
-                        <h2 class="title animated h1" data-animation="fadeInDown">Meat</h2>
-                            <div class="animated" data-animation="fadeInUp">Unlimited Choices. Unbeatable Prices. Free Shipping.</div>
-                            <div class="animated" data-animation="fadeInUp">Furniture category icon fonts!</div>
+                        <h2 class="title animated h1" data-animation="fadeInDown">THE MAGIC MARBLE</h2>
+                            <div class="animated" data-animation="fadeInUp">DECADENCE HAS ARRIVED</div>
+                            <div class="animated" data-animation="fadeInUp">Carrara 640 is a perfect
+combination of nature and
+experience. Only Carrara 640
+Wagyu is created to honour the
+magic marble. Displaying an
+intricate, feathery pattern and
+distinguished as the world’s finest.</div>
                             <div class="animated" data-animation="fadeInUp">
                                 <a href="" class="btn btn-clean">Read more</a>
                             </div>
@@ -55,8 +65,8 @@
 
                     <div class="col-md-8">
                         <figure>
-                            <figcaption style="background-image:url({{ asset('assets/img/01.jpg') }})">
-                                <img src="{{ asset('assets/img/01.jpg') }}" alt="" />
+                            <figcaption style="background-image:url({{ asset('img/Brochure/1.jpg') }})">
+                                <img src="{{ asset('img/Brochure/1.jpg') }}" alt="" />
                             </figcaption>
                             <a href="#interiorId1" class="btn btn-clean mfp-open mfp-open-scrollto">Read more</a>
                         </figure>
@@ -66,8 +76,8 @@
 
                     <div class="col-md-4">
                         <figure>
-                            <figcaption style="background-image:url({{ asset('assets/img/02.jpg') }})">
-                                <img src="{{ asset('assets/img/01.jpg') }}" alt="" />
+                            <figcaption style="background-image:url({{ asset('img/Brochure/2.jpg') }})">
+                                <img src="{{ asset('img/Brochure/1.jpg') }}" alt="" />
                             </figcaption>
                             <a href="#interiorId1" class="btn btn-clean mfp-open mfp-open-scrollto">Read more</a>
                         </figure>
@@ -77,8 +87,8 @@
 
                     <div class="col-md-4">
                         <figure>
-                            <figcaption style="background-image:url({{ asset('assets/img/03.jpg') }})">
-                                <img src="{{ asset('assets/img/01.jpg') }}" alt="" />
+                            <figcaption style="background-image:url({{ asset('img/Brochure/3.jpg') }})">
+                                <img src="{{ asset('img/Brochure/1.jpg') }}" alt="" />
                             </figcaption>
                             <a href="#interiorId1" class="btn btn-clean mfp-open mfp-open-scrollto">Read more</a>
                         </figure>
@@ -88,8 +98,8 @@
 
                     <div class="col-md-4">
                         <figure>
-                            <figcaption style="background-image:url({{ asset('assets/img/04.jpg') }})">
-                                <img src="{{ asset('assets/img/01.jpg') }}" alt="" />
+                            <figcaption style="background-image:url({{ asset('img/Brochure/4.jpg') }})">
+                                <img src="{{ asset('img/Brochure/1.jpg') }}" alt="" />
                             </figcaption>
                             <a href="#interiorId1" class="btn btn-clean mfp-open mfp-open-scrollto">Read more</a>
                         </figure>
@@ -99,8 +109,8 @@
 
                     <div class="col-md-4">
                         <figure>
-                            <figcaption style="background-image:url({{ asset('assets/img/01.jpg') }})">
-                                <img src="{{ asset('assets/img/01.jpg') }}" alt="" />
+                            <figcaption style="background-image:url({{ asset('img/Brochure/5.jpg') }})">
+                                <img src="{{ asset('img/Brochure/5.jpg') }}" alt="" />
                             </figcaption>
                             <a href="#interiorId1" class="btn btn-clean mfp-open mfp-open-scrollto">Read more</a>
                         </figure>
@@ -220,35 +230,35 @@
 
                             <div id="box-filters" class="box-filters">
 
-                                <figure data-filter=".sofa">
+                                <figure data-filter=".poultry">
                                     <figcaption>
                                     <i class="flaticon-hen" style="font-size:60px;"></i>
                                         <span>POULTRY</span>
                                     </figcaption>
                                 </figure>
 
-                                <figure data-filter=".armchair">
+                                <figure data-filter=".beef">
                                     <figcaption>
                                     <i class="flaticon-animal" style="font-size:60px;"></i>
                                         <span>BEEF</span>
                                     </figcaption>
                                 </figure>
 
-                                <figure data-filter=".chair">
+                                <figure data-filter=".lamb">
                                     <figcaption>
                                     <i class="flaticon-lamb-1" style="font-size:60px;"></i>
                                         <span>LAMB</span>
                                     </figcaption>
                                 </figure>
 
-                                <figure data-filter=".bedroom">
+                                <figure data-filter=".venison">
                                     <figcaption>
                                     <i class="flaticon-deer-1" style="font-size:60px;"></i>
                                         <span>VENISON</span>
                                     </figcaption>
                                 </figure>
 
-                                <figure data-filter=".bedroom">
+                                <figure data-filter=".turkey">
                                     <figcaption>
                                     <i class="flaticon-turkey" style="font-size:60px;"></i>
                                         <span>TURKEY</span>
@@ -265,16 +275,16 @@
 
                     <!-- === product-item === -->
 
-                    <div class="col-xs-6 col-sm-4 item sofa">
+                    <div class="col-xs-6 col-sm-4 item poultry">
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
                                     <a href="#productid1" class="mfp-open">
-                                        <img src="{{ asset('assets/img/01.jpg') }}" alt="" width="360" />
+                                        <img src="{{ asset('img/Brochure/logoAngus.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text">
-                                    <h2 class="title h4" style="color: #fff !important;">Green corner</h2>
+                                <div class="text" style="background: #000000bf;">
+                                    <h2 class="title h4" style="color: #fff !important;">poultry</h2>
                                     <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>
                             </div>
@@ -283,16 +293,16 @@
 
                     <!-- === product-item === -->
 
-                    <div class="col-xs-6 col-sm-4 item armchair">
+                    <div class="col-xs-6 col-sm-4 item poultry">
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
                                     <a href="#productid1" class="mfp-open">
-                                        <img src="{{ asset('assets/img/02.jpg') }}" alt="" width="360" />
+                                        <img src="{{ asset('img/Brochure/logoAngus.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text">
-                                    <h2 class="title h4" style="color: #fff !important;">Laura</h2>
+                                <div class="text" style="background: #000000bf;">
+                                    <h2 class="title h4" style="color: #fff !important;">poultry</h2>
                                     <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>
                             </div>
@@ -301,16 +311,16 @@
 
                     <!-- === product-item === -->
 
-                    <div class="col-xs-6 col-sm-4 item sofa armchair">
+                    <div class="col-xs-6 col-sm-4 item sofa beef">
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
                                     <a href="#productid1" class="mfp-open">
-                                        <img src="{{ asset('assets/img/03.jpg') }}" alt="" width="360" />
+                                        <img src="{{ asset('img/Brochure/logoAngus.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text">
-                                    <h2 class="title h4" style="color: #fff !important;">Nude</h2>
+                                <div class="text" style="background: #000000bf;">
+                                    <h2 class="title h4" style="color: #fff !important;">beef</h2>
                                     <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>
                             </div>
@@ -319,16 +329,16 @@
 
                     <!-- === product-item === -->
 
-                    <div class="col-xs-6 col-sm-4 item armchair">
+                    <div class="col-xs-6 col-sm-4 item beef">
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
                                     <a href="#productid1" class="mfp-open">
-                                        <img src="{{ asset('assets/img/04.jpg') }}" alt="" width="360" />
+                                        <img src="{{ asset('img/Brochure/logoAngus.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text">
-                                    <h2 class="title h4" style="color: #fff !important;">Aurora</h2>
+                                <div class="text" style="background: #000000bf;">
+                                    <h2 class="title h4" style="color: #fff !important;">beef</h2>
                                     <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>
                             </div>
@@ -337,16 +347,16 @@
 
                     <!-- === product-item === -->
 
-                    <div class="col-xs-6 col-sm-4 item bedroom">
+                    <div class="col-xs-6 col-sm-4 item lamb">
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
                                     <a href="#productid1" class="mfp-open">
-                                        <img src="{{ asset('assets/img/01.jpg') }}" alt="" width="360" />
+                                        <img src="{{ asset('img/Brochure/logoAngus.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text">
-                                    <h2 class="title h4" style="color: #fff !important;">Dining set</h2>
+                                <div class="text" style="background: #000000bf;">
+                                    <h2 class="title h4" style="color: #fff !important;">lamb</h2>
                                     <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>
                             </div>
@@ -355,16 +365,16 @@
 
                     <!-- === product-item === -->
 
-                    <div class="col-xs-6 col-sm-4 item sofa">
+                    <div class="col-xs-6 col-sm-4 item lamb">
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
                                     <a href="#productid1" class="mfp-open">
-                                        <img src="{{ asset('assets/img/02.jpg') }}" alt="" width="360" />
+                                        <img src="{{ asset('img/Brochure/logoAngus.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text">
-                                    <h2 class="title h4" style="color: #fff !important;">Seat chair</h2>
+                                <div class="text" style="background: #000000bf;">
+                                    <h2 class="title h4" style="color: #fff !important;">lamb</h2>
                                     <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>
                             </div>
@@ -373,16 +383,16 @@
 
                     <!-- === product-item === -->
 
-                    <div class="col-xs-6 col-sm-4 item bedroom">
+                    <div class="col-xs-6 col-sm-4 item venison">
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
                                     <a href="#productid1" class="mfp-open">
-                                        <img src="{{ asset('assets/img/03.jpg') }}" alt="" width="360" />
+                                        <img src="{{ asset('img/Brochure/logoAngus.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text">
-                                    <h2 class="title h4" style="color: #fff !important;">Dining set</h2>
+                                <div class="text" style="background: #000000bf;">
+                                    <h2 class="title h4" style="color: #fff !important;">venison</h2>
                                     <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>
                             </div>
@@ -391,16 +401,16 @@
 
                     <!-- === product-item === -->
 
-                    <div class="col-xs-6 col-sm-4 item chair">
+                    <div class="col-xs-6 col-sm-4 item turkey">
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
                                     <a href="#productid1" class="mfp-open">
-                                        <img src="{{ asset('assets/img/04.jpg') }}" alt="" width="360" />
+                                        <img src="{{ asset('img/Brochure/logoAngus.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text">
-                                    <h2 class="title h4" style="color: #fff !important;">Seat chair</h2>
+                                <div class="text" style="background: #000000bf;">
+                                    <h2 class="title h4" style="color: #fff !important;">turkey</h2>
                                     <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>
                             </div>
@@ -409,17 +419,17 @@
 
                     <!-- === product-item === -->
 
-                    <div class="col-xs-6 col-sm-4 item sofa chair">
+                    <div class="col-xs-6 col-sm-4 item sofa turkey">
 
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
                                     <a href="#productid1" class="mfp-open">
-                                        <img src="{{ asset('assets/img/04.jpg') }}" alt="" width="360" />
+                                        <img src="{{ asset('img/Brochure/logoAngus.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text">
-                                    <h2 class="title h4" style="color: #fff !important;">Green corner</h2>
+                                <div class="text" style="background: #000000bf;">
+                                    <h2 class="title h4" style="color: #fff !important;">turkey</h2>
                                     <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>
                             </div>
@@ -444,9 +454,9 @@
                         <!-- === product gallery === -->
 
                         <div class="owl-product-gallery">
-                            <img src="{{ asset('assets/img/01.jpg') }}" alt="" width="640" />
-                            <img src="{{ asset('assets/img/01.jpg') }}" alt="" width="640" />
-                            <img src="{{ asset('assets/img/01.jpg') }}" alt="" width="640" />
+                            <img src="{{ asset('img/Brochure/1.jpg') }}" alt="" width="640" />
+                            <img src="{{ asset('img/Brochure/2.jpg') }}" alt="" width="640" />
+                            <img src="{{ asset('img/Brochure/3.jpg') }}" alt="" width="640" />
                         </div>
 
                         <!-- === product-popup-footer === -->
@@ -454,7 +464,8 @@
                         <div class="popup-table">
                             <div class="popup-cell">
                                 <div class="price price-single">
-                                    <span class="h6">DWoeoddwiacrda Ftoeodds Atuost rpaleiar isf ae vcerttiicoalnly isntiengrcateed 1m8ea8t b8us.iness from the rich fertile Murray Valley region </span>
+                                    <span class="h6">Pure Australian meat, satisfying meat-lovers worldwide. As one of Australia's largest meat producers and distributors with hubs in Brisbane, Sydney, Adelaide and Swan Hill, Victoria,
+we are dedicated to upholding the highest quality standards across our entire network.</span>
                                 </div>
                             </div>
                         </div>

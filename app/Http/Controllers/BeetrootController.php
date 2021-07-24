@@ -14,7 +14,7 @@ class BeetrootController extends Controller
      */
     public function index()
     {
-        return view('user.Beetroot');
+        return view('user.beetroot');
     }
 
     /**

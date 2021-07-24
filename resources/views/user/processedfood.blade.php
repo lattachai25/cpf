@@ -1,5 +1,9 @@
 @extends('.user.userlayout.adminpage')
 @section('title', 'PROCESSED FOODS Product')
+@section('keywords', 'CPFAUSTRALIA')
+@section('description', 'description CPFAUSTRALIA')
+@section('google', 'google')
+@section('facebook', 'Facebook')
 @section('content')
 
 <div class="wrapper">

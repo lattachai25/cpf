@@ -1,5 +1,9 @@
 @extends('.user.userlayout.adminpage')
 @section('title', 'HOME')
+@section('keywords', 'CPFAUSTRALIA')
+@section('description', 'description CPFAUSTRALIA')
+@section('google', 'google')
+@section('facebook', 'Facebook')
 @section('content')
 
 
@@ -43,7 +47,7 @@
 
                     <!-- === icon item === -->
 
-                    <a href="#">
+                    <a href="/Meat">
                         <figure>
                             <i class="flaticon-meat"></i>
                             <figcaption>MEAT</figcaption>
@@ -52,7 +56,7 @@
 
                     <!-- === icon item === -->
 
-                    <a href="#">
+                    <a href="/Seafood">
                         <figure>
                             <i class="flaticon-seafood"></i>
                             <figcaption>SEAFOOD</figcaption>
@@ -61,7 +65,7 @@
 
                     <!-- === icon item === -->
 
-                    <a href="#">
+                    <a href="/Fruit">
                         <figure>
                             <i class="flaticon-fruits"></i>
                             <figcaption>FRUITS</figcaption>
@@ -70,7 +74,7 @@
 
                     <!-- === icon item === -->
 
-                    <a href="#">
+                    <a href="/Vegetable">
                         <figure>
                             <i class="flaticon-vegetable"></i>
                             <figcaption>VEGRTABLE</figcaption>
@@ -79,16 +83,16 @@
 
                     <!-- === icon item === -->
 
-                    <a href="#">
+                    <a href="/Dairy">
                         <figure>
                             <i class="flaticon-milk"></i>
-                            <figcaption>MILK</figcaption>
+                            <figcaption>DAIRY</figcaption>
                         </figure>
                     </a>
 
                     <!-- === icon item === -->
 
-                    <a href="#">
+                    <a href="/Cloche">
                         <figure>
                             <i class="flaticon-cloche"></i>
                             <figcaption>CLOCHE</figcaption>
@@ -323,10 +327,6 @@
                 </div> <!--/row-->
                 <!-- === button more === -->
 
-                <div class="wrapper-more">
-                    <a href="" class="btn btn-main">View all posts</a>
-                </div>
-
             </div> <!--/container-->
         </section>
         <!-- ========================  สินค้าเพื่อสุขภาพ ======================== -->                
@@ -339,7 +339,7 @@
                         <p>
                         เราเป็นผู้นำเข้าสินค้าประเภทเนื้อสัตว์ ผัก ผลไม้ และ ผลิตภัณฑ์จากนม จากประเทศ Australia ที่ได้มีมาตราฐาน
                         </p>
-                        <p><a href="" class="btn btn-clean">Read full story</a></p>
+                        <p><a href="/About" class="btn btn-clean">Read full story</a></p>
                     </div>
                 </div>
             </div>

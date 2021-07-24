@@ -53,7 +53,7 @@
                             
                             <!-- Start Meat -->
                             <li>
-                                <a href="Meat">MEAT <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
+                                <a href="/Meat">MEAT <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
                                 <div class="navbar-dropdown">
                                     <div class="navbar-box">
 
@@ -63,7 +63,7 @@
                                             <div class="box">
                                                 <div class="h2">Find your MEAT</div>
                                                 <div class="clearfix">
-                                                    <p>Homes that differ in terms of style, concept and architectural solutions have been furnished by Furniture Factory. These spaces tell of an international lifestyle that expresses modernity, research and a creative spirit.</p>
+                                                    <p>Meat is animal flesh that is eaten as food.[1] Humans have hunted and killed animals for meat since prehistoric times. The advent of civilization allowed the domestication of animals such as chickens, sheep, rabbits, pigs and cattle. This eventually led to their use in meat production on an industrial scale with the aid of slaughterhouses.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -73,7 +73,7 @@
                                         <div class="box-2">
                                             <div class="box clearfix">
                                                 <div class="row">
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-12">
                                                         <ul>
                                                             <li class="label">MEAT</li>
                                                             <li><a href="/Poultry">Poultry</a></li>
@@ -102,7 +102,10 @@
                                             <div class="box">
                                                 <div class="h2">Find your SEAFOOD</div>
                                                 <div class="clearfix">
-                                                    <p>Homes that differ in terms of style, concept and architectural solutions have been furnished by Furniture Factory. These spaces tell of an international lifestyle that expresses modernity, research and a creative spirit.</p>
+                                                    <p>This article is about the food. For the UK band, see Seafood (band). For the Chinese film, see Seafood (film). For just fish, see Fish as food.
+A seafood platter composed of shrimp, oyster, snail and crab.
+Seafood includes any form of food taken from the sea.
+Seafood is any form of sea life regarded as food by humans, prominently including fish and shellfish. Shellfish include various species of molluscs (e.g. bivalve molluscs such as clams, oysters, and mussels and cephalopods such as octopus and squid), crustaceans (e.g. shrimp, crabs, and lobster), and echinoderms (e.g. sea cucumbers and sea urchins). Historically, marine mammals such as cetaceans (whales and dolphins) as well as seals have been eaten as food, though that happens to a lesser extent in modern times.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -112,7 +115,7 @@
                                         <div class="box-2">
                                             <div class="box clearfix">
                                                 <div class="row">
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-12">
                                                         <ul>
                                                             <li class="label">SEAFOOD</li>
                                                             <li><a href="/Fish">Fish</a></li>
@@ -140,7 +143,7 @@
                                             <div class="box">
                                                 <div class="h2">Find your Fruit</div>
                                                 <div class="clearfix">
-                                                    <p>Homes that differ in terms of style, concept and architectural solutions have been furnished by Furniture Factory. These spaces tell of an international lifestyle that expresses modernity, research and a creative spirit.</p>
+                                                    <p>In botany, a fruit is the seed-bearing structure in flowering plants that is formed from the ovary after flowering. Fruits are the means by which flowering plants (also known as angiosperms) disseminate their seeds. Edible fruits in particular have long propagated using the movements of humans and animals in a symbiotic relationship that is the means for seed dispersal for the one group and nutrition for the other.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -150,7 +153,7 @@
                                         <div class="box-2">
                                             <div class="box clearfix">
                                                 <div class="row">
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-12">
                                                         <ul>
                                                             <li class="label">Fruit</li>
                                                             <li><a href="/Apple">Apple</a></li>
@@ -179,7 +182,7 @@
                                             <div class="box">
                                                 <div class="h2">Find your Vegetable</div>
                                                 <div class="clearfix">
-                                                    <p>Homes that differ in terms of style, concept and architectural solutions have been furnished by Furniture Factory. These spaces tell of an international lifestyle that expresses modernity, research and a creative spirit.</p>
+                                                    <p>In botany, a fruit is the seed-bearing structure in flowering plants that is formed from the ovary after flowering. Fruits are the means by which flowering plants (also known as angiosperms) disseminate their seeds. Edible fruits in particular have long propagated using the movements of humans and animals in a symbiotic relationship that is the means for seed dispersal for the one group and nutrition for the other.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -189,7 +192,7 @@
                                         <div class="box-2">
                                             <div class="box clearfix">
                                                 <div class="row">
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-12">
                                                         <ul>
                                                             <li class="label">Vegetable</li>
                                                             <li><a href="/Carrot">Carrot</a></li>
@@ -217,7 +220,7 @@
                                             <div class="box">
                                                 <div class="h2">Find your Dairy</div>
                                                 <div class="clearfix">
-                                                    <p>Homes that differ in terms of style, concept and architectural solutions have been furnished by Furniture Factory. These spaces tell of an international lifestyle that expresses modernity, research and a creative spirit.</p>
+                                                    <p>dairy is a business enterprise established for the harvesting or processing (or both) of animal milk – mostly from cows or buffaloes, but also from goats, sheep, horses, or camels – for human consumption. A dairy is typically located on a dedicated dairy farm or in a section of a multi-purpose farm (mixed farm) that is concerned with the harvesting of milk.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -227,7 +230,7 @@
                                         <div class="box-2">
                                             <div class="box clearfix">
                                                 <div class="row">
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-12">
                                                         <ul>
                                                             <li class="label">Dairy</li>
                                                             <li><a href="/Yogurt">Yogurt</a></li>
@@ -254,7 +257,7 @@
                                             <div class="box">
                                                 <div class="h2">Find your Others</div>
                                                 <div class="clearfix">
-                                                    <p>Homes that differ in terms of style, concept and architectural solutions have been furnished by Furniture Factory. These spaces tell of an international lifestyle that expresses modernity, research and a creative spirit.</p>
+                                                    <p>Food is any substance[1] consumed to provide nutritional support for an organism. Food is usually of plant, animal or fungal origin, and contains essential nutrients, such as carbohydrates, fats, proteins, vitamins, or minerals. The substance is ingested by an organism and assimilated by the organism's cells to provide energy, maintain life, or stimulate growth. Different species of animals have different feeding behaviours that satisfy the needs of their unique metabolisms, often evolved to fill a specific ecological niche within specific geographical contexts.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -264,7 +267,7 @@
                                         <div class="box-2">
                                             <div class="box clearfix">
                                                 <div class="row">
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-12">
                                                         <ul>
                                                             <li class="label">Others</li>
                                                             <li><a href="/Processedfood">Processed Foods</a></li>
@@ -280,7 +283,7 @@
                                 </div> <!--/navbar-dropdown-->
                             </li>
                             <!--End Others -->  
-                            <li class="label"><a href="/contact">CONTACT US</a></li>
+                            <li class="label"><a href="/Contact">CONTACT US</a></li>
                            
                         </ul>
                     </div> <!--/floating-menu-->

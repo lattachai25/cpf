@@ -1,5 +1,9 @@
 @extends('.user.userlayout.adminpage')
 @section('title', 'SEAFOOD Product')
+@section('keywords', 'CPFAUSTRALIA')
+@section('description', 'description CPFAUSTRALIA')
+@section('google', 'google')
+@section('facebook', 'Facebook')
 @section('content')
 
 <div class="wrapper">
@@ -12,7 +16,7 @@
 
                 <!-- === slide item === -->
                 @for($i=1; $i<=4; $i++)
-                <div class="item" style="background-image:url({{ asset('assets/img/0'.$i.'.jpg') }})">
+                <div class="item" style="background-image:url({{ asset('img/FishTail/'.$i.'.jpg') }})">
                     <div class="box">
                         <div class="container text-center">
                         <h2 class="title animated h1" data-animation="fadeInDown">SEAFOOD</h2>
@@ -55,8 +59,8 @@
 
                     <div class="col-md-8">
                         <figure>
-                            <figcaption style="background-image:url({{ asset('assets/img/01.jpg') }})">
-                                <img src="{{ asset('assets/img/01.jpg') }}" alt="" />
+                            <figcaption style="background-image:url({{ asset('img/FishTail/1.jpg') }})">
+                                <img src="{{ asset('img/FishTail/1.jpg') }}" alt="" />
                             </figcaption>
                             <a href="#interiorId1" class="btn btn-clean mfp-open mfp-open-scrollto">Read more</a>
                         </figure>
@@ -66,8 +70,8 @@
 
                     <div class="col-md-4">
                         <figure>
-                            <figcaption style="background-image:url({{ asset('assets/img/02.jpg') }})">
-                                <img src="{{ asset('assets/img/01.jpg') }}" alt="" />
+                            <figcaption style="background-image:url({{ asset('img/FishTail/2.jpg') }})">
+                                <img src="{{ asset('img/FishTail/1.jpg') }}" alt="" />
                             </figcaption>
                             <a href="#interiorId1" class="btn btn-clean mfp-open mfp-open-scrollto">Read more</a>
                         </figure>
@@ -77,8 +81,8 @@
 
                     <div class="col-md-4">
                         <figure>
-                            <figcaption style="background-image:url({{ asset('assets/img/03.jpg') }})">
-                                <img src="{{ asset('assets/img/01.jpg') }}" alt="" />
+                            <figcaption style="background-image:url({{ asset('img/FishTail/3.jpg') }})">
+                                <img src="{{ asset('img/FishTail/1.jpg') }}" alt="" />
                             </figcaption>
                             <a href="#interiorId1" class="btn btn-clean mfp-open mfp-open-scrollto">Read more</a>
                         </figure>
@@ -88,8 +92,8 @@
 
                     <div class="col-md-4">
                         <figure>
-                            <figcaption style="background-image:url({{ asset('assets/img/04.jpg') }})">
-                                <img src="{{ asset('assets/img/01.jpg') }}" alt="" />
+                            <figcaption style="background-image:url({{ asset('img/FishTail/4.jpg') }})">
+                                <img src="{{ asset('img/FishTail/1.jpg') }}" alt="" />
                             </figcaption>
                             <a href="#interiorId1" class="btn btn-clean mfp-open mfp-open-scrollto">Read more</a>
                         </figure>
@@ -99,8 +103,8 @@
 
                     <div class="col-md-4">
                         <figure>
-                            <figcaption style="background-image:url({{ asset('assets/img/01.jpg') }})">
-                                <img src="{{ asset('assets/img/01.jpg') }}" alt="" />
+                            <figcaption style="background-image:url({{ asset('img/FishTail/1.jpg') }})">
+                                <img src="{{ asset('img/FishTail/1.jpg') }}" alt="" />
                             </figcaption>
                             <a href="#interiorId1" class="btn btn-clean mfp-open mfp-open-scrollto">Read more</a>
                         </figure>
@@ -155,7 +159,7 @@
                                     Codex HACCP approved; BRCGS certified; AUS-MEAT accreditation; AUS-QUAL Product Certification; Australian
                                     Renderer’s Association accredited; Halal certification; Meat Standards Australia licenses (MSA); PrimeSafe certified
                                 </p>
-                                <p><img src="{{ asset('assets/img/01.jpg') }}" /></p>
+                                <p><img src="{{ asset('img/FishTail/1.jpg') }}" /></p>
                                 <p>
                                 of Victoria, Australia.
                                     We are committed to ethical and sustainable practices, which drives the signature quality across all aspects of
@@ -220,28 +224,28 @@
 
                             <div id="box-filters" class="box-filters">
 
-                                <figure data-filter=".sofa">
+                                <figure data-filter=".fish">
                                     <figcaption style="margin-top:-11px;">
                                     <i class="flaticon-fish" style="font-size:60px;"></i>
                                         <span>&nbsp; Fish &nbsp;</span>
                                     </figcaption>
                                 </figure>
 
-                                <figure data-filter=".armchair">
+                                <figure data-filter=".shells">
                                     <figcaption>
                                     <i class="flaticon-oyster" style="font-size:54px;"></i>
                                         <span>Shells</span>
                                     </figcaption>
                                 </figure>
 
-                                <figure data-filter=".chair">
+                                <figure data-filter=".cephalopod">
                                     <figcaption>
                                     <i class="flaticon-squid" style="font-size:50px;"></i>
                                         <span>Cephalopod</span>
                                     </figcaption>
                                 </figure>
 
-                                <figure data-filter=".bedroom">
+                                <figure data-filter=".shrimp">
                                     <figcaption>
                                     <i class="flaticon-shrimp" style="font-size:50px;"></i>
                                         <span>Shrimp</span>
@@ -258,17 +262,16 @@
 
                     <!-- === product-item === -->
 
-                    <div class="col-xs-6 col-sm-4 item sofa">
+                    <div class="col-xs-6 col-sm-4 item fish">
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
                                     <a href="#productid1" class="mfp-open">
-                                        <img src="{{ asset('assets/img/01.jpg') }}" alt="" width="360" />
+                                        <img src="{{ asset('img/FishTail/Logo_Large_Dark.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text">
+                                <div class="text" style="background: #000000bf;">
                                     <h2 class="title h4" style="color: #fff !important;">Fish</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>
                             </div>
                         </article>
@@ -276,17 +279,16 @@
 
                     <!-- === product-item === -->
 
-                    <div class="col-xs-6 col-sm-4 item armchair">
+                    <div class="col-xs-6 col-sm-4 item fish">
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
                                     <a href="#productid1" class="mfp-open">
-                                        <img src="{{ asset('assets/img/02.jpg') }}" alt="" width="360" />
+                                        <img src="{{ asset('img/FishTail/Logo_Large_Dark.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text">
+                                <div class="text" style="background: #000000bf;">
                                     <h2 class="title h4" style="color: #fff !important;">Fish</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>
                             </div>
                         </article>
@@ -294,17 +296,16 @@
 
                     <!-- === product-item === -->
 
-                    <div class="col-xs-6 col-sm-4 item sofa armchair">
+                    <div class="col-xs-6 col-sm-4 item sofa shells">
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
                                     <a href="#productid1" class="mfp-open">
-                                        <img src="{{ asset('assets/img/03.jpg') }}" alt="" width="360" />
+                                        <img src="{{ asset('img/FremantleOctopus/fremantle_octopus_logo.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text">
+                                <div class="text" style="background: #000000bf;">
                                     <h2 class="title h4" style="color: #fff !important;">Shells</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>
                             </div>
                         </article>
@@ -312,17 +313,16 @@
 
                     <!-- === product-item === -->
 
-                    <div class="col-xs-6 col-sm-4 item armchair">
+                    <div class="col-xs-6 col-sm-4 item shells">
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
                                     <a href="#productid1" class="mfp-open">
-                                        <img src="{{ asset('assets/img/04.jpg') }}" alt="" width="360" />
+                                        <img src="{{ asset('img/FremantleOctopus/fremantle_octopus_logo.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text">
+                                <div class="text" style="background: #000000bf;">
                                     <h2 class="title h4" style="color: #fff !important;">Shells</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>
                             </div>
                         </article>
@@ -330,17 +330,16 @@
 
                     <!-- === product-item === -->
 
-                    <div class="col-xs-6 col-sm-4 item bedroom">
+                    <div class="col-xs-6 col-sm-4 item cephalopod">
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
                                     <a href="#productid1" class="mfp-open">
-                                        <img src="{{ asset('assets/img/01.jpg') }}" alt="" width="360" />
+                                        <img src="{{ asset('img/FishTail/Logo_Large_Dark.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text">
+                                <div class="text" style="background: #000000bf;">
                                     <h2 class="title h4" style="color: #fff !important;">Cephalopod</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>
                             </div>
                         </article>
@@ -348,17 +347,16 @@
 
                     <!-- === product-item === -->
 
-                    <div class="col-xs-6 col-sm-4 item sofa">
+                    <div class="col-xs-6 col-sm-4 item cephalopod">
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
                                     <a href="#productid1" class="mfp-open">
-                                        <img src="{{ asset('assets/img/02.jpg') }}" alt="" width="360" />
+                                        <img src="{{ asset('img/FishTail/Logo_Large_Dark.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text">
+                                <div class="text" style="background: #000000bf;">
                                     <h2 class="title h4" style="color: #fff !important;">Cephalopod</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>
                             </div>
                         </article>
@@ -366,17 +364,16 @@
 
                     <!-- === product-item === -->
 
-                    <div class="col-xs-6 col-sm-4 item bedroom">
+                    <div class="col-xs-6 col-sm-4 item shrimp">
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
                                     <a href="#productid1" class="mfp-open">
-                                        <img src="{{ asset('assets/img/03.jpg') }}" alt="" width="360" />
+                                        <img src="{{ asset('img/FishTail/2.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text">
+                                <div class="text" style="background: #000000bf;">
                                     <h2 class="title h4" style="color: #fff !important;">Shrimp</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>
                             </div>
                         </article>
@@ -384,17 +381,16 @@
 
                     <!-- === product-item === -->
 
-                    <div class="col-xs-6 col-sm-4 item chair">
+                    <div class="col-xs-6 col-sm-4 item shrimp">
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
                                     <a href="#productid1" class="mfp-open">
-                                        <img src="{{ asset('assets/img/04.jpg') }}" alt="" width="360" />
+                                        <img src="{{ asset('img/FishTail/2.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text">
+                                <div class="text" style="background: #000000bf;">
                                     <h2 class="title h4" style="color: #fff !important;">Shrimp</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>
                             </div>
                         </article>
@@ -402,18 +398,17 @@
 
                     <!-- === product-item === -->
 
-                    <div class="col-xs-6 col-sm-4 item sofa chair">
+                    <div class="col-xs-6 col-sm-4 item sofa shrimp">
 
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
                                     <a href="#productid1" class="mfp-open">
-                                        <img src="{{ asset('assets/img/04.jpg') }}" alt="" width="360" />
+                                        <img src="{{ asset('img/FishTail/2.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text">
-                                    <h2 class="title h4" style="color: #fff !important;">Cephalopod</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
+                                <div class="text" style="background: #000000bf;">
+                                    <h2 class="title h4" style="color: #fff !important;">Shrimp</h2>
                                 </div>
                             </div>
                         </article>
@@ -437,9 +432,9 @@
                         <!-- === product gallery === -->
 
                         <div class="owl-product-gallery">
-                            <img src="{{ asset('assets/img/01.jpg') }}" alt="" width="640" />
-                            <img src="{{ asset('assets/img/01.jpg') }}" alt="" width="640" />
-                            <img src="{{ asset('assets/img/01.jpg') }}" alt="" width="640" />
+                            <img src="{{ asset('img/FishTail/1.jpg') }}" alt="" width="640" />
+                            <img src="{{ asset('img/FishTail/1.jpg') }}" alt="" width="640" />
+                            <img src="{{ asset('img/FishTail/1.jpg') }}" alt="" width="640" />
                         </div>
 
                         <!-- === product-popup-footer === -->

@@ -415,6 +415,7 @@ class ComposerStaticInitaf8e6cf78b7ee0138523d4c5c758ddb5
     );
 
     public static $classMap = array (
+        'App\\About' => __DIR__ . '/../..' . '/app/About.php',
         'App\\Apple' => __DIR__ . '/../..' . '/app/Apple.php',
         'App\\Beef' => __DIR__ . '/../..' . '/app/Beef.php',
         'App\\Beetroot' => __DIR__ . '/../..' . '/app/Beetroot.php',
@@ -447,6 +448,7 @@ class ComposerStaticInitaf8e6cf78b7ee0138523d4c5c758ddb5
         'App\\Http\\Controllers\\CheeseController' => __DIR__ . '/../..' . '/app/Http/Controllers/CheeseController.php',
         'App\\Http\\Controllers\\CherriesController' => __DIR__ . '/../..' . '/app/Http/Controllers/CherriesController.php',
         'App\\Http\\Controllers\\ConfectionaryController' => __DIR__ . '/../..' . '/app/Http/Controllers/ConfectionaryController.php',
+        'App\\Http\\Controllers\\ContactController' => __DIR__ . '/../..' . '/app/Http/Controllers/ContactController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\DairyController' => __DIR__ . '/../..' . '/app/Http/Controllers/DairyController.php',
         'App\\Http\\Controllers\\FishController' => __DIR__ . '/../..' . '/app/Http/Controllers/FishController.php',
