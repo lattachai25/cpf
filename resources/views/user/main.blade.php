@@ -131,7 +131,7 @@
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
-                                    <a href="#productid1" class="mfp-open">
+                                    <a href="/Apple">
                                         <img src="{{ asset('assets/newproduct/01.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
@@ -149,13 +149,12 @@
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
-                                    <a href="#productid1" class="mfp-open">
+                                    <a href="/Yogurt">
                                         <img src="{{ asset('assets/newproduct/02.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
                                 <div class="text" style="background-color:#000000b0;">
-                                    <h2 class="title h4"><a href="" style="color:#fff !important;">GreekStyle</a></h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
+                                    <h2 class="title h4"><a href="" style="color:#fff !important;">Yogurt</a></h2>
                                 </div>
                             </div>
                         </article>
@@ -167,13 +166,12 @@
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
-                                    <a href="#productid1" class="mfp-open">
+                                    <a href="/Cephalopod">
                                         <img src="{{ asset('assets/newproduct/03.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
                                 <div class="text" style="background-color:#000000b0;">
                                     <h2 class="title h4"><a href="" style="color:#fff !important;">Fremantle Octopus</a></h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>
                             </div>
                         </article>
@@ -185,14 +183,13 @@
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
-                                    <a href="#productid1" class="mfp-open">
+                                    <a href="/Beef">
                                         <img src="{{ asset('assets/newproduct/04.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
                                 <div class="text" style="background-color:#000000b0;">
                                     <h2 class="title h4"><a href="" style="color:#fff !important;">Harvey Beef</a></h2>
                             
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>
                             </div>
                         </article>
@@ -205,14 +202,13 @@
                             <div class="figure-grid">
 
                                 <div class="image">
-                                    <a href="#productid1" class="mfp-open">
+                                    <a href="/Fish">
                                         <img src="{{ asset('assets/newproduct/05.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
                                 <div class="text" style="background-color:#000000b0;">
                                     <h2 class="title h4"><a href="" style="color:#fff !important;">Fresh Large</a></h2>
 
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>
                             </div>
                         </article>
@@ -224,13 +220,12 @@
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
-                                    <a href="#productid1" class="mfp-open">
+                                    <a href="/Sweetpotatoes">
                                         <img src="{{ asset('assets/newproduct/06.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
                                 <div class="text" style="background-color:#000000b0;">
                                     <h2 class="title h4"><a href="" style="color:#fff !important;">Purple</a></h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>
                             </div>
                         </article>
@@ -261,7 +256,7 @@
                         <figcaption>Harvey Beef</figcaption>
                     </figure>
                     <!--anchor-->
-                    <a href="#"></a>
+                    <a href="/Meat"></a>
                 </li>
                 @endfor
 
@@ -271,7 +266,7 @@
                     <div class="more-icon">
                         <span data-title-show="Show more" data-title-hide="+"></span>
                     </div>
-                    <a href="#"></a>
+                    <a href="/Meat"></a>
                 </li>
 
             </ul>
@@ -301,7 +296,7 @@
                     @for ($i = 1; $i < 4; $i++)
                     <div class="col-sm-4">
                         <article>
-                            <a href="article.html">
+                            <a href="/Beef">
                                 <div class="image">
                                     <img src="{{ asset('assets/newproduct/HarveyBeef0'.$i.'.jpg') }}" alt="" />
                                 </div>
@@ -425,7 +420,7 @@
 
             <div class="gallery clearfix">
                 @for ($i = 1; $i < 7; $i++)
-                <a class="item" href="#">
+                <a class="item" href="Showmeat">
                     <img src="{{ asset('assets/newproduct/Beef0'.$i.'.jpg') }}" alt="Alternate Text" />
                 </a>
                 @endfor

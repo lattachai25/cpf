@@ -11,7 +11,7 @@
 
                         </div>
                         <div class="col-sm-4 text-center">
-                            <a href="#" class="btn btn-clean"><span class="icon icon-map-marker"></span> Get directions</a>
+                            <a href="Contact" class="btn btn-clean"><span class="icon icon-map-marker"></span> Get directions</a>
                             <div class="call-us h4"><span class="icon icon-phone-handset"></span> 02 - 123 - 45678</div>
                         </div>
                     </div>
@@ -23,25 +23,24 @@
                         <div class="col-sm-4 col-md-2">
                     
                             <ul>
-                                <li><a href="#">MEAT</a></li>
-                                <li><a href="#">SEAFOOD</a></li>
-                                <li><a href="#">FRUIT</a></li>
+                                <li><a href="/Meat">MEAT</a></li>
+                                <li><a href="/Seafood">SEAFOOD</a></li>
+                                <li><a href="/Fruit">FRUIT</a></li>
                             </ul>
                         </div>
                         <div class="col-sm-4 col-md-2">
                       
                             <ul>
-                                <li><a href="#">VEGETABLE</a></li>
-                                <li><a href="#">DAIRY</a></li>
-                                <li><a href="#">OTHERS</a></li>
+                                <li><a href="/Vegetable">VEGETABLE</a></li>
+                                <li><a href="/Dairy">DAIRY</a></li>
+                                <li><a href="/Others">OTHERS</a></li>
                             </ul>
                         </div>
                         <div class="col-sm-4 col-md-2">
                          
                             <ul>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">News</a></li>
-                                <li><a href="#">Contact</a></li>
+                                <li><a href="/About">About</a></li>
+                                <li><a href="/Contact">Contact</a></li>
                             </ul>
                         </div>
                         <div class="col-sm-12 col-md-6">

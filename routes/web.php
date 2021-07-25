@@ -62,3 +62,12 @@ Route::resource('/Confectionary', 'ConfectionaryController');
 // MENU Contact
 Route::resource('/Contact', 'ContactController');
 Route::resource('/About', 'AboutController');
+
+
+// SHOW 
+Route::resource('/Showvegetable', 'ShowvegetableController');
+Route::resource('/Showseafood', 'ShowseafoodController');
+Route::resource('/Showothers', 'ShowothersController');
+Route::resource('/Showmeat', 'ShowmeatController');
+Route::resource('/Showfrut', 'ShowfrutController');
+Route::resource('/ShowDairy', 'ShowDairyController');

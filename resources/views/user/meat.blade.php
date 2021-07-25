@@ -29,7 +29,7 @@ magic marble. Displaying an
 intricate, feathery pattern and
 distinguished as the world’s finest.</div>
                             <div class="animated" data-animation="fadeInUp">
-                                <a href="" class="btn btn-clean">Read more</a>
+                                <a href="/Showmeat" class="btn btn-clean">Read more</a>
                             </div>
                         </div>
                     </div>
@@ -68,7 +68,7 @@ distinguished as the world’s finest.</div>
                             <figcaption style="background-image:url({{ asset('img/Brochure/1.jpg') }})">
                                 <img src="{{ asset('img/Brochure/1.jpg') }}" alt="" />
                             </figcaption>
-                            <a href="#interiorId1" class="btn btn-clean mfp-open mfp-open-scrollto">Read more</a>
+                            <a href="/Showmeat" class="btn btn-clean mfp-open-scrollto">Read more</a>
                         </figure>
                     </div>
 
@@ -79,7 +79,7 @@ distinguished as the world’s finest.</div>
                             <figcaption style="background-image:url({{ asset('img/Brochure/2.jpg') }})">
                                 <img src="{{ asset('img/Brochure/1.jpg') }}" alt="" />
                             </figcaption>
-                            <a href="#interiorId1" class="btn btn-clean mfp-open mfp-open-scrollto">Read more</a>
+                            <a href="/Showmeat" class="btn btn-clean mfp-open-scrollto">Read more</a>
                         </figure>
                     </div>
 
@@ -90,7 +90,7 @@ distinguished as the world’s finest.</div>
                             <figcaption style="background-image:url({{ asset('img/Brochure/3.jpg') }})">
                                 <img src="{{ asset('img/Brochure/1.jpg') }}" alt="" />
                             </figcaption>
-                            <a href="#interiorId1" class="btn btn-clean mfp-open mfp-open-scrollto">Read more</a>
+                            <a href="/Showmeat" class="btn btn-clean mfp-open-scrollto">Read more</a>
                         </figure>
                     </div>
 
@@ -101,7 +101,7 @@ distinguished as the world’s finest.</div>
                             <figcaption style="background-image:url({{ asset('img/Brochure/4.jpg') }})">
                                 <img src="{{ asset('img/Brochure/1.jpg') }}" alt="" />
                             </figcaption>
-                            <a href="#interiorId1" class="btn btn-clean mfp-open mfp-open-scrollto">Read more</a>
+                            <a href="/Showmeat" class="btn btn-clean mfp-open-scrollto">Read more</a>
                         </figure>
                     </div>
 
@@ -112,7 +112,7 @@ distinguished as the world’s finest.</div>
                             <figcaption style="background-image:url({{ asset('img/Brochure/5.jpg') }})">
                                 <img src="{{ asset('img/Brochure/5.jpg') }}" alt="" />
                             </figcaption>
-                            <a href="#interiorId1" class="btn btn-clean mfp-open mfp-open-scrollto">Read more</a>
+                            <a href="/Showmeat" class="btn btn-clean mfp-open-scrollto">Read more</a>
                         </figure>
                     </div>
 
@@ -279,7 +279,7 @@ distinguished as the world’s finest.</div>
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
-                                    <a href="#productid1" class="mfp-open">
+                                    <a href="/Showmeat">
                                         <img src="{{ asset('img/Brochure/logoAngus.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
@@ -297,7 +297,7 @@ distinguished as the world’s finest.</div>
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
-                                    <a href="#productid1" class="mfp-open">
+                                    <a href/Showmeat">
                                         <img src="{{ asset('img/Brochure/logoAngus.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
@@ -315,7 +315,7 @@ distinguished as the world’s finest.</div>
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
-                                    <a href="#productid1" class="mfp-open">
+                                    <a href="/Showmeat">
                                         <img src="{{ asset('img/Brochure/logoAngus.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
@@ -333,7 +333,7 @@ distinguished as the world’s finest.</div>
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
-                                    <a href="#productid1" class="mfp-open">
+                                    <a href="/Showmeat">
                                         <img src="{{ asset('img/Brochure/logoAngus.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
@@ -351,7 +351,7 @@ distinguished as the world’s finest.</div>
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
-                                    <a href="#productid1" class="mfp-open">
+                                    <a href="/Showmeat">
                                         <img src="{{ asset('img/Brochure/logoAngus.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
@@ -369,7 +369,7 @@ distinguished as the world’s finest.</div>
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
-                                    <a href="#productid1" class="mfp-open">
+                                    <a href="/Showmeat">
                                         <img src="{{ asset('img/Brochure/logoAngus.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
@@ -387,7 +387,7 @@ distinguished as the world’s finest.</div>
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
-                                    <a href="#productid1" class="mfp-open">
+                                    <a href="/Showmeat">
                                         <img src="{{ asset('img/Brochure/logoAngus.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
@@ -405,7 +405,7 @@ distinguished as the world’s finest.</div>
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
-                                    <a href="#productid1" class="mfp-open">
+                                    <a href="/Showmeat">
                                         <img src="{{ asset('img/Brochure/logoAngus.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
@@ -424,7 +424,7 @@ distinguished as the world’s finest.</div>
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
-                                    <a href="#productid1" class="mfp-open">
+                                    <a href="/Showmeat">
                                         <img src="{{ asset('img/Brochure/logoAngus.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
