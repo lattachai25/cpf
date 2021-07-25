@@ -32,7 +32,7 @@
 
                     <!-- Setup your logo here-->
 
-                    <a href="/" class="logo"><img src="{{ asset('assets/images/logo.png') }}" width="45px" alt="" /></a>
+                    <a href="/main" class="logo"><img src="{{ asset('assets/images/logo.png') }}" width="45px" alt="" /></a>
 
                     <!-- Mobile toggle menu -->
 
@@ -49,7 +49,7 @@
                         </div>
 
                         <ul>
-                            <li><a href="/">Home</a></li>
+                            <li><a href="/main">Home</a></li>
                             
                             <!-- Start Meat -->
                             <li>

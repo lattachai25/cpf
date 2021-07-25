@@ -13,7 +13,8 @@ Route::resource('/home', 'HomeController');
 
 
 // USER
-Route::resource('/', 'MainController');
+Route::resource('/main', 'MainController');
+Route::resource('/', 'IntroController');
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
