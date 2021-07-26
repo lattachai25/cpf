@@ -32,7 +32,7 @@
 
                     <!-- Setup your logo here-->
 
-                    <a href="/main" class="logo"><img src="{{ asset('assets/images/logo.png') }}" width="45px" alt="" /></a>
+                    <a href="/main" class="logo"><img src="{{ asset('assets/images/logo.png') }}" alt="" /></a>
 
                     <!-- Mobile toggle menu -->
 

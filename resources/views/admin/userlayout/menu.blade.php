@@ -33,12 +33,6 @@
               <span>Dashboard</span>
             </a>
           </li>          
-          <li>
-            <a href="#">
-              <i class="fa fa-globe"></i>
-              <span>Executive Board</span>
-            </a>
-          </li>
           <li class="sidebar-dropdown">
             <a href="#">
               <i class="fa fas fa-tasks"></i>
@@ -117,6 +111,24 @@
                 </li>
               </ul>
             </div>
+          </li>
+          <li>
+            <a href="/Brand.">
+              <i class="fa fa-globe"></i>
+              <span>Brand</span>
+            </a>
+          </li>
+          <li>
+            <a href="/Category">
+              <i class="fa fa-globe"></i>
+              <span>Category</span>
+            </a>
+          </li>
+          <li>
+            <a href="/Subcategory">
+              <i class="fa fa-globe"></i>
+              <span>Sub Category</span>
+            </a>
           </li>
           <!-- <li class="sidebar-dropdown">
             <a href="#">

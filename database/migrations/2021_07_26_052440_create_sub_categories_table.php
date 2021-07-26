@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateShowDairiesTable extends Migration
+class CreateSubCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateShowDairiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('show_dairies', function (Blueprint $table) {
+        Schema::create('sub_categories', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name_sub_categories');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ class CreateShowDairiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('show_dairies');
+        Schema::dropIfExists('sub_categories');
     }
 }

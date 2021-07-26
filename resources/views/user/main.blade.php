@@ -19,10 +19,9 @@
                 <div class="item" style="background-image:url({{asset('assets/img/0'.$i.'.jpg') }})">
                     <div class="box">
                         <div class="container">
-                            <h2 class="title animated h1" data-animation="fadeInDown">Modern furniture theme</h2>
+                            <h2 class="title animated h1" data-animation="fadeInDown">Meat is animal flesh that is eaten as food.</h2>
                             <div class="animated" data-animation="fadeInUp">
-                                Modern & powerfull template. <br /> Clean design & reponsive
-                                layout. Google fonts integration
+                            Meat is animal flesh that is eaten as food.[1] Humans have hunted and killed animals for meat since prehistoric times.
                             </div>
 
                         </div>
@@ -116,7 +115,7 @@
                         <div class="col-md-offset-2 col-md-8 text-center">
                             <h2 class="title" style="color:#FFF;">New Products</h2>
                             <div class="text">
-                                <p>สินค้าใหม่ประจำเดือน</p>
+                                <p>Monthly new products</p>
                             </div>
                         </div>
                     </div>
@@ -282,9 +281,9 @@
                 <header>
                     <div class="row">
                         <div class="col-md-offset-2 col-md-8 text-center">
-                            <h2 class="title" style="color: rgb(255, 255, 255);">สินค้าเพื่อสุขภาพ</h2>
+                            <h2 class="title" style="color: rgb(255, 255, 255);">Health Products</h2>
                             <div class="text">
-                                <p>อาหารเพื่อสุขภาพ</p>
+                                <p>Healthy Food</p>
                             </div>
                         </div>
                     </div>
@@ -303,7 +302,7 @@
                                 <div class="entry entry-block">
                                     <div class="date">06/06/2021</div>
                                     <div class="title">
-                                        <h2 class="h3">Harvey Beef is proud to offer our premium 100 Day Grain finished beef range.</h2>
+                                        <h2 class="h4">Harvey Beef is proud to offer our premium 100 Day Grain finished beef range.</h2>
                                     </div>
                                     <div class="description" style="background-color: rgba(0, 0, 0, 0.6); padding: 20px;">
                                         <p>
@@ -332,7 +331,7 @@
                     <div class="col-md-offset-2 col-md-8 text-center">
                         <h2 class="title">ABOUT Us</h2>
                         <p>
-                        เราเป็นผู้นำเข้าสินค้าประเภทเนื้อสัตว์ ผัก ผลไม้ และ ผลิตภัณฑ์จากนม จากประเทศ Australia ที่ได้มีมาตราฐาน
+                        We are importers of meat, vegetables, fruit and dairy products from Australia that have standards.
                         </p>
                         <p><a href="/About" class="btn btn-clean">Read full story</a></p>
                     </div>
@@ -350,9 +349,9 @@
                 <header>
                     <div class="row">
                         <div class="col-md-offset-2 col-md-8 text-center">
-                            <h1 class="h2 title" style="color: rgb(255, 255, 255);">ช่องทางการจัดจําหน่าย</h1>
+                            <h1 class="h2 title" style="color: rgb(255, 255, 255);">Distribution Channel</h1>
                             <div class="text">
-                                <p>อาหาร สด ใหม่ สะอาด ถึงมือคุณ</p>
+                                <p>Fresh, clean food to you</p>
                             </div>
                         </div>
                     </div>
@@ -364,7 +363,7 @@
                     @for ($i = 1; $i < 4; $i++)
                     <div class="col-sm-4">
                         <article>
-                            <a href="article.html">
+                            <a href="">
                                 <div class="image" style="background-image:url({{ asset('assets/newproduct/Purple'.$i.'.jpg') }})">
                                     <img src="{{ asset('assets/newproduct/Purple'.$i.'.jpg') }}" alt="" />
                                 </div>
@@ -407,9 +406,9 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-offset-2 col-md-8 text-center">
-                            <h2 class="h2 title">สินค้าอื่นๆของเรา</h2>
+                            <h2 class="h2 title">Our other products</h2>
                             <div class="text">
-                                <p>ยังมีสินค้าที่ สด ใหม่ สะอาด อีกมากมาย</p>
+                                <p>There are also many fresh and clean products.</p>
                             </div>
                         </div>
                     </div>

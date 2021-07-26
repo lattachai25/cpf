@@ -6,8 +6,9 @@
                     <div class="row">
                         <div class="col-sm-8">
                             <h2>CPF AUSTRALIA</h2>
-                            <p>เลขที่ 13 ซอยอารีย์ สัมพันธ์ 2 ซอยพหลโยธิน 5(ราชครู) <br>
-                            ถนนพหลโยธิน แขวงพญาไท เขตพญาไท กรุงเทพมหานคร 10400</p>
+                            <p>No. 13, Soi Aree Samphan 2, Soi Phahonyothin 5 (Ratchahru)<br>
+                                Phahonyothin Road, Phaya Thai Subdistrict, Phaya Thai District, Bangkok 10400
+                            </p>
 
                         </div>
                         <div class="col-sm-4 text-center">

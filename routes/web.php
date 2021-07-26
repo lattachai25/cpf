@@ -9,15 +9,18 @@ Auth::routes();
 
 // ADMIN
 Route::resource('/home', 'HomeController');
+Route::resource('/Brand', 'BrandController');
+Route::resource('/Category', 'CategoryController');
+Route::resource('/Subcategory', 'SubCategoryController');
 
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // USER
 Route::resource('/main', 'MainController');
 Route::resource('/', 'IntroController');
 
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
 // MENU Meat
 Route::resource('/Meat', 'MeatController');
 Route::resource('/Poultry', 'PoultryController');
@@ -72,3 +75,7 @@ Route::resource('/Showothers', 'ShowothersController');
 Route::resource('/Showmeat', 'ShowmeatController');
 Route::resource('/Showfrut', 'ShowfrutController');
 Route::resource('/ShowDairy', 'ShowDairyController');
+
+
+
+

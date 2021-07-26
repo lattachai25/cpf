@@ -37,7 +37,33 @@
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('font3/flaticon.css') }}">
 </head>
 <style>
-
+.container {
+    width: 85% !important;
+}
+nav .navigation-main .floating-menu > ul > li > a {
+    color: white;
+    padding: 45px 20px;
+}
+nav .navigation .logo img {
+    width: 80px;
+}
+nav.navbar-fixed {
+    position: fixed;
+    min-height: 150px;
+    background-color: #000000ab;
+}
+nav.navbar-sticked {
+    min-height: 110px;
+    background-color: #232529 !important;
+}
+nav .navigation > ul {
+    width: 80% !important;
+    float: right;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.blog.blog-block article .show-more {
+    bottom: 2px !important;
+}
 nav .navigation-main .floating-menu > ul > li > a.current:after, nav .navigation-main .floating-menu > ul > li > a:after {
     background-color: #fff !important;
     }
@@ -49,6 +75,11 @@ nav .navigation-main .floating-menu > ul > li .navbar-dropdown .navbar-box .box-
     width: 100% !important;
     background-color: #3c3b3a !important;
 }
+
+nav .navigation-top > ul > li > a {
+    color: #91e608 !important;
+}
+
 
 nav .navigation-top > ul > li > a:hover {
     color: #fff !important;
@@ -102,6 +133,44 @@ footer a:hover {
     width: 120px !important;
     height: 120px !important;
 }
+.owl-icons-wrapper.owl-icons-frontpage {
+    margin-top: -143px;
+    background: #05050578;
+}
+.owl-icons-wrapper.owl-icons-frontpage a, .owl-icons-wrapper.owl-icons-frontpage a:focus, .owl-icons-wrapper.owl-icons-frontpage a:active, .owl-icons-wrapper.owl-icons-frontpage a{
+    color:#000;
+}
+.owl-icons-wrapper.owl-icons-frontpage a, .owl-icons-wrapper.owl-icons-frontpage a:focus, .owl-icons-wrapper.owl-icons-frontpage a:active, .owl-icons-wrapper.owl-icons-frontpage a:hover {
+    color:#b5b5ba;
+}
+.products article .image {
+    border-radius: 10px;
+}
+
+.products article {
+    margin-bottom: 30px;
+}
+.products article {
+    background-color: #000;
+}
+
+
+.figure-grid .image a img:hover {
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    -moz-transition: all 0.8s;
+    -o-transition: all 0.8s;
+    -webkit-transition: all 0.8s;
+    transition: all 0.8s;
+}
+
+
+
+
+
 
 </style>
 

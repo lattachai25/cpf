@@ -1,10 +1,10 @@
-@extends('.admin.app')
+@extends('.admin.userlayout.app')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6" style="padding-top:15%;">
-            <div class="card">
+            <div class="card" style="height: 350px !important;">
                 <div class="card-header"><h1 style="font-weight:bold;">{{ __('Sign In') }}</h1></div>
 
                 <div class="card-body" style="background:none;">

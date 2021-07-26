@@ -67,7 +67,7 @@
 
 
 <div class="row">
-       @include('.admin.menu')
+       @include('.admin.userlayout.menu')
        @yield('content')
 
 </div>

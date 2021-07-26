@@ -1,0 +1,21 @@
+
+Temporary FTP Hostname: 27.254.33.64
+
+FTP Username: cpfaustr
+FTP Password: MO25M.wu36Lf+r
+FTP Port: 2121
+
+เมื่อโดเมนของท่าน propagate จะสามารถใช้งาน FTP และดู website ได้ตามรายละเอียดนี้เลยค่ะ
+
+FTP Hostname: cpfaustralia.com
+FTP Username: cpfaustr
+FTP Password: MO25M.wu36Lf+r
+FTP Port: 2121
+
+Webpage URL: http://www.cpfaustralia.com
+
+
+Database:	cpfaustr_cpfaustr
+Host:	localhost
+Username:	cpfaustr_cpfaustr
+Password:	MO25M.wu36Lf+r

@@ -1,11 +1,11 @@
-@extends('.admin.app')
+@extends('.admin.userlayout.app')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+        <div class="col-md-8" style="padding-top:10%;">
+            <div class="card" style="height: 430px !important;">
+                <div class="card-header" style="font-size:30px;">{{ __('Register') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">

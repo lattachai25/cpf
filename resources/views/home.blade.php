@@ -1,4 +1,4 @@
-@extends('.admin.adminpage')
+@extends('.admin.userlayout.adminpage')
 @section('title', 'CPFAUSTRALIA: Admin')
 @section('content')
 
