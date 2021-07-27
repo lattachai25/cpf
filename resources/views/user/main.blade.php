@@ -427,6 +427,6 @@
 
         </section>
         <!-- ======================== สินค้าอื่นๆ ======================== -->
-    
+        <div class="scroll-top visible"><i class="icon icon-chevron-up"></i></div>
 
 @endsection

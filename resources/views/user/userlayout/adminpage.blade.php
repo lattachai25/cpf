@@ -37,6 +37,48 @@
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('font3/flaticon.css') }}">
 </head>
 <style>
+
+@media (max-width: 991px) {
+
+    nav .container {
+        padding: 0;
+        margin: 0;
+        width: 100% !important;
+    }
+
+    nav .navigation-main .open-menu {
+        position: absolute;
+        top: 0px;
+        right: 0;
+        width: 100px !important;
+        height: 100%;
+        color: #fff;
+        text-align: center;
+        border-left: 1px solid #333;
+    }
+    nav .navigation .logo img {
+        width: 55px !important;
+    }
+    nav .navigation-main .floating-menu > ul > li > a {
+        color: white;
+        padding: 10px 10px !important;
+    }
+    nav.navbar-fixed {
+        position: fixed;
+        min-height: 100px !important;
+        background-color: #000000ab;
+    }
+    nav.navbar-sticked {
+        min-height: 75px !important;
+        background-color: #232529 !important;
+    }
+}
+
+
+
+
+
+
 .container {
     width: 85% !important;
 }
@@ -151,9 +193,19 @@ footer a:hover {
     margin-bottom: 30px;
 }
 .products article {
-    background-color: #000;
+    background-color: #0000 !important
 }
 
+.btn.btn-clean {
+    background-color: #0000007a !important;
+    border-color: #f8f5f5 !important;
+    color: white !important;
+}
+.btn.btn-clean:hover {
+    background-color: #100f0f !important;
+    border-color: white !important;
+    color: #f3f8f3 !important;
+}
 
 .figure-grid .image a img:hover {
     -moz-transform: scale(1.2);
