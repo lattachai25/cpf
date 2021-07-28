@@ -48,6 +48,7 @@ class ConfectionaryController extends Controller
     public function show(Confectionary $confectionary)
     {
         //
+        return view('admin/Confectionary/index');
     }
 
     /**

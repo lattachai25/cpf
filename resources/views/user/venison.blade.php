@@ -214,7 +214,7 @@ distinguished as the world’s finest.</div>
                                         <img src="{{ asset('img/Brochure/1.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text" style="background: #000000bf;">
+                                <div class="text" style="background: #000000bf; border-radius: 10px 10px 0px 0px;">
                                     <h2 class="title h4" style="color: #fff !important;">VENISON</h2>
                                     <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>

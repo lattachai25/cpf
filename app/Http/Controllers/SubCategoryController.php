@@ -49,6 +49,7 @@ class SubCategoryController extends Controller
     public function show(SubCategory $subCategory)
     {
         //
+        return view('admin/SubCategory/index');
     }
 
     /**

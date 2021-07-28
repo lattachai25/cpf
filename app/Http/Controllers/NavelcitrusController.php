@@ -48,6 +48,7 @@ class NavelcitrusController extends Controller
     public function show(Navelcitrus $navelcitrus)
     {
         //
+        return view('admin/Navelcitrus/index');
     }
 
     /**

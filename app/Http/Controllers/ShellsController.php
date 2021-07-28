@@ -48,6 +48,7 @@ class ShellsController extends Controller
     public function show(Shells $shells)
     {
         //
+        return view('admin/Shells/index');
     }
 
     /**

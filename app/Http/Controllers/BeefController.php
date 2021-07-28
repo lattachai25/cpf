@@ -47,6 +47,7 @@ class BeefController extends Controller
     public function show(Beef $beef)
     {
         //
+        return view('admin/Beef/index');
     }
 
     /**

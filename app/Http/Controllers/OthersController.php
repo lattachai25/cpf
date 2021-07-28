@@ -48,6 +48,7 @@ class OthersController extends Controller
     public function show(Others $others)
     {
         //
+        return view('admin/Others/index');
     }
 
     /**

@@ -49,6 +49,7 @@ class BrandController extends Controller
     public function show(Brand $brand)
     {
         //
+        return view('admin/Brand/index');
     }
 
     /**

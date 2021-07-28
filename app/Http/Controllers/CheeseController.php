@@ -48,6 +48,7 @@ class CheeseController extends Controller
     public function show(Cheese $cheese)
     {
         //
+        return view('admin/Cheese/index');
     }
 
     /**

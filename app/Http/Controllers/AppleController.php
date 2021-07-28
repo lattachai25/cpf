@@ -48,6 +48,7 @@ class AppleController extends Controller
     public function show(Apple $apple)
     {
         //
+        return view('admin/Apple/index');
     }
 
     /**

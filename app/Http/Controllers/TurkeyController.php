@@ -47,6 +47,7 @@ class TurkeyController extends Controller
     public function show(Turkey $turkey)
     {
         //
+        return view('admin/Turkey/index');
     }
 
     /**

@@ -302,11 +302,11 @@
                                 <div class="entry entry-block">
                                     <div class="date">06/06/2021</div>
                                     <div class="title">
-                                        <h2 class="h4">Harvey Beef is proud to offer our premium 100 Day Grain finished beef range.</h2>
+                                        <h2 class="h4">Harvey Beef is proud to offer our premium 100 Day . <br><br></h2>
                                     </div>
                                     <div class="description" style="background-color: rgba(0, 0, 0, 0.6); padding: 20px;">
                                         <p>
-                                        Since 1919 Harvey Beef has fostered long lasting relationships with Western Australia’s best beef producers. From the pristine and rugged Kimberley and Pilbara regions where the cattle feed on the natural grasses of the rangelands, to the green grass pastures of the Great Southern and South Western regions, Harvey Beef and our producers place the highest priority on animal welfare and food safety. We are proud that our beef has no added hormones and have MSA programs suitable for domestic and international markets.
+                                        Since 1919 Harvey Beef has fostered long lasting relationships with Western Australia’s best beef producers. From the pristine and rugged Kimberley and Pilbara regions where the cattle feed on the natural grasses of the rangelands, to the green grass pastures of the Great Southern and South Western regions, Harvey Beef and our producers place the highest priority on animal welfare and food safety.
                                         </p>
                                     </div>
                                 </div>

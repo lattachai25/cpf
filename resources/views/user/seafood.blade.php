@@ -181,7 +181,7 @@
                                         <img src="{{ asset('img/FishTail/Logo_Large_Dark.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text" style="background: #000000bf;">
+                                <div class="text radius">
                                     <h2 class="title h4" style="color: #fff !important;">Fish</h2>
                                 </div>
                             </div>
@@ -198,7 +198,7 @@
                                         <img src="{{ asset('img/FishTail/Logo_Large_Dark.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text" style="background: #000000bf;">
+                                <div class="text radius">
                                     <h2 class="title h4" style="color: #fff !important;">Fish</h2>
                                 </div>
                             </div>
@@ -215,7 +215,7 @@
                                         <img src="{{ asset('img/FremantleOctopus/fremantle_octopus_logo.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text" style="background: #000000bf;">
+                                <div class="text radius">
                                     <h2 class="title h4" style="color: #fff !important;">Shells</h2>
                                 </div>
                             </div>
@@ -232,7 +232,7 @@
                                         <img src="{{ asset('img/FremantleOctopus/fremantle_octopus_logo.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text" style="background: #000000bf;">
+                                <div class="text radius">
                                     <h2 class="title h4" style="color: #fff !important;">Shells</h2>
                                 </div>
                             </div>
@@ -249,7 +249,7 @@
                                         <img src="{{ asset('img/FishTail/Logo_Large_Dark.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text" style="background: #000000bf;">
+                                <div class="text radius">
                                     <h2 class="title h4" style="color: #fff !important;">Cephalopod</h2>
                                 </div>
                             </div>
@@ -266,7 +266,7 @@
                                         <img src="{{ asset('img/FishTail/Logo_Large_Dark.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text" style="background: #000000bf;">
+                                <div class="text radius">
                                     <h2 class="title h4" style="color: #fff !important;">Cephalopod</h2>
                                 </div>
                             </div>
@@ -283,7 +283,7 @@
                                         <img src="{{ asset('img/FishTail/2.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text" style="background: #000000bf;">
+                                <div class="text radius">
                                     <h2 class="title h4" style="color: #fff !important;">Shrimp</h2>
                                 </div>
                             </div>
@@ -300,7 +300,7 @@
                                         <img src="{{ asset('img/FishTail/2.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text" style="background: #000000bf;">
+                                <div class="text radius">
                                     <h2 class="title h4" style="color: #fff !important;">Shrimp</h2>
                                 </div>
                             </div>
@@ -318,7 +318,7 @@
                                         <img src="{{ asset('img/FishTail/2.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text" style="background: #000000bf;">
+                                <div class="text radius">
                                     <h2 class="title h4" style="color: #fff !important;">Shrimp</h2>
                                 </div>
                             </div>

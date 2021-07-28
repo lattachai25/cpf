@@ -48,6 +48,7 @@ class VegetableController extends Controller
     public function show(Vegetable $vegetable)
     {
         //
+        return view('admin/Vegetable/index');
     }
 
     /**

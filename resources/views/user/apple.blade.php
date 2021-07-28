@@ -135,7 +135,7 @@
                                         <img src="{{ asset('img/Apple/Bravo/bravo_logo.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text" style="background: #000000bf;">
+                                <div class="text radius">
                                     <h2 class="title h4" style="color: #fff !important;">APPLE Bravo</h2>
                                 </div>
                             </div>

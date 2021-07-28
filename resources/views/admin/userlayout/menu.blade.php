@@ -35,58 +35,47 @@
           </li>          
           <li class="sidebar-dropdown">
             <a href="#">
-              <i class="fa fas fa-tasks"></i>
-              <span>Manager</span>
-              <span class="badge badge-pill badge-danger">3</span>
+              <i class="fa fa-cubes"></i>
+              <span>MEAT</span>
             </a>
             <div class="sidebar-submenu">
               <ul>
                 <li>
-                  <a href="#">Overview Report</a>
+                  <a href="/Poultry/show">POULTR</a>
                 </li>
                 <li>
-                  <a href="#">Overview Refill Board</a>
+                  <a href="/Beef/show">BEEF</a>
                 </li>
                 <li>
-                  <a href="#">In Order ( PO )
-                    <span class="badge badge-pill badge-warning">3</span>
-                  </a>
+                  <a href="/Lamb/show">LAMB</a>
                 </li>
                 <li>
-                  <a href="#">Revise PO
-                    <span class="badge badge-pill badge-warning">1</span>
-                  </a>
+                  <a href="/Venison/show">VENISON</a>
                 </li>
                 <li>
-                  <a href="#">Order Confirmation
-                  <span class="badge badge-pill badge-success">3</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">Cancel Order</a>
+                  <a href="/Turkey/show">TURKEY</a>
                 </li>
               </ul>
             </div>
           </li>
           <li class="sidebar-dropdown">
             <a href="#">
-              <i class="fa fa-asterisk"></i>
-              <span>Admin Coord</span>
-              <span class="badge badge-pill badge-danger">10</span>
-              <!-- <span class="badge badge-pill badge-warning">New</span> -->
+              <i class="fa fa-cubes"></i>
+              <span>SEAFOOD</span>
             </a>
             <div class="sidebar-submenu">
               <ul>
                 <li>
-                  <a href="#">In order
-                    <span class="badge badge-pill badge-warning">3</span>
-                  </a>
+                  <a href="/Fish/show">FISH</a>
                 </li>
                 <li>
-                <a href="#">Customer List</a>
+                  <a href="/Shells/show">SHELLS</a>
                 </li>
                 <li>
-                  <a href="#">Dashboard 3</a>
+                  <a href="/Cephalopod/show">CEPHALOPOD</a>
+                </li>
+                <li>
+                  <a href="/Shrimp/show">SHRIMP</a>
                 </li>
               </ul>
             </div>
@@ -95,39 +84,123 @@
           <li class="sidebar-dropdown">
             <a href="#">
               <i class="fa fa-cubes"></i>
-              <span>Operation Depart</span>
-              <span class="badge badge-pill badge-danger">3</span>
+              <span>FRUIT</span>
             </a>
             <div class="sidebar-submenu">
               <ul>
                 <li>
-                  <a href="#">QC Products <span class="badge badge-pill badge-danger">3</span></a>
+                  <a href="/Apple/show">APPLE</a>
                 </li>
                 <li>
-                  <a href="#">Storage</a>
+                  <a href="/Cherries/show">CHERRIES</a>
                 </li>
                 <li>
-                  <a href="#">Transport To Store</a>
+                  <a href="/Stonefruit/show">STONE FRUIT</a>
+                </li>
+                <li>
+                  <a href="/Navelcitrus/show">NAVEL CITRUS</a>
+                </li>
+                <li>
+                  <a href="/Strawberry/show">STRAWBERRY</a>
                 </li>
               </ul>
             </div>
           </li>
+
+          <li class="sidebar-dropdown">
+            <a href="#">
+              <i class="fa fa-cubes"></i>
+              <span>VEGETABLE</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a href="/Carrot/show">CARROT</a>
+                </li>
+                <li>
+                  <a href="/Beetroot/show">BEETROOT</a>
+                </li>
+                <li>
+                  <a href="/Whiteonion/show">WHITE ONION</a>
+                </li>
+                <li>
+                  <a href="/Sweetpotatoes/show">SWEET POTATOES</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="sidebar-dropdown">
+            <a href="#">
+              <i class="fa fa-cubes"></i>
+              <span>DAIRY</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a href="/Yogurt/show">YOGURT</a>
+                </li>
+                <li>
+                  <a href="/Cheese/show">CHEESE</a>
+                </li>
+                <li>
+                  <a href="/Butter/show">BUTTER</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="sidebar-dropdown">
+            <a href="#">
+              <i class="fa fa-cubes"></i>
+              <span>ORTERS</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a href="/Processedfood/show">PROCESSED FOODS</a>
+                </li>
+                <li>
+                  <a href="/Beverage/show">BEVEAGE</a>
+                </li>
+                <li>
+                  <a href="/Confectionary/show">CONFECTIONARY</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+
+
           <li>
-            <a href="/Brand.">
+            <a href="/About/show">
               <i class="fa fa-globe"></i>
-              <span>Brand</span>
+              <span>ABOUT</span>
             </a>
           </li>
           <li>
-            <a href="/Category">
+            <a href="/Contact">
               <i class="fa fa-globe"></i>
-              <span>Category</span>
+              <span>CONTACT US</span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="/Category">
+              <i class="fa fa-asterisk"></i>
+              <span>CATEGORY</span>
+            </a>
+          </li>
+          <li>
+            <a href="/Brand">
+              <i class="fa fa-asterisk"></i>
+              <span>BRAND</span>
             </a>
           </li>
           <li>
             <a href="/Subcategory">
-              <i class="fa fa-globe"></i>
-              <span>Sub Category</span>
+              <i class="fa fa-asterisk"></i>
+              <span>SUB CATEGORY</span>
             </a>
           </li>
           <!-- <li class="sidebar-dropdown">

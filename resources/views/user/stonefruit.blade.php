@@ -216,24 +216,7 @@
                 <div id="box-filters-results" class="row">
 
                     <!-- === product-item === -->
-
-                    <div class="col-xs-6 col-sm-4 item sofa">
-                        <article>
-                            <div class="figure-grid">
-                                <div class="image">
-                                    <a href="#productid1" class="mfp-open">
-                                        <img src="{{ asset('img/Apple/Bravo/01.jpg') }}" alt="" width="360" />
-                                    </a>
-                                </div>
-                                <div class="text" style="background: #000000bf;">
-                                    <h2 class="title h4" style="color: #fff !important;">STONE FRUIT</h2>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- === product-item === -->
-                    @for($i=1; $i<=8; $i++)
+                    @for($i=1; $i<=9; $i++)
                     <div class="col-xs-6 col-sm-4 item bedroom">
                         <article>
                             <div class="figure-grid">
@@ -242,7 +225,7 @@
                                         <img src="{{ asset('img/Apple/Bravo/bravo_logo.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text" style="background: #000000bf;">
+                                <div class="text" style="background: #000000bf; border-radius: 10px 10px 0px 0px;">
                                     <h2 class="title h4" style="color: #fff !important;">STONE FRUIT</h2>
                                 </div>
                             </div>

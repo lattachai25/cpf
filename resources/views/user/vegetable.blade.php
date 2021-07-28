@@ -148,7 +148,7 @@
                                         <img src="{{ asset('img/Patane/Purple1.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text" style="background-color:#000000bf; !important;">
+                                <div class="text" style="background: #000000bf; border-radius: 10px 10px 0px 0px;">
                                     <h2 class="title h4" style="color: #fff !important;">CARROT</h2>
                                 </div>
                             </div>
@@ -167,7 +167,7 @@
                                         <img src="{{ asset('img/Patane/Purple1.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text" style="background-color:#000000bf; !important;">
+                                <div class="text" style="background: #000000bf; border-radius: 10px 10px 0px 0px;">
                                     <h2 class="title h4" style="color: #fff !important;">Purple</h2>
                                 </div>
                             </div>
@@ -184,7 +184,7 @@
                                         <img src="{{ asset('img/Patane/Purple2.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text" style="background-color:#000000bf; !important;">
+                                <div class="text" style="background-color:background: #000000bf; border-radius: 10px 10px 0px 0px;">
                                     <h2 class="title h4" style="color: #fff !important;">white onion</h2>
                                 </div>
                             </div>
@@ -202,7 +202,7 @@
                                         <img src="{{ asset('img/Patane/Purple2.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text" style="background-color:#000000bf; !important;">
+                                <div class="text" style="background-color:background: #000000bf; border-radius: 10px 10px 0px 0px;">
                                     <h2 class="title h4" style="color: #fff !important;">sweet potatoes</h2>
                                 </div>
                             </div>

@@ -48,6 +48,7 @@ class FishController extends Controller
     public function show(Fish $fish)
     {
         //
+        return view('admin/Fish/index');
     }
 
     /**

@@ -48,6 +48,7 @@ class WhiteonionController extends Controller
     public function show(Whiteonion $whiteonion)
     {
         //
+        return view('admin/Whiteonion/index');
     }
 
     /**

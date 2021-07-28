@@ -48,6 +48,7 @@ class CarrotController extends Controller
     public function show(Carrot $carrot)
     {
         //
+        return view('admin/Carrot/index');
     }
 
     /**

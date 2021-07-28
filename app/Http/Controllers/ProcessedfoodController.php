@@ -48,6 +48,7 @@ class ProcessedfoodController extends Controller
     public function show(Processedfood $processedfood)
     {
         //
+        return view('admin/Processedfood/index');
     }
 
     /**

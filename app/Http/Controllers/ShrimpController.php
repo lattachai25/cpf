@@ -48,6 +48,7 @@ class ShrimpController extends Controller
     public function show(Shrimp $shrimp)
     {
         //
+        return view('admin/Shrimp/index');
     }
 
     /**

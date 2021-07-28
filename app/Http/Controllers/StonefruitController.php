@@ -48,6 +48,7 @@ class StonefruitController extends Controller
     public function show(Stonefruit $stonefruit)
     {
         //
+        return view('admin/Stonefruit/index');
     }
 
     /**

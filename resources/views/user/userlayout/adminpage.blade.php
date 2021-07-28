@@ -39,7 +39,6 @@
 <style>
 
 @media (max-width: 991px) {
-
     nav .container {
         padding: 0;
         margin: 0;
@@ -72,19 +71,36 @@
         min-height: 75px !important;
         background-color: #232529 !important;
     }
+    nav .navigation > ul {
+    width: 100% !important;
+    margin-right:0px !important;
+    float: right;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .animated {
+    text-shadow: 2px 2px 2px rgb(0 0 0) !important;
+    }
+    .radius{
+    background: #000000bf; border-radius: 0px 0px 0px 0px !important;
+    }
+
+    .products .box-filters figure {
+    width: 80px !important;
+    height: 80px !important;
+    }
+  
+
+    .products article .image {
+    border-radius: 0px !important;
 }
-
-
-
-
-
+}
 
 .container {
     width: 85% !important;
 }
 nav .navigation-main .floating-menu > ul > li > a {
     color: white;
-    padding: 45px 20px;
+    padding: 45px 31px;
 }
 nav .navigation .logo img {
     width: 80px;
@@ -100,8 +116,9 @@ nav.navbar-sticked {
 }
 nav .navigation > ul {
     width: 80% !important;
+    margin-right: -90px;
     float: right;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 0px solid rgba(255, 255, 255, 0.2) !important;
 }
 .blog.blog-block article .show-more {
     bottom: 2px !important;
@@ -171,19 +188,18 @@ footer a:hover {
     background-color: #4e4e4d !important;
 }
 
-.products .box-filters figure {
-    width: 120px !important;
-    height: 120px !important;
+.products .box-filters figure span {
+color:#000 !important;
 }
 .owl-icons-wrapper.owl-icons-frontpage {
     margin-top: -143px;
     background: #05050578;
 }
 .owl-icons-wrapper.owl-icons-frontpage a, .owl-icons-wrapper.owl-icons-frontpage a:focus, .owl-icons-wrapper.owl-icons-frontpage a:active, .owl-icons-wrapper.owl-icons-frontpage a{
-    color:#000;
+    color:#fff;
 }
 .owl-icons-wrapper.owl-icons-frontpage a, .owl-icons-wrapper.owl-icons-frontpage a:focus, .owl-icons-wrapper.owl-icons-frontpage a:active, .owl-icons-wrapper.owl-icons-frontpage a:hover {
-    color:#b5b5ba;
+    color:#c0c1d2;
 }
 .products article .image {
     border-radius: 10px;
@@ -207,6 +223,9 @@ footer a:hover {
     color: #f3f8f3 !important;
 }
 
+.radius{
+    background: #000000bf; border-radius: 10px 10px 0px 0px;
+}
 .figure-grid .image a img:hover {
     -moz-transform: scale(1.2);
     -ms-transform: scale(1.2);
@@ -219,7 +238,9 @@ footer a:hover {
     transition: all 0.8s;
 }
 
-
+.animated {
+    text-shadow: 2px 2px 2px rgb(0 0 0) !important;
+}
 
 
 

@@ -243,7 +243,7 @@
                                         <img src="{{ asset('img/Apple/Bravo/bravo_logo.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text" style="background: #000000bf;">
+                                <div class="text radius">
                                     <h2 class="title h4" style="color: #fff !important;">Bravo</h2>
                                 </div>
                             </div>
@@ -260,7 +260,7 @@
                                         <img src="{{ asset('img/Apple/Bravo/bravo_logo.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text" style="background: #000000bf;">
+                                <div class="text radius">
                                     <h2 class="title h4" style="color: #fff !important;">Bravo</h2>
                                 </div>
                             </div>
@@ -277,7 +277,7 @@
                                         <img src="{{ asset('img/Apple/Bravo/bravo_logo.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text" style="background: #000000bf;">
+                                <div class="text radius">
                                     <h2 class="title h4" style="color: #fff !important;">Nude</h2>
                                 </div>
                             </div>
@@ -294,7 +294,7 @@
                                         <img src="{{ asset('img/Apple/Bravo/bravo_logo.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text" style="background: #000000bf;">
+                                <div class="text radius">
                                     <h2 class="title h4" style="color: #fff !important;">Aurora</h2>
                                 </div>
                             </div>
@@ -311,7 +311,7 @@
                                         <img src="{{ asset('img/Apple/Bravo/bravo_logo.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text" style="background: #000000bf;">
+                                <div class="text radius">
                                     <h2 class="title h4" style="color: #fff !important;">Dining set</h2>
                                 </div>
                             </div>
@@ -328,7 +328,7 @@
                                         <img src="{{ asset('img/Apple/Bravo/bravo_logo.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text" style="background: #000000bf;">
+                                <div class="text radius">
                                     <h2 class="title h4" style="color: #fff !important;">Seat chair</h2>
                                 </div>
                             </div>
@@ -345,7 +345,7 @@
                                         <img src="{{ asset('img/Apple/Bravo/bravo_logo.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text" style="background: #000000bf;">
+                                <div class="text radius">
                                     <h2 class="title h4" style="color: #fff !important;">Dining set</h2>
                                 </div>
                             </div>
@@ -362,7 +362,7 @@
                                         <img src="{{ asset('img/Apple/Bravo/bravo_logo.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text" style="background: #000000bf;">
+                                <div class="text radius">
                                     <h2 class="title h4" style="color: #fff !important;">Seat chair</h2>
                                 </div>
                             </div>
@@ -380,7 +380,7 @@
                                         <img src="{{ asset('img/Apple/Bravo/bravo_logo.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text" style="background: #000000bf;">
+                                <div class="text radius">
                                     <h2 class="title h4" style="color: #fff !important;">Green corner</h2>
                                 </div>
                             </div>

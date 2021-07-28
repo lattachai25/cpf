@@ -48,6 +48,7 @@ class FruitController extends Controller
     public function show(Fruit $fruit)
     {
         //
+        return view('admin/Fruit/index');
     }
 
     /**

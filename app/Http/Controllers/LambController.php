@@ -47,6 +47,7 @@ class LambController extends Controller
     public function show(Lamb $lamb)
     {
         //
+        return view('admin/Lamb/index');
     }
 
     /**

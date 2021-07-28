@@ -133,7 +133,7 @@
                                         <img src="{{ asset('img/jadetiger/3.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text" style="background: #000000bf;">
+                                <div class="text radius">
                                     <h2 class="title h4" style="color: #fff !important;">Jade Tiger</h2>
                                 </div>
                             </div>

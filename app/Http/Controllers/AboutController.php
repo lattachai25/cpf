@@ -46,9 +46,10 @@ class AboutController extends Controller
      * @param  \App\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function show(About $about)
+    public function show()
     {
         //
+        return view('admin/About/index');
     }
 
     /**

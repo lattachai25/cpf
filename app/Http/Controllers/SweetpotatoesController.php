@@ -48,6 +48,7 @@ class SweetpotatoesController extends Controller
     public function show(Sweetpotatoes $sweetpotatoes)
     {
         //
+        return view('admin/Sweetpotatoes/index');
     }
 
     /**

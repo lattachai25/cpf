@@ -48,6 +48,7 @@ class StrawberryController extends Controller
     public function show(Strawberry $strawberry)
     {
         //
+        return view('admin/Strawberry/index');
     }
 
     /**

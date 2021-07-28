@@ -47,6 +47,7 @@ class MeatController extends Controller
     public function show(Meat $meat)
     {
         //
+        return view('admin/Meat/index');
     }
 
     /**

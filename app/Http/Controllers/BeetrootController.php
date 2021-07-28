@@ -47,6 +47,7 @@ class BeetrootController extends Controller
     public function show(Beetroot $beetroot)
     {
         //
+        return view('admin/Beetroot/index');
     }
 
     /**

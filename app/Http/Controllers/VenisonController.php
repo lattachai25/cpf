@@ -47,6 +47,7 @@ class VenisonController extends Controller
     public function show(Venison $venison)
     {
         //
+        return view('admin/Venison/index');
     }
 
     /**

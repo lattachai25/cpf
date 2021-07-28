@@ -175,9 +175,8 @@
                                         <img src="{{ asset('assets/img/01.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text">
-                                    <h2 class="title h4" style="color: #fff !important;">Green corner</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
+                                <div class="text radius">
+                                    <h2 class="title h4" style="color: #fff !important;">PROCESSED FOOD</h2>
                                 </div>
                             </div>
                         </article>
@@ -193,9 +192,8 @@
                                         <img src="{{ asset('assets/img/02.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text">
-                                    <h2 class="title h4" style="color: #fff !important;">Laura</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
+                                <div class="text radius">
+                                    <h2 class="title h4" style="color: #fff !important;">PROCESSED FOOD</h2>
                                 </div>
                             </div>
                         </article>
@@ -211,9 +209,8 @@
                                         <img src="{{ asset('assets/img/03.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text">
-                                    <h2 class="title h4" style="color: #fff !important;">Nude</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
+                                <div class="text radius">
+                                    <h2 class="title h4" style="color: #fff !important;">BEVERAGE</h2>
                                 </div>
                             </div>
                         </article>
@@ -229,9 +226,8 @@
                                         <img src="{{ asset('assets/img/04.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text">
-                                    <h2 class="title h4" style="color: #fff !important;">Aurora</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
+                                <div class="text radius">
+                                    <h2 class="title h4" style="color: #fff !important;">BEVERAGE</h2>
                                 </div>
                             </div>
                         </article>
@@ -247,9 +243,8 @@
                                         <img src="{{ asset('assets/img/01.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text">
-                                    <h2 class="title h4" style="color: #fff !important;">Dining set</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
+                                <div class="text radius">
+                                    <h2 class="title h4" style="color: #fff !important;">BEVERAGE</h2>
                                 </div>
                             </div>
                         </article>
@@ -265,9 +260,8 @@
                                         <img src="{{ asset('assets/img/02.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text">
-                                    <h2 class="title h4" style="color: #fff !important;">Seat chair</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
+                                <div class="text radius">
+                                    <h2 class="title h4" style="color: #fff !important;">BEVERAGE</h2>
                                 </div>
                             </div>
                         </article>
@@ -283,9 +277,8 @@
                                         <img src="{{ asset('assets/img/03.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text">
-                                    <h2 class="title h4" style="color: #fff !important;">Dining set</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
+                                <div class="text radius">
+                                    <h2 class="title h4" style="color: #fff !important;">CONFECTIONARY</h2>
                                 </div>
                             </div>
                         </article>
@@ -301,9 +294,8 @@
                                         <img src="{{ asset('assets/img/04.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text">
-                                    <h2 class="title h4" style="color: #fff !important;">Seat chair</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
+                                <div class="text radius">
+                                    <h2 class="title h4" style="color: #fff !important;">CONFECTIONARY</h2>
                                 </div>
                             </div>
                         </article>
@@ -320,9 +312,8 @@
                                         <img src="{{ asset('assets/img/04.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text">
-                                    <h2 class="title h4" style="color: #fff !important;">Green corner</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
+                                <div class="text radius">
+                                    <h2 class="title h4" style="color: #fff !important;">BEVERAGE</h2>
                                 </div>
                             </div>
                         </article>

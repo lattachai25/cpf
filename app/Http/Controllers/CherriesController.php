@@ -48,6 +48,7 @@ class CherriesController extends Controller
     public function show(Cherries $cherries)
     {
         //
+        return view('admin/Cherries/index');
     }
 
     /**

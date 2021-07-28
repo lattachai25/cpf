@@ -195,7 +195,7 @@ distinguished as the world’s finest.</div>
                                         <img src="{{ asset('img/Brochure/logoAngus.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text" style="background: #000000bf;">
+                                <div class="text radius">
                                     <h2 class="title h4" style="color: #fff !important;">poultry</h2>
                                     <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>
@@ -213,7 +213,7 @@ distinguished as the world’s finest.</div>
                                         <img src="{{ asset('img/Brochure/logoAngus.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text" style="background: #000000bf;">
+                                <div class="text radius">
                                     <h2 class="title h4" style="color: #fff !important;">poultry</h2>
                                     <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>
@@ -231,7 +231,7 @@ distinguished as the world’s finest.</div>
                                         <img src="{{ asset('img/Brochure/logoAngus.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text" style="background: #000000bf;">
+                                <div class="text radius">
                                     <h2 class="title h4" style="color: #fff !important;">beef</h2>
                                     <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>
@@ -249,7 +249,7 @@ distinguished as the world’s finest.</div>
                                         <img src="{{ asset('img/Brochure/logoAngus.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text" style="background: #000000bf;">
+                                <div class="text radius">
                                     <h2 class="title h4" style="color: #fff !important;">beef</h2>
                                     <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>
@@ -267,7 +267,7 @@ distinguished as the world’s finest.</div>
                                         <img src="{{ asset('img/Brochure/logoAngus.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text" style="background: #000000bf;">
+                                <div class="text radius">
                                     <h2 class="title h4" style="color: #fff !important;">lamb</h2>
                                     <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>
@@ -285,7 +285,7 @@ distinguished as the world’s finest.</div>
                                         <img src="{{ asset('img/Brochure/logoAngus.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text" style="background: #000000bf;">
+                                <div class="text radius">
                                     <h2 class="title h4" style="color: #fff !important;">lamb</h2>
                                     <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>
@@ -303,7 +303,7 @@ distinguished as the world’s finest.</div>
                                         <img src="{{ asset('img/Brochure/logoAngus.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text" style="background: #000000bf;">
+                                <div class="text radius">
                                     <h2 class="title h4" style="color: #fff !important;">venison</h2>
                                     <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>
@@ -321,7 +321,7 @@ distinguished as the world’s finest.</div>
                                         <img src="{{ asset('img/Brochure/logoAngus.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text" style="background: #000000bf;">
+                                <div class="text radius">
                                     <h2 class="title h4" style="color: #fff !important;">turkey</h2>
                                     <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>
@@ -340,7 +340,7 @@ distinguished as the world’s finest.</div>
                                         <img src="{{ asset('img/Brochure/logoAngus.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>
-                                <div class="text" style="background: #000000bf;">
+                                <div class="text radius">
                                     <h2 class="title h4" style="color: #fff !important;">turkey</h2>
                                     <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
                                 </div>

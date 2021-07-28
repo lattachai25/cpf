@@ -48,6 +48,7 @@ class CephalopodController extends Controller
     public function show(Cephalopod $cephalopod)
     {
         //
+        return view('admin/Cephalopod/index');
     }
 
     /**

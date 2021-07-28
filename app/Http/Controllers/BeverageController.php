@@ -48,6 +48,7 @@ class BeverageController extends Controller
     public function show(Beverage $beverage)
     {
         //
+        return view('admin/Beverage/index');
     }
 
     /**

@@ -47,6 +47,7 @@ class SeafoodController extends Controller
     public function show(Seafood $seafood)
     {
         //
+        return view('admin/Seafood/index');
     }
 
     /**

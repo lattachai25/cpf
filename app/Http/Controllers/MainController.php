@@ -48,6 +48,7 @@ class MainController extends Controller
     public function show(main $main)
     {
         //
+
     }
 
     /**

@@ -48,6 +48,7 @@ class ButterController extends Controller
     public function show(Butter $butter)
     {
         //
+        return view('admin/Butter/index');
     }
 
     /**

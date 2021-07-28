@@ -49,6 +49,7 @@ class ShowDairyController extends Controller
     public function show(show_dairy $show_dairy)
     {
         //
+
     }
 
     /**

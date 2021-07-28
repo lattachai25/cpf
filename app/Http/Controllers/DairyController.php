@@ -48,6 +48,7 @@ class DairyController extends Controller
     public function show(Dairy $dairy)
     {
         //
+        return view('admin/Dairy/index');
     }
 
     /**

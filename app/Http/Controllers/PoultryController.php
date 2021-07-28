@@ -48,6 +48,7 @@ class PoultryController extends Controller
     public function show(Poultry $poultry)
     {
         //
+        return view('admin/Poultry/index');
     }
 
     /**

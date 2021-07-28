@@ -2,7 +2,7 @@
             <div class="container">
 
                 <!--footer showroom-->
-                <div class="footer-showroom">
+                <div class="footer-showroom" style="color:#fff !important">
                     <div class="row">
                         <div class="col-sm-8">
                             <h2>CPF AUSTRALIA</h2>
@@ -19,7 +19,7 @@
                 </div>
 
                 <!--footer links-->
-                <div class="footer-links">
+                <div class="footer-links" style="font-weight: 600 !important">
                     <div class="row">
                         <div class="col-sm-4 col-md-2">
                     
@@ -45,7 +45,7 @@
                             </ul>
                         </div>
                         <div class="col-sm-12 col-md-6">
-                            <h5>สินค้า สดใหม่ นำเข้าจาก Australia</h5>
+                            <h5>Fresh products imported from Australia</h5>
                             
                             <div class="form-group form-newsletter">
                                 <input class="form-control" type="text" name="email" value="" placeholder="Email address" />
@@ -57,7 +57,7 @@
 
                 <!--footer social-->
 
-                <div class="footer-social">
+                <div class="footer-social" >
                     <div class="row">
                         <div class="col-sm-6">
                         <a href="#">CPFAUSTRALIA.COM</a>

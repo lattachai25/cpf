@@ -48,6 +48,7 @@ class YogurtController extends Controller
     public function show(Yogurt $yogurt)
     {
         //
+        return view('admin/Yogurt/index');
     }
 
     /**
