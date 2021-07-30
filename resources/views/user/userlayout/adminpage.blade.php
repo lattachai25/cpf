@@ -38,7 +38,69 @@
 </head>
 <style>
 
+@media (max-width: 1599px) {
+    /* .container {
+        width: 95% !important;
+    }     */
+
+    nav .container, nav .navigation {
+    position: relative;
+    width: 100% !important;
+}
+    nav .navigation > ul {
+            width: 80% !important;
+            margin-right: -50px;
+            float: right;
+            border-bottom: 0px solid rgba(255, 255, 255, 0.2) !important;
+    }
+
+    nav .navigation .logo img {
+        width: 85px !important;
+        left: 15px;
+    }
+    nav .navigation-main .floating-menu > ul > li > a {
+    color: white;
+    padding: 45px 40px !important;
+}
+
+}
+/*                          */
+
+@media (max-width: 1301px) {
+    /* .container {
+        width: 95% !important;
+    }     */
+
+    nav .container, nav .navigation {
+    position: relative;
+    width: 100% !important;
+}
+    nav .navigation > ul {
+            width: 80% !important;
+            margin-right: -50px;
+            float: right;
+            border-bottom: 0px solid rgba(255, 255, 255, 0.2) !important;
+    }
+
+    nav .navigation .logo img {
+        width: 85px !important;
+        left: 15px;
+    }
+    nav .navigation-main .floating-menu > ul > li > a {
+    color: white;
+    padding: 45px 20px !important;
+}
+
+}
+
+/*                          */
 @media (max-width: 991px) {
+
+    nav .container, nav .navigation {
+    position: relative;
+    width: 98%;
+}
+    
     nav .container {
         padding: 0;
         margin: 0;
@@ -54,6 +116,9 @@
         color: #fff;
         text-align: center;
         border-left: 1px solid #333;
+    }
+    nav .navigation .logo {
+    left: 15px;
     }
     nav .navigation .logo img {
         width: 55px !important;
@@ -71,6 +136,7 @@
         min-height: 75px !important;
         background-color: #232529 !important;
     }
+    
     nav .navigation > ul {
     width: 100% !important;
     margin-right:0px !important;
@@ -95,12 +161,32 @@
 }
 }
 
-.container {
-    width: 85% !important;
+
+
+nav .container, nav .navigation {
+    position: relative;
+    width: 95%;
 }
+
+
+
+/* .container {
+    width: 85% !important;
+} */
+
+
+nav .container, nav .navigation {
+    position: relative;
+    width: 98%;
+}
+
+
 nav .navigation-main .floating-menu > ul > li > a {
     color: white;
-    padding: 45px 31px;
+    padding: 45px 45px;
+}
+nav .navigation .logo {
+    left: 15px;
 }
 nav .navigation .logo img {
     width: 80px;
@@ -115,8 +201,8 @@ nav.navbar-sticked {
     background-color: #232529 !important;
 }
 nav .navigation > ul {
-    width: 80% !important;
-    margin-right: -90px;
+    width: 40% !important;
+    margin-right: -15px;
     float: right;
     border-bottom: 0px solid rgba(255, 255, 255, 0.2) !important;
 }

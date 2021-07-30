@@ -136,30 +136,30 @@
                             <div id="box-filters" class="box-filters">
 
                                 <figure data-filter=".fish">
-                                    <figcaption style="margin-top:-11px;">
+                                    <figcaption style="margin-top:10px;">
                                     <i class="flaticon-fish" style="font-size:60px;"></i>
-                                        <span>&nbsp; Fish &nbsp;</span>
+                                        <span>&nbsp; FISH &nbsp;</span>
                                     </figcaption>
                                 </figure>
 
                                 <figure data-filter=".shells">
-                                    <figcaption>
+                                    <figcaption style="margin-top:19px;">
                                     <i class="flaticon-oyster" style="font-size:54px;"></i>
-                                        <span>Shells</span>
+                                        <span>SHELLS</span>
                                     </figcaption>
                                 </figure>
 
                                 <figure data-filter=".cephalopod">
-                                    <figcaption>
+                                    <figcaption style="margin-top:16px;">
                                     <i class="flaticon-squid" style="font-size:50px;"></i>
-                                        <span>Cephalopod</span>
+                                        <span style="margin-left: -10px;">CEPHALOPOD</span>
                                     </figcaption>
                                 </figure>
 
                                 <figure data-filter=".shrimp">
-                                    <figcaption>
+                                    <figcaption style="margin-top:15px;">
                                     <i class="flaticon-shrimp" style="font-size:50px;"></i>
-                                        <span>Shrimp</span>
+                                        <span>SHRIMP</span>
                                     </figcaption>
                                 </figure>
 
