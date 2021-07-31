@@ -11,6 +11,7 @@
     <link href="{{ URL::asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ URL::asset('css/dashboard.css') }}" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
 </head>
 <body>
   <div id="app">
@@ -84,7 +85,11 @@
         crossorigin="anonymous"></script>
            
 </body>
-
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.ckeditor').ckeditor();
+    });
+</script>
 <script>
 jQuery(function ($) {
     $(".sidebar-dropdown > a").click(function () {

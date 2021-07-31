@@ -9,7 +9,7 @@
 </div>
         <div class="col-9">
           <br><br><br>
-          <div class="col-12"><button type="button" class="btn btn-success" style="float:right; margin-bottom: 10px;">Add Product</button></div>
+          <div class="col-12"><a href="create"><button type="button" class="btn btn-success" style="float:right; margin-bottom: 10px;">Add Product</button></a></div>
               <table class="table">
                   <thead class="thead-dark">
                     <tr>
@@ -27,8 +27,14 @@
                       <td>Mark</td>
                       <td>Otto</td>
                       <td>@mdo</td>
-                      <td><button type="button" class="btn btn-warning">Edit</button></td>
-                      <td><button type="button" class="btn btn-danger">Delete</button></td>
+                      <td><a href="edit"><button type="button" class="btn btn-warning">Edit</button></a></td>
+                      <td>
+                       
+                          @csrf
+                          @method('DELETE')
+                          <button class="btn btn-danger" type="submit">Delete</button>
+                      
+                      </td>
                     </tr>
                    
                   </tbody>

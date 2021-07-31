@@ -1,0 +1,64 @@
+composer global require laravel/installer
+
+composer create-project --prefer-dist laravel/laravel blog "5.8.*"
+
+php artisan serve
+
+php artisan storage:link
+
+*************************************************************************************
+composer global require laravel/installer
+
+composer create-project --prefer-dist laravel/laravel blog
+
+
+composer require laravel/ui
+php artisan ui vue --auth
+
+
+// create model, controller and migration in single artisan command
+
+php artisan make:model Todo -mcr
+php artisan make:model -mcr  intro --resource
+
+
+php artisan make:migration 2020_03_02_092347_create_magazines_admins_table
+php artisan migrate
+php artisan migrate:refresh
+php artisan migrate:reset 
+
+--------------------------------------------------------------------------------
+{{ asset('mainpage/assets/images/gallery-3.jpg') }}
+<img src="{{asset('assets/images/image.png')}}">
+{{ asset('img/myimage.png') }}
+{{ HTML::image('img/myimage.png', 'a picture') }}
+<img src="{{ URL::to('/assets/img/default.jpg') }}">
+
+
+
+
+{{ route('select_your_bike.index') }}
+
+--------------------------------------------------------------------------------
+
+<link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+<script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script>
+<link rel="stylesheet" href="{{ URL::asset('css/styles.css') }}">
+
+---------------------------------------------------------------------------------
+
+
+<a href="{{ URL::route('articles.edit', $article->id) }}">Edit</a>
+<a href="{{ route('select_your_bike.index') }}"> </a>
+
+
+
+
+Error : There is no existing directory at
+
+php artisan route:clear
+php artisan config:clear
+php artisan cache:clear 
+
+
+

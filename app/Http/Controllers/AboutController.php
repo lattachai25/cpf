@@ -27,6 +27,7 @@ class AboutController extends Controller
     public function create()
     {
         //
+        return view('admin/About/create');
     }
 
     /**
@@ -61,6 +62,7 @@ class AboutController extends Controller
     public function edit(About $about)
     {
         //
+        return view('admin/About/edit');
     }
 
     /**
