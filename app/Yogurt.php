@@ -8,7 +8,7 @@ class Yogurt extends Model
 {
     //
     protected $fillable = [
-        'title',
+       'title',
        'keywords',
        'description',
        'google_code',
@@ -30,10 +30,10 @@ class Yogurt extends Model
        'images_product4',
        'images_product5',
        'images_product6',
+       'attachment',
        'status'
              ];
        
            public $timestamps = false;
-       }
-       
+   
 }
