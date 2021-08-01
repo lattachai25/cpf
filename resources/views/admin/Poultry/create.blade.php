@@ -98,11 +98,11 @@
             </div>
 
             <div class="form-group">
-              <label for="exampleFormControlInput1"><b>Name Protion EN</b></label>
+              <label for="exampleFormControlInput1"><b>Name Product EN</b></label>
               <input type="test" class="form-control" name="name_product_en">
             </div>
             <div class="form-group">
-              <label for="exampleFormControlInput1"><b>Name Protion TH</b></label>
+              <label for="exampleFormControlInput1"><b>Name Product TH</b></label>
               <input type="test" class="form-control" name="name_product_th">
             </div>
             <div class="form-group">
