@@ -1,0 +1,118 @@
+@section('title', 'ABOUT')
+@section('keywords', 'CPFAUSTRALIA')
+@section('description', 'ABOUT description CPFAUSTRALIA')
+@section('google', 'google')
+@section('facebook', 'Facebook')
+
+
+
+    public function store(Request $request)
+    {
+          $input = new meetings([
+            'series_name' => $request->input('series_name'),
+            'set_name' => $request->input('set_name'),
+            'group_name' => $request->input('group_name'),
+            'date' => $request->input('date'),
+            'time' => $request->input('time'),
+            'note' => $request->input('note'),
+            'file' => $request->file->getClientOriginalName()
+            ]);
+
+          $input->save();
+          $input = $request->all();
+          $input = request()->file->getClientOriginalName();
+          $request->file->move(public_path('/files_upload'), $input);
+
+
+          return redirect('admin/meetings')->with('success', 'ได้ทำการเพิ่ม หัวข้อวาระการประชุม เรียบร้อยแล้ว');
+
+    }
+
+
+
+<form action='{{ route('meetings.store') }}' method='POST' enctype='multipart/form-data'>
+
+
+
+
+
+
+
+
+<?php
+
+namespace App;
+use Illuminate\Database\Eloquent\Model;
+
+
+class meetings extends Model
+{
+
+    protected $fillable = [
+        'title',
+        'keywords',
+        'description',
+        'google_code',
+        'facrbook_code'
+	'orteh_code',
+        'story_en',
+	'story_th',
+	'history_en',
+	'history_th',
+	'name_en',
+	'name_th',
+	'protion_en',
+	'protion_th',
+	'content_en',
+	'content_th',
+        'file'
+      ];
+
+    public $timestamps = false;
+
+
+}
+
+    protected $fillable = [
+ 'title',
+'keywords',
+'description',
+'google_code',
+'facrbook_code',
+'orteh_code',  
+'brade',
+'category',
+'sub_category',
+'images_logo',
+'text_title_en',
+'text_title_th',
+'name_product_en',
+'name_product_th',
+'detel_product_en',
+'detel_product_th',
+'images_product1',
+'images_product2',
+'images_product3',
+'images_product4',
+'images_product5',
+'images_product6',
+'attachment',
+'status'
+      ];
+
+    public $timestamps = false;
+}
+
+
+                            @foreach($about as $abouts)
+                            {{ $abouts->history_en }}
+                            @endforeach
+
+
+Attachment
+
+use App\Poultry;
+use App\Brand;
+use App\Category;
+use App\SubCategory;
+use DB;
