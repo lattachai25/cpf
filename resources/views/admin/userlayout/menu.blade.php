@@ -28,13 +28,13 @@
             <span>General</span>
           </li>
           <li>
-            <a href="#">
+            <a href="">
               <i class="fa fa-tachometer-alt"></i>
               <span>Dashboard</span>
             </a>
           </li>          
           <li class="sidebar-dropdown">
-            <a href="#">
+            <a href="">
               <i class="fa fa-cubes"></i>
               <span>MEAT</span>
             </a>
@@ -59,7 +59,7 @@
             </div>
           </li>
           <li class="sidebar-dropdown">
-            <a href="#">
+            <a href="">
               <i class="fa fa-cubes"></i>
               <span>SEAFOOD</span>
             </a>
@@ -179,31 +179,35 @@
             </a>
           </li>
           <li>
-            <a href="/Contact">
+            <a href="/Contact/show">
               <i class="fa fa-globe"></i>
               <span>CONTACT US</span>
             </a>
           </li>
           
+        <hr>
+        <li>
+            <a href="/Brand/show">
+              <i class="fa fa-asterisk"></i>
+              <span>BRAND</span>
+            </a>
+          </li>
+
           <li>
-            <a href="/Category">
+            <a href="/Category/show">
               <i class="fa fa-asterisk"></i>
               <span>CATEGORY</span>
             </a>
           </li>
           <li>
-            <a href="/Brand">
-              <i class="fa fa-asterisk"></i>
-              <span>BRAND</span>
-            </a>
-          </li>
-          <li>
-            <a href="/Subcategory">
+            <a href="/Subcategory/show">
               <i class="fa fa-asterisk"></i>
               <span>SUB CATEGORY</span>
             </a>
           </li>
-          <!-- <li class="sidebar-dropdown">
+
+
+ <!--          <li class="sidebar-dropdown">
             <a href="#">
               <i class="far fa-gem"></i>
               <span>Components</span>

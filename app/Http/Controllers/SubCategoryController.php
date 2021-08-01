@@ -27,6 +27,7 @@ class SubCategoryController extends Controller
     public function create()
     {
         //
+        return view('admin/Subcategory/create');
     }
 
     /**
@@ -38,6 +39,13 @@ class SubCategoryController extends Controller
     public function store(Request $request)
     {
         //
+        $input = new subcategory([
+            'name_sub_categories' => $request->input('name_sub_categories'),
+            ]);
+
+          $input->save();
+
+          return redirect('Subcategory/show')->with('success', 'ได้ทำการเพิ่มข้อมูลเรียบร้อยแล้ว');
     }
 
     /**
@@ -49,7 +57,8 @@ class SubCategoryController extends Controller
     public function show(SubCategory $subCategory)
     {
         //
-        return view('admin/SubCategory/index');
+        $subcategory = subcategory::all();
+        return view('admin/Subcategory/index', compact('subcategory'));
     }
 
     /**
@@ -58,9 +67,11 @@ class SubCategoryController extends Controller
      * @param  \App\SubCategory  $subCategory
      * @return \Illuminate\Http\Response
      */
-    public function edit(SubCategory $subCategory)
+    public function edit(SubCategory $subCategory, $id)
     {
         //
+        $subcategory = subcategory::find($id);
+        return view('admin/Subcategory/edit', compact('subcategory'));
     }
 
     /**
@@ -70,9 +81,14 @@ class SubCategoryController extends Controller
      * @param  \App\SubCategory  $subCategory
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, SubCategory $subCategory)
+    public function update(Request $request, SubCategory $subCategory, $id)
     {
         //
+        $subcategory = subcategory::find($id);
+        $subcategory->name_sub_categories = $request->get('name_sub_categories');
+
+        $subcategory->save();
+      return redirect('Subcategory/show')->with('success', 'ได้ทำการแก้ไขข้อมูลเรียบร้อยแล้ว');
     }
 
     /**
@@ -84,5 +100,9 @@ class SubCategoryController extends Controller
     public function destroy(SubCategory $subCategory)
     {
         //
+        $subcategory = subcategory::find($id);
+        $subcategory->delete();
+
+        return redirect('/Subcategory/show')->with('success', 'ได้ทำการลบข้อมูล เรียบร้อยแล้ว');
     }
 }

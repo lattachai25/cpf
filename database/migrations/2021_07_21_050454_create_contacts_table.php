@@ -15,31 +15,34 @@ class CreateContactsTable extends Migration
     {
         Schema::create('contacts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title_bar');
-            $table->string('keyworks');
-            $table->string('description');
-            $table->string('google');
-            $table->string('facebook');
-            $table->string('orteh_code');
-            $table->string('text_title_en');
-            $table->string('text_title_th');
+            $table->text('title')->nullable();
+            $table->text('keywords')->nullable();
+            $table->text('description')->nullable();
+            $table->text('google_code')->nullable();
+            $table->text('facrbook_code')->nullable();
+            $table->text('orteh_code')->nullable();
 
-            $table->string('brade');
-            $table->string('category');
-            $table->string('sub_category');
+            $table->text('text_title_en')->nullable();
+            $table->text('text_title_th')->nullable();
+            $table->text('address_en')->nullable();
+            $table->text('address_th')->nullable();
+            $table->text('faceboot_link_en')->nullable();
+            $table->text('faceboot_link_th')->nullable();
+            $table->text('line_link_en')->nullable();
+            $table->text('line_link_th')->nullable();
+            $table->text('tel_link_en')->nullable();
+            $table->text('tel_link_th')->nullable();
 
-            $table->string('images_logo');
-            $table->string('name_product_en');
-            $table->string('name_product_th');
-            $table->string('detel_product_en');
-            $table->string('detel_product_th');
-            $table->string('images_product1');
-            $table->string('images_product2');
-            $table->string('images_product3');
-            $table->string('images_product4');
-            $table->string('images_product5');
-            $table->string('images_product6');
-            $table->string('status');
+            $table->text('mobile_link_en')->nullable();
+            $table->text('mobile_link_th')->nullable();
+
+            $table->text('Email_link1_en')->nullable();
+            $table->text('Email_link1_th')->nullable();
+
+            $table->text('Email_link2_en')->nullable();
+            $table->text('Email_link2_th')->nullable();
+            $table->text('link_map')->nullable();
+
             $table->timestamps();
         });
     }

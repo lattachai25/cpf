@@ -15,31 +15,31 @@ class CreateBeetrootsTable extends Migration
     {
         Schema::create('beetroots', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title_bar');
-            $table->string('keyworks');
-            $table->string('description');
-            $table->string('google');
-            $table->string('facebook');
-            $table->string('orteh_code');
-            $table->string('text_title_en');
-            $table->string('text_title_th');
-
-            $table->string('brade');
-            $table->string('category');
-            $table->string('sub_category');
-
-            $table->string('images_logo');
-            $table->string('name_product_en');
-            $table->string('name_product_th');
-            $table->string('detel_product_en');
-            $table->string('detel_product_th');
-            $table->string('images_product1');
-            $table->string('images_product2');
-            $table->string('images_product3');
-            $table->string('images_product4');
-            $table->string('images_product5');
-            $table->string('images_product6');
-            $table->string('status');
+            $table->string('title_bar')->nullable();
+            $table->string('keyworks')->nullable();
+            $table->string('description')->nullable();
+            $table->string('google')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('orteh_code')->nullable();
+            
+            $table->string('brade')->nullable();
+            $table->string('category')->nullable();
+            $table->string('sub_category')->nullable();
+            
+            $table->string('images_logo')->nullable();
+            $table->string('text_title_en')->nullable();
+            $table->string('text_title_th')->nullable();
+            $table->string('name_product_en')->nullable();
+            $table->string('name_product_th')->nullable();
+            $table->string('detel_product_en')->nullable();
+            $table->string('detel_product_th')->nullable();
+            $table->string('images_product1')->nullable();
+            $table->string('images_product2')->nullable();
+            $table->string('images_product3')->nullable();
+            $table->string('images_product4')->nullable();
+            $table->string('images_product5')->nullable();
+            $table->string('images_product6')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

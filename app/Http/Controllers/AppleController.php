@@ -26,6 +26,7 @@ class AppleController extends Controller
     public function create()
     {
         //
+        
     }
 
     /**

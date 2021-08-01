@@ -27,6 +27,7 @@ class BrandController extends Controller
     public function create()
     {
         //
+        return view('admin/Brand/create');
     }
 
     /**
@@ -38,6 +39,20 @@ class BrandController extends Controller
     public function store(Request $request)
     {
         //
+        $input = new brand([
+            'name_brand_en' => $request->input('name_brand_en'),
+            'name_brand_th' => $request->input('name_brand_th'),
+            'status' => $request->input('status'),
+            'images' => $request->images->getClientOriginalName()
+            ]);
+
+          $input->save();
+          $input = $request->all();
+          $input = request()->images->getClientOriginalName();
+          $request->images->move(public_path('/files_upload/Brand'), $input);
+
+
+          return redirect('Brand/show')->with('success', 'ได้ทำการเพิ่มข้อมูลเรียบร้อยแล้ว');
     }
 
     /**
@@ -49,7 +64,9 @@ class BrandController extends Controller
     public function show(Brand $brand)
     {
         //
-        return view('admin/Brand/index');
+        $brand = Brand::all();
+        return view('admin/Brand/index', compact('brand'));
+
     }
 
     /**
@@ -58,9 +75,12 @@ class BrandController extends Controller
      * @param  \App\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function edit(Brand $brand)
+    public function edit(Brand $brand ,$id)
     {
         //
+
+        $brand = brand::find($id);
+        return view('admin/Brand/edit', compact('brand'));
     }
 
     /**
@@ -70,9 +90,25 @@ class BrandController extends Controller
      * @param  \App\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Brand $brand)
+    public function update(Request $request, Brand $brand, $id)
     {
         //
+        $brand = brand::find($id);
+        $brand->name_brand_en = $request->get('name_brand_en');
+        $brand->name_brand_th = $request->get('name_brand_th');
+        $brand->status = $request->get('status');
+        $brand->images = $request->get('images');
+        
+          if ($request->hasfile('images')){
+              $file = $request->file('images');
+              $extension = $file->getClientOriginalName();
+              $filename = time() .'.'. $extension;
+              $file->move('files_upload/Brand', $filename);
+              $brand->images = $filename;
+          }
+
+        $brand->save();
+      return redirect('Brand/show')->with('success', 'ได้ทำการแก้ไขข้อมูลเรียบร้อยแล้ว');
     }
 
     /**
@@ -81,8 +117,12 @@ class BrandController extends Controller
      * @param  \App\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Brand $brand)
+    public function destroy(Brand $brand, $id)
     {
         //
+        $brand = brand::find($id);
+        $brand->delete();
+
+        return redirect('/Brand/show')->with('success', 'ได้ทำการลบข้อมูล เรียบร้อยแล้ว');
     }
 }

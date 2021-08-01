@@ -27,6 +27,7 @@ class CategoryController extends Controller
     public function create()
     {
         //
+        return view('admin/Category/create');
     }
 
     /**
@@ -38,6 +39,13 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
+        $input = new category([
+            'name_categories' => $request->input('name_categories'),
+            ]);
+
+          $input->save();
+
+          return redirect('Category/show')->with('success', 'ได้ทำการเพิ่มข้อมูลเรียบร้อยแล้ว');
     }
 
     /**
@@ -49,7 +57,8 @@ class CategoryController extends Controller
     public function show(Category $category)
     {
         //
-        return view('admin/Category/index');
+        $category = category::all();
+        return view('admin/Category/index', compact('category'));
     }
 
     /**
@@ -58,9 +67,12 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit(Category $category, $id)
     {
         //
+        
+        $category = category::find($id);
+        return view('admin/Category/edit', compact('category'));
     }
 
     /**
@@ -70,9 +82,14 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, Category $category, $id)
     {
         //
+        $category = category::find($id);
+        $category->name_categories = $request->get('name_categories');
+
+        $category->save();
+      return redirect('Category/show')->with('success', 'ได้ทำการแก้ไขข้อมูลเรียบร้อยแล้ว');
     }
 
     /**
@@ -84,5 +101,9 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         //
+        $category = category::find($id);
+        $category->delete();
+
+        return redirect('/Category/show')->with('success', 'ได้ทำการลบข้อมูล เรียบร้อยแล้ว');
     }
 }

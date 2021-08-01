@@ -2,13 +2,56 @@
 @section('content')
 <div class="col-12">
 <div class="row">
-<div class="col-3">
+<div class="col-2">
   @if(session()->get('success'))
       {{ session()->get('success') }}
   @endif
 </div>
-        <div class="col-8" style="border:1px solid #000;">
-            <h2>  BORDERS  INDEX </h2>
+        <div class="col-9">
+          <br><br><br>
+          <div class="col-12">
+              <div class="row">
+                <div class="col-6">
+                  <H2>Brand List</H2>
+                </div>
+                <div class="col-6">
+                  <a href="create"><button type="button" class="btn btn-success" style="float:right; margin-bottom: 10px;">Add Brand</button></a>
+                </div>              
+              </div>
+            </div>
+              <table class="table">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th width="5%">#</th>
+                      <th width="8%">Name EN</th>
+                      <th width="8%">Name TH</th>
+                      <th width="8%">Images Brand</th>
+                      <th width="5%">Edit</th>
+                      <th width="5%">Dele</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  @foreach($brand as $brands)
+                    <tr>
+                      <th scope="row">{{ $brands ->id }}</th>
+                      <td>{{ str_limit($brands ->name_brand_en, $limit = 30, $end = '...') }}</td>
+                      <td>{{ str_limit( $brands ->name_brand_th, $limit = 30, $end = '...') }}</td>
+                      <td><a href="../files_upload/Brand/{{$brands->images}}"><img src="../files_upload/Brand/{{$brands->images}}" width="100px" alt=""></a></td>
+                      <td><a href="{{ route('Brand.edit', $brands->id)}}"><button type="button" class="btn btn-warning">Edit</button></a></td>
+                      <td>
+                       
+
+                          <form action="{{ route('Brand.destroy', $brands->id)}}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger" type="submit">Delete</button>
+                          </form>
+                      </td>
+                    </tr>
+                  @endforeach
+                  </tbody>
+                </table>
+
         </div>
 <div class="col-1"></div>
 </div>

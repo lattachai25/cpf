@@ -12,6 +12,10 @@ Route::resource('/home', 'HomeController');
 Route::resource('/Brand', 'BrandController');
 Route::resource('/Category', 'CategoryController');
 Route::resource('/Subcategory', 'SubCategoryController');
+// image uploading
+Route::get('ckeditor', 'CkeditorController@index');
+Route::post('ckeditor/upload', 'CkeditorController@upload')->name('ckeditor.upload');
+
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -85,11 +85,6 @@
         crossorigin="anonymous"></script>
            
 </body>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('.ckeditor').ckeditor();
-    });
-</script>
 <script>
 jQuery(function ($) {
     $(".sidebar-dropdown > a").click(function () {
