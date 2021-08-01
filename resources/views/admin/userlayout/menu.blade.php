@@ -33,14 +33,15 @@
               <span>Dashboard</span>
             </a>
           </li>          
+
           <li class="sidebar-dropdown">
-            <a href="">
+            <a href="#">
               <i class="fa fa-cubes"></i>
               <span>MEAT</span>
             </a>
             <div class="sidebar-submenu">
               <ul>
-                <li>
+              <li>
                   <a href="/Poultry/show">POULTR</a>
                 </li>
                 <li>
@@ -58,14 +59,15 @@
               </ul>
             </div>
           </li>
+
           <li class="sidebar-dropdown">
-            <a href="">
+            <a href="#">
               <i class="fa fa-cubes"></i>
               <span>SEAFOOD</span>
             </a>
             <div class="sidebar-submenu">
               <ul>
-                <li>
+              <li>
                   <a href="/Fish/show">FISH</a>
                 </li>
                 <li>
@@ -87,7 +89,7 @@
               <span>FRUIT</span>
             </a>
             <div class="sidebar-submenu">
-              <ul>
+            <ul>
                 <li>
                   <a href="/Apple/show">APPLE</a>
                 </li>
@@ -106,6 +108,7 @@
               </ul>
             </div>
           </li>
+
 
           <li class="sidebar-dropdown">
             <a href="#">
@@ -170,8 +173,6 @@
             </div>
           </li>
 
-
-
           <li>
             <a href="/About/show">
               <i class="fa fa-globe"></i>
@@ -207,7 +208,7 @@
           </li>
 
 
- <!--          <li class="sidebar-dropdown">
+      <li class="sidebar-dropdown">
             <a href="#">
               <i class="far fa-gem"></i>
               <span>Components</span>
@@ -232,7 +233,7 @@
               </ul>
             </div>
           </li>
-          <li class="sidebar-dropdown">
+ <!--         <li class="sidebar-dropdown">
             <a href="#">
               <i class="fa fa-chart-line"></i>
               <span>Charts</span>
