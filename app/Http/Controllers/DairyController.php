@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Dairy;
+use App\Brand;
+use App\Category;
+use App\SubCategory;
+use DB;
 use Illuminate\Http\Request;
 
 class DairyController extends Controller
@@ -26,6 +30,11 @@ class DairyController extends Controller
     public function create()
     {
         //
+        $dairy = Dairy::all();
+        $brand = Brand::all();
+        $category = Category::all();
+        $subcategory = SubCategory::all();
+        return view('admin/Dairy/create', compact('dairy','brand','category','subcategory'));
     }
 
     /**
@@ -37,6 +46,60 @@ class DairyController extends Controller
     public function store(Request $request)
     {
         //
+         // dd($request->all());
+         $image = array();
+         if($files = $request-> file('images_product1')){
+             foreach ($files as $file){
+                 $image_name = md5(rand(100, 10000));
+                 $ext = strtolower($file->getClientOriginalExtension());
+                 $image_full_name = $image_name.'.'.$ext;
+                 $upload_path = 'files_upload/Dairy/';
+                 $image_url = $upload_path.$image_full_name;
+                 $file->move($upload_path, $image_full_name);
+                 $image[] = $image_url;
+             }
+         }
+ 
+         $attachment = array();
+         if($files = $request-> file('attachment')){
+             foreach ($files as $file){
+                 $image_name = md5(rand(1000, 10000));
+                 $ext = strtolower($file->getClientOriginalExtension());
+                 $image_full_name = $image_name.'.'.$ext;
+                 $upload_path = 'files_upload/Dairy/';
+                 $image_url = $upload_path.$image_full_name;
+                 $file->move($upload_path, $image_full_name);
+                 $attachment[] = $image_url;
+             }
+         }
+         Dairy::insert([
+                 'title' => $request->title,
+                 'keywords' => $request->keywords,
+                 'description' => $request->description,
+                 'google_code' => $request->google_code,
+                 'facrbook_code' => $request->facrbook_code,
+                 'orteh_code' => $request->orteh_code,
+                 
+                 'brade' => $request->brade,
+                 'category' => $request->category,
+                 'sub_category' => $request->sub_category,
+ 
+                 'text_title_en' => $request->text_title_en,
+                 'text_title_th' => $request->text_title_th,
+ 
+                 'name_product_en' => $request->name_product_en,
+                 'name_product_th' => $request->name_product_th,
+ 
+                 'detel_product_en' => $request->detel_product_en,
+                 'detel_product_th' => $request->detel_product_th,
+ 
+                 'status' => $request->status,
+ 
+ 
+                 'images_product1' => implode('|', $image),
+                 'attachment' => implode('|', $attachment),
+             ]);
+      return redirect('Dairy/show')->with('successfully', 'ได้ทำการเพิ่มข้อมูลเรียบร้อยแล้ว');
     }
 
     /**
@@ -48,7 +111,8 @@ class DairyController extends Controller
     public function show(Dairy $dairy)
     {
         //
-        return view('admin/Dairy/index');
+        $dairy = Dairy::orderBy('id', 'DESC')->paginate(20);
+        return view('admin/Dairy/index', compact('dairy'));
     }
 
     /**
@@ -57,9 +121,14 @@ class DairyController extends Controller
      * @param  \App\Dairy  $dairy
      * @return \Illuminate\Http\Response
      */
-    public function edit(Dairy $dairy)
+    public function edit(Dairy $dairy, $id)
     {
         //
+        $dairy = Dairy::find($id);
+        $brand = Brand::all();
+        $category = Category::all();
+        $subcategory = SubCategory::all();
+        return view('admin/Dairy/edit', compact('dairy','brand','category','subcategory'));
     }
 
     /**
@@ -69,9 +138,60 @@ class DairyController extends Controller
      * @param  \App\Dairy  $dairy
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Dairy $dairy)
+    public function update(Request $request, Dairy $dairy, $id)
     {
         //
+        $dairy = Dairy::find($id);
+        $dairy->title = $request->get('title');
+        $dairy->keywords = $request->get('keywords');
+        $dairy->description = $request->get('description');
+        $dairy->google_code = $request->get('google_code');
+        $dairy->facrbook_code = $request->get('facrbook_code');
+        $dairy->orteh_code = $request->get('orteh_code');
+
+        $dairy->brade = $request->get('brade');
+        $dairy->category = $request->get('category');
+        $dairy->sub_category = $request->get('sub_category');
+
+        $dairy->text_title_en = $request->get('text_title_en');
+        $dairy->text_title_th = $request->get('text_title_th');
+
+        $dairy->name_product_en = $request->get('name_product_en');
+        $dairy->name_product_th = $request->get('name_product_th');
+
+        $dairy->status = $request->get('status');
+
+        $dairy->images_product1 = $request->get('images_product1');
+        $dairy->attachment = $request->get('attachment');
+
+
+        $image = array();
+        if($files = $request-> file('images_product1')){
+            foreach ($files as $file){
+                $image_name = md5(rand(100, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Dairy/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $image[] = $image_url;
+            }
+        }
+
+        $attachment = array();
+        if($files = $request-> file('attachment')){
+            foreach ($files as $file){
+                $image_name = md5(rand(1000, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Dairy/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $attachment[] = $image_url;
+            }
+        }
+        $dairy->save();
+      return redirect('Dairy/show')->with('success', 'ได้ทำการแก้ไขข้อมูลเรียบร้อยแล้ว');
     }
 
     /**
@@ -80,8 +200,12 @@ class DairyController extends Controller
      * @param  \App\Dairy  $dairy
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Dairy $dairy)
+    public function destroy(Dairy $dairy, $id)
     {
         //
+        $dairy = Dairy::find($id);
+        $dairy->delete();
+
+        return redirect('/Dairy/show')->with('success', 'ได้ทำการลบข้อมูล เรียบร้อยแล้ว');
     }
 }

@@ -210,7 +210,7 @@ distinguished as the world’s finest.</div>
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
-                                    <a href="#productid1" class="mfp-open">
+                                    <a href="/Showmeat">
                                         <img src="{{ asset('img/Brochure/1.jpg') }}" alt="" width="360" />
                                     </a>
                                 </div>

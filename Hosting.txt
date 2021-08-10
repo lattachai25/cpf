@@ -19,3 +19,12 @@ Database:	cpfaustr_cpfaustr
 Host:	localhost
 Username:	cpfaustr_cpfaustr
 Password:	MO25M.wu36Lf+r
+
+
+
+Database:	cpfaustr_ci
+Host:	localhost
+Username:	cpfaustr_ci
+Password:	1234567890
+
+

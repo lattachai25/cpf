@@ -12,6 +12,9 @@
     <link href="{{ URL::asset('css/dashboard.css') }}" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+    
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
 <body>
   <div id="app">

@@ -10,132 +10,134 @@
 </div>
         <div class="col-9">
           <br><br><br>
-            <h2>Create  About</h2>
+            <h2>Create  Beef</h2>
             <a href="show"><button type="submit" class="btn btn-primary" style="float:right;">BACK</button></a>
             <br><br>
-            <form role="form" action="{{ route('About.store') }}" method="POST" enctype="multipart/form-data">
-            @csrf
+            <!-- <form action="{{ route('Poultry.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf -->
+            <form method="post" action="{{ route('Beef.store') }}" enctype="multipart/form-data">
+                    @csrf
+                    <div class="card">
+                <div class="card-header">
+                    <h3>SEO</h3>
+                        </div>
+                        <div class="card-body">
 
-            <div class="card">
-        <div class="card-header">
-            <h3>SEO</h3>
-                </div>
-                  <div class="card-body">
-                    
-                    
-                    <div class="form-group">
-                      <label for="exampleFormControlInput1"><b>Title Bar</b></label>
-                      <input type="text" class="form-control" name="title">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleFormControlTextarea1"><b>Keywords</b></label>
-                      <input type="text" class="form-control" name="keywords">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleFormControlTextarea1"><b>Description</b></label>
-                      <input type="text" class="form-control" name="description">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleFormControlTextarea1"><b>Google Code</b></label>
-                      <input type="text" class="form-control" name="google_code">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleFormControlTextarea1"><b>Facebook Code</b></label>
-                      <input type="text" class="form-control" name="facrbook_code">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleFormControlTextarea1"><b>Orteh Code</b></label>
-                      <input type="text" class="form-control" name="orteh_code">
-                    </div>
-          
-                  </div>
-        </div>        
-            <br><br>
-       
-            
+                            <div class="form-group">
+                            <label for="exampleFormControlInput1"><b>Title BAR</b></label>
+                            <input type="text" class="form-control" name="title">
+                            </div>
+                            <div class="form-group">
+                            <label for="exampleFormControlTextarea1"><b>Keywords</b></label>
+                            <input type="text" class="form-control" name="keywords">
+                            </div>
+                            <div class="form-group">
+                            <label for="exampleFormControlTextarea1"><b>Description</b></label>
+                            <input type="text" class="form-control" name="description">
+                            </div>
+                            <div class="form-group">
+                            <label for="exampleFormControlTextarea1"><b>Google Code</b></label>
+                            <input type="text" class="form-control" name="google_code">
+                            </div>
+                            <div class="form-group">
+                            <label for="exampleFormControlTextarea1"><b>Fackbook Code</b></label>
+                            <input type="text" class="form-control" name="facrbook_code">
+                            </div>
+                            <div class="form-group">
+                            <label for="exampleFormControlTextarea1"><b>Orter Code</b></label>
+                            <input type="text" class="form-control" name="orteh_code">
+                            </div>
+                
+                        </div>
+                </div>        
+                    <br><br>
 
 
 
-            <h2><p class="text-success">Content TH / EN </p></h2> 
+            <h2><p class="text-success">CONTENT TH / EN </p></h2> 
             
             <div class="form-group">
-              <label for="exampleFormControlTextarea1"><b>OUR STORY EN</b></label>
-              <textarea class="ckeditor form-control" name="story_en"></textarea>
+              <label for="exampleFormControlTextarea1"><b>Brand </b></label>
+              <select class="form-control" id="exampleFormControlSelect1"  name="brade" style="height:40px;">
+               @foreach ($brand as $brands)
+                <option value="{{ $brands->id }}"> {{ $brands->name_brand_en }} </option>
+                @endforeach
+              </select>
             </div>
             <div class="form-group">
-              <label for="exampleFormControlTextarea1"><b>OUR STORY TH</b></label>
-              <textarea class="ckeditor form-control" name="story_th"></textarea>
+              <label for="exampleFormControlTextarea1"><b>Category</b></label>
+              <select class="form-control" id="exampleFormControlSelect1"  name="category" style="height:40px;">
+               @foreach ($category as $categorys)
+                <option value="{{ $categorys->id }}"> {{ $categorys->name_categories }} </option>
+                @endforeach
+              </select>
             </div>
             <br>
             <div class="form-group">
-              <label for="exampleFormControlTextarea1"><b>A bit of history EN</b></label>
-              <textarea class="ckeditor form-control" name="history_en"></textarea>
+              <label for="exampleFormControlTextarea1"><b>Sub Category</b></label>
+              <select class="form-control" id="exampleFormControlSelect1"  name="sub_category" style="height:40px;">
+               @foreach ($subcategory as $subcategorys)
+                <option value="{{ $subcategorys->id}}"> {{ $subcategorys->name_sub_categories }} </option>
+                @endforeach
+              </select>
             </div>
             <div class="form-group">
-              <label for="exampleFormControlTextarea1"><b>A bit of history TH</b></label>
-              <textarea class="ckeditor form-control" name="history_th"></textarea>
+              <label for="exampleFormControlInput1"><b>Title</b></label>
+              <input type="test" class="form-control" name="text_title_en">
             </div>
             <div class="form-group">
-              <label for="exampleFormControlInput1"><b>Name EN </b></label>
-              <input type="test" class="form-control" name="name_en">
-            </div>
-            <div class="form-group">
-              <label for="exampleFormControlInput1"><b>Name TH </b></label>
-              <input type="test" class="form-control" name="name_th">
+              <label for="exampleFormControlInput1"><b>หัวข้อ</b></label>
+              <input type="test" class="form-control" name="text_title_th">
             </div>
 
             <div class="form-group">
-              <label for="exampleFormControlInput1"><b>Protion EN</b></label>
-              <input type="test" class="form-control" name="protion_en">
+              <label for="exampleFormControlInput1"><b>Name Product</b></label>
+              <input type="test" class="form-control" name="name_product_en">
             </div>
             <div class="form-group">
-              <label for="exampleFormControlInput1"><b>Protion TH</b></label>
-              <input type="test" class="form-control" name="protion_th">
+              <label for="exampleFormControlInput1"><b>ชื่อสินค้า</b></label>
+              <input type="test" class="form-control" name="name_product_th">
             </div>
 
             <div class="form-group">
-              <label for="exampleFormControlTextarea1"><b>Content EN</b></label>
-              <textarea class="ckeditor form-control" name="content_en"></textarea>
+              <label for="exampleFormControlTextarea1"><b>Detel Product</b></label>
+              <textarea class="form-control" name="detel_product_en"></textarea>
             </div>
             <div class="form-group">
-              <label for="exampleFormControlTextarea1"><b>Content TH</b></label>
-              <textarea class="ckeditor form-control" name="content_th"></textarea>
+              <label for="exampleFormControlTextarea1"><b>รายละเอียดสินค้า</b></label>
+              <textarea class="form-control" name="detel_product_th"></textarea>
             </div>
             <div class="form-group">
-              <input type="text" hidden name="status" value="1">
+              <input type="test" hidden class="form-control" name="status" value="1">
             </div>
+            <div class="card-header">
+                <h3>UPLOAD IMAGE PRODUCTS</h3>
+                <h4 style="color:red;">*** ต้องใสรูปและ เอกสารให้ครับ ทุกช่อง ถ้าไม่มีรูปให้ใส่รูปที่แนบให้  ***</h4>
+                <div class="card-body">    
+                    <div class="form-group">
+                    <div class="input-group control-group increment" >
+                        <input type="file" name="images_product1[]" class="form-control" multiple>
+                    </div>
+                    <br>
+                    <div class="input-group control-group increment" >
+                    <label for="exampleFormControlTextarea1"><b>เอกสารแนบ</b></label>
+                        <input type="file" name="attachment[]" class="form-control">
+                    </div>
 
-
-
-
-
-            <div class="form-group">
-              <label for="exampleFormControlFile1"> <br> File input MaxSize 400px - 600px / Size less than 1M </b></label>
-              <input type="file" name="images" class="form-control-file">
+                    </div>
+                </div>
+            </div>    
+            <br>
+            <div class="cal-12">
+                        <center>
+                                <button type="submit" class="btn btn-success">SAVE</button>
+                                <a href="/Beef/show" class="btn btn-primary">BACK</a>    
+                        </center>
             </div>
-<div class="cal-12">
-  <center>
-            <button type="submit" class="btn btn-success">SAVE</button>
-            <button type="submit" class="btn btn-primary">CENCEL</button>    
-  </center>
-</div>
-            
-            </form>     
-            
+            </form>      
             <br><br><br><br><br>
         </div>
 <div class="col-1"></div>
 </div>
 </div>
-
-
-
-
-  <script type="text/javascript">
-    CKEDITOR.replace('story_en', {
-        filebrowserUploadUrl: "{{route('ckeditor.upload', ['_token' => csrf_token() ])}}",
-        filebrowserUploadMethod: 'form'
-    });
-</script>
-
 @endsection

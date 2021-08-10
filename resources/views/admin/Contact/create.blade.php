@@ -21,8 +21,7 @@
             <h3>SEO</h3>
                 </div>
                   <div class="card-body">
-                    
-                    
+
                     <div class="form-group">
                       <label for="exampleFormControlInput1"><b>Title Bar</b></label>
                       <input type="text" class="form-control" name="title">

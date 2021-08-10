@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Turkey;
+use App\Brand;
+use App\Category;
+use App\SubCategory;
+use DB;
 use Illuminate\Http\Request;
 
 class TurkeyController extends Controller
@@ -25,6 +29,11 @@ class TurkeyController extends Controller
     public function create()
     {
         //
+        $turkey = Turkey::all();
+        $brand = Brand::all();
+        $category = Category::all();
+        $subcategory = SubCategory::all();
+        return view('admin/Turkey/create', compact('turkey','brand','category','subcategory'));
     }
 
     /**
@@ -36,6 +45,59 @@ class TurkeyController extends Controller
     public function store(Request $request)
     {
         //
+        $image = array();
+        if($files = $request-> file('images_product1')){
+            foreach ($files as $file){
+                $image_name = md5(rand(100, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Turkey/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $image[] = $image_url;
+            }
+        }
+
+        $attachment = array();
+        if($files = $request-> file('attachment')){
+            foreach ($files as $file){
+                $image_name = md5(rand(1000, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Turkey/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $attachment[] = $image_url;
+            }
+        }
+        Turkey::insert([
+                'title' => $request->title,
+                'keywords' => $request->keywords,
+                'description' => $request->description,
+                'google_code' => $request->google_code,
+                'facrbook_code' => $request->facrbook_code,
+                'orteh_code' => $request->orteh_code,
+                
+                'brade' => $request->brade,
+                'category' => $request->category,
+                'sub_category' => $request->sub_category,
+
+                'text_title_en' => $request->text_title_en,
+                'text_title_th' => $request->text_title_th,
+
+                'name_product_en' => $request->name_product_en,
+                'name_product_th' => $request->name_product_th,
+
+                'detel_product_en' => $request->detel_product_en,
+                'detel_product_th' => $request->detel_product_th,
+
+                'status' => $request->status,
+
+
+                'images_product1' => implode('|', $image),
+                'attachment' => implode('|', $attachment),
+            ]);
+     return redirect('Turkey/show')->with('successfully', 'ได้ทำการเพิ่มข้อมูลเรียบร้อยแล้ว');
     }
 
     /**
@@ -47,7 +109,8 @@ class TurkeyController extends Controller
     public function show(Turkey $turkey)
     {
         //
-        return view('admin/Turkey/index');
+        $turkey = Turkey::orderBy('id', 'DESC')->paginate(20);
+        return view('admin/Turkey/index', compact('turkey'));
     }
 
     /**
@@ -56,9 +119,14 @@ class TurkeyController extends Controller
      * @param  \App\Turkey  $turkey
      * @return \Illuminate\Http\Response
      */
-    public function edit(Turkey $turkey)
+    public function edit(Turkey $turkey, $id)
     {
         //
+        $turkey = Turkey::find($id);
+        $brand = Brand::all();
+        $category = Category::all();
+        $subcategory = SubCategory::all();
+        return view('admin/Turkey/edit', compact('turkey','brand','category','subcategory'));
     }
 
     /**
@@ -68,9 +136,60 @@ class TurkeyController extends Controller
      * @param  \App\Turkey  $turkey
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Turkey $turkey)
+    public function update(Request $request, Turkey $turkey, $id)
     {
         //
+        $turkey = Turkey::find($id);
+        $turkey->title = $request->get('title');
+        $turkey->keywords = $request->get('keywords');
+        $turkey->description = $request->get('description');
+        $turkey->google_code = $request->get('google_code');
+        $turkey->facrbook_code = $request->get('facrbook_code');
+        $turkey->orteh_code = $request->get('orteh_code');
+
+        $turkey->brade = $request->get('brade');
+        $turkey->category = $request->get('category');
+        $turkey->sub_category = $request->get('sub_category');
+
+        $turkey->text_title_en = $request->get('text_title_en');
+        $turkey->text_title_th = $request->get('text_title_th');
+
+        $turkey->name_product_en = $request->get('name_product_en');
+        $turkey->name_product_th = $request->get('name_product_th');
+
+        $turkey->status = $request->get('status');
+
+        $turkey->images_product1 = $request->get('images_product1');
+        $turkey->attachment = $request->get('attachment');
+
+
+        $image = array();
+        if($files = $request-> file('images_product1')){
+            foreach ($files as $file){
+                $image_name = md5(rand(100, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Turkey/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $image[] = $image_url;
+            }
+        }
+
+        $attachment = array();
+        if($files = $request-> file('attachment')){
+            foreach ($files as $file){
+                $image_name = md5(rand(1000, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Turkey/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $attachment[] = $image_url;
+            }
+        }
+        $turkey->save();
+      return redirect('Turkey/show')->with('success', 'ได้ทำการแก้ไขข้อมูลเรียบร้อยแล้ว');
     }
 
     /**
@@ -79,8 +198,12 @@ class TurkeyController extends Controller
      * @param  \App\Turkey  $turkey
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Turkey $turkey)
+    public function destroy(Turkey $turkey, $id)
     {
         //
+        $turkey = Turkey::find($id);
+        $turkey->delete();
+
+        return redirect('/Turkey/show')->with('success', 'ได้ทำการลบข้อมูล เรียบร้อยแล้ว');
     }
 }

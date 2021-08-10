@@ -10,119 +10,131 @@
 </div>
         <div class="col-9">
           <br><br><br>
-            <h2>Create  About</h2>
+            <h2>Edit  Turkey</h2>
             <a href="../show"><button type="submit" class="btn btn-primary" style="float:right;">BACK</button></a>
             <br><br>
-            <form action="{{ route('About.update', $about->id) }}"  method="POST" enctype="multipart/form-data">
+            <form action="{{ route('Turkey.update', $turkey->id) }}"  method="POST" enctype="multipart/form-data">
             @method('PATCH')
             @csrf
 
             <div class="card">
-        <div class="card-header">
-            <h3>SEO</h3>
-                </div>
-                  <div class="card-body">
-                    
-                    
-                    <div class="form-group">
-                      <label for="exampleFormControlInput1"><b>Title Bar</b></label>
-                      <input type="text" class="form-control" name="title" value="{{ $about->title }}">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleFormControlTextarea1"><b>Keywords</b></label>
-                      <input type="text" class="form-control" name="keywords" value="{{ $about->keywords }}">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleFormControlTextarea1"><b>Description</b></label>
-                      <input type="text" class="form-control" name="description" value="{{ $about->description }}">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleFormControlTextarea1"><b>Google Code</b></label>
-                      <input type="text" class="form-control" name="google_code" value="{{ $about->google_code }}">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleFormControlTextarea1"><b>Facebook Code</b></label>
-                      <input type="text" class="form-control" name="facrbook_code" value="{{ $about->facrbook_code }}">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleFormControlTextarea1"><b>Orteh Code</b></label>
-                      <input type="text" class="form-control" name="orteh_code" value="{{ $about->orteh_code }}">
-                    </div>
-          
-                  </div>
-        </div>        
-            <br><br>
-       
-            
+                <div class="card-header">
+                    <h3>SEO</h3>
+                        </div>
+                        <div class="card-body">
+
+                            <div class="form-group">
+                            <label for="exampleFormControlInput1"><b>Title BAR</b></label>
+                            <input type="text" class="form-control" name="title" value="{{ $turkey->title }}">
+                            </div>
+                            <div class="form-group">
+                            <label for="exampleFormControlTextarea1"><b>Keywords</b></label>
+                            <input type="text" class="form-control" name="keywords" value="{{ $turkey->keywords }}">
+                            </div>
+                            <div class="form-group">
+                            <label for="exampleFormControlTextarea1"><b>Description</b></label>
+                            <input type="text" class="form-control" name="description" value="{{ $turkey->description }}">
+                            </div>
+                            <div class="form-group">
+                            <label for="exampleFormControlTextarea1"><b>Google Code</b></label>
+                            <input type="text" class="form-control" name="google_code"  value="{{ $turkey->google_code }}">
+                            </div>
+                            <div class="form-group">
+                            <label for="exampleFormControlTextarea1"><b>Fackbook Code</b></label>
+                            <input type="text" class="form-control" name="facrbook_code"  value="{{ $turkey->facrbook_code }}">
+                            </div>
+                            <div class="form-group">
+                            <label for="exampleFormControlTextarea1"><b>Orter Code</b></label>
+                            <input type="text" class="form-control" name="orteh_code" value="{{ $turkey->orteh_code }}">
+                            </div>
+                
+                        </div>
+                </div>        
+                    <br><br>
 
 
 
-            <h2><p class="text-success">Content TH / EN </p></h2> 
+            <h2><p class="text-success">CONTENT TH / EN </p></h2> 
             
             <div class="form-group">
-              <label for="exampleFormControlTextarea1"><b>OUR STORY EN</b></label>
-              <textarea class="form-control" name="story_en">{{ $about->story_en }}</textarea>
+              <label for="exampleFormControlTextarea1"><b>Brand </b></label>
+              <select class="form-control" id="exampleFormControlSelect1"  name="brade" style="height:40px;">
+               @foreach ($brand as $brands)
+                <option value="{{ $brands->id }}"> {{ $brands->name_brand_en }} </option>
+                @endforeach
+              </select>
             </div>
             <div class="form-group">
-              <label for="exampleFormControlTextarea1"><b>OUR STORY TH</b></label>
-              <textarea class="form-control" name="story_th">{{ $about->story_th }}</textarea>
+              <label for="exampleFormControlTextarea1"><b>Category</b></label>
+              <select class="form-control" id="exampleFormControlSelect1"  name="category" style="height:40px;">
+               @foreach ($category as $categorys)
+                <option value="{{ $categorys->id }}"> {{ $categorys->name_categories }} </option>
+                @endforeach
+              </select>
             </div>
             <br>
             <div class="form-group">
-              <label for="exampleFormControlTextarea1"><b>A bit of history EN</b></label>
-              <textarea class="form-control" name="history_en">{{ $about->history_en }}</textarea>
+              <label for="exampleFormControlTextarea1"><b>Sub Category</b></label>
+              <select class="form-control" id="exampleFormControlSelect1"  name="sub_category" style="height:40px;">
+               @foreach ($subcategory as $subcategorys)
+                <option value="{{ $subcategorys->id}}"> {{ $subcategorys->name_sub_categories }} </option>
+                @endforeach
+              </select>
             </div>
             <div class="form-group">
-              <label for="exampleFormControlTextarea1"><b>A bit of history TH</b></label>
-              <textarea class="form-control" name="history_th">{{ $about->history_th }}</textarea>
+              <label for="exampleFormControlInput1"><b>Title</b></label>
+              <input type="test" class="form-control" name="text_title_en" value="{{ $turkey->text_title_en }}">
             </div>
             <div class="form-group">
-              <label for="exampleFormControlInput1"><b>Name EN </b></label>
-              <input type="test" class="form-control" name="name_en" value="{{ $about->name_en }}">
-            </div>
-            <div class="form-group">
-              <label for="exampleFormControlInput1"><b>Name TH </b></label>
-              <input type="test" class="form-control" name="name_th" value="{{ $about->name_th }}">
+              <label for="exampleFormControlInput1"><b>หัวข้อ</b></label>
+              <input type="test" class="form-control" name="text_title_th" value="{{ $turkey->text_title_th }}">
             </div>
 
             <div class="form-group">
-              <label for="exampleFormControlInput1"><b>Protion EN</b></label>
-              <input type="test" class="form-control" name="protion_en" value="{{ $about->protion_en }}">
+              <label for="exampleFormControlInput1"><b>Name Product</b></label>
+              <input type="test" class="form-control" name="name_product_en" value="{{ $turkey->name_product_en }}">
             </div>
             <div class="form-group">
-              <label for="exampleFormControlInput1"><b>Protion TH</b></label>
-              <input type="test" class="form-control" name="protion_th" value="{{ $about->protion_th }}">
+              <label for="exampleFormControlInput1"><b>ชื่อสินค้า</b></label>
+              <input type="test" class="form-control" name="name_product_th" value="{{ $turkey->name_product_th }}">
             </div>
 
             <div class="form-group">
-              <label for="exampleFormControlTextarea1"><b>Content EN</b></label>
-              <textarea class="form-control" name="content_en">{{ $about->content_en }}</textarea>
+              <label for="exampleFormControlTextarea1"><b>Detel Product</b></label>
+              <textarea class="form-control" name="detel_product_en">{{ $turkey->detel_product_en }}</textarea>
             </div>
             <div class="form-group">
-              <label for="exampleFormControlTextarea1"><b>Content TH</b></label>
-              <textarea class="form-control" name="content_th">{{ $about->content_th }}</textarea>
+              <label for="exampleFormControlTextarea1"><b>รายละเอียดสินค้า</b></label>
+              <textarea class="form-control" name="detel_product_th">{{ $turkey->detel_product_th }}</textarea>
             </div>
             <div class="form-group">
-              <input type="text" hidden name="status" value="1">
+              <input type="test" hidden class="form-control" name="status" value="1">
             </div>
+            <div class="card-header">
+                <h3>UPLOAD IMAGE PRODUCTS</h3>
+                <h4 style="color:red;">*** ต้องใสรูปและ เอกสารให้ครับ ทุกช่อง ถ้าไม่มีรูปให้ใส่รูปที่แนบให้  ***</h4>
+                <div class="card-body">    
+                    <div class="form-group">
+                    <div class="input-group control-group increment" >
+                        <input type="file" name="images_product1[]" class="form-control" multiple>
+                    </div>
+                    <br>
+                    <div class="input-group control-group increment" >
+                    <label for="exampleFormControlTextarea1"><b>เอกสารแนบ</b></label>
+                        <input type="file" name="attachment[]" class="form-control">
+                    </div>
 
-
-
-
-
-            <div class="form-group">
-              <label for="exampleFormControlFile1"> <br> File input MaxSize 400px - 600px / Size less than 1M </b></label>
-             <h3>{{ $about->images }}</h3> 
-              <input type="file" name="images" class="form-control-file" value="{{ $about->images }}">
+                    </div>
+                </div>
+            </div>    
+            <br>
+            <div class="cal-12">
+                        <center>
+                                <button type="submit" class="btn btn-success">SAVE</button>
+                                <a href="/Turkey/show" class="btn btn-primary">BACK</a>    
+                        </center>
             </div>
-<div class="cal-12">
-  <center>
-  <button type="submit" class="btn btn-primary">Update</button> 
-  </center>
-</div>
-            
-            </form>     
-            
+            </form>      
             <br><br><br><br><br>
         </div>
 <div class="col-1"></div>

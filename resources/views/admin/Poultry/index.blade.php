@@ -9,35 +9,30 @@
 </div>
         <div class="col-9">
           <br><br><br>
+          <h2>List Poulrty</h2>
           <div class="col-12"><a href="create"><button type="button" class="btn btn-success" style="float:right; margin-bottom: 10px;">Add Product</button></a></div>
-              <table class="table">
+        
+          <table class="table">
                   <thead class="thead-dark">
                     <tr>
-                      <th width="5%">#</th>
-                      <th width="8%">TITLE EN</th>
-                      <th width="8%">NAME PRODUCT EN</th>
-                      <th width="8%">DETEL PRODUCT EN</th>
-                      <th width="8%">History TH</th>
-                      <th width="8%">IMAGES BRAND</th>
+                      <th width="10%">#</th>
+                      <th width="20%">TITLE</th>
+                      <th width="20%">NAME PRODUCT</th>
+                      <th width="30%">DETEL PRODUCT</th>
 
-                      <th width="5%">Edit</th>
-                      <th width="5%">Dele</th>
+                      <th width="10%">Edit</th>
+                      <th width="10%">Dele</th>
                     </tr>
                   </thead>
                   <tbody>
-                  @foreach($poultry as $poultrys)
+                  @foreach($poultry as $key => $poultrys)
                     <tr>
-                      <th scope="row">{{ $poultrys ->id }}</th>
+                      <th scope="row">{{ $key + 1  }}</th>
                       <td>{{ str_limit($poultrys ->text_title_en, $limit = 30, $end = '...') }}</td>
                       <td>{{ str_limit( $poultrys ->name_product_en, $limit = 30, $end = '...') }}</td>
                       <td>{{ str_limit( $poultrys ->detel_product_en, $limit = 30, $end = '...') }}</td>
-                      <td>{{ $poultrys ->images_logo }}</td>
-
-                      <td><a href="../files_upload/Poultry/{{$poultrys->images_logo}}"><img src="../files_upload/Poultry/{{$poultrys->images_logo}}" width="100px" alt=""></a></td>
                       <td><a href="{{ route('Poultry.edit', $poultrys->id)}}"><button type="button" class="btn btn-warning">Edit</button></a></td>
                       <td>
-                       
-
                           <form action="{{ route('Poultry.destroy', $poultrys->id)}}" method="post">
                             @csrf
                             @method('DELETE')
@@ -48,7 +43,27 @@
                   @endforeach
                   </tbody>
                 </table>
+<style>
 
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #000 !important;
+    border-color: !important;
+}
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    z-index: 3;
+    color: #fff;
+    cursor: default;
+    background-color: #5a5b5d !important;
+    border-color: #5a5b5d !important;
+}
+</style>
+
+
+                <center>
+                  {{ $poultry->links() }}
+                </center>
         </div>
 <div class="col-1"></div>
 </div>

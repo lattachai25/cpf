@@ -81,5 +81,3 @@ Route::resource('/Showfrut', 'ShowfrutController');
 Route::resource('/ShowDairy', 'ShowDairyController');
 
 
-
-

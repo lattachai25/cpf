@@ -10,39 +10,29 @@
         <div class="col-9">
           <br><br><br>
           <div class="col-12"><a href="create"><button type="button" class="btn btn-success" style="float:right; margin-bottom: 10px;">Add Product</button></a></div>
-              <table class="table">
+        <h2> Lamb List </h2>
+          <table class="table">
                   <thead class="thead-dark">
                     <tr>
-                      <th width="5%">#</th>
-                      <th width="8%">Story EN</th>
-                      <th width="8%">Story TH</th>
-                      <th width="8%">History EN</th>
-                      <th width="8%">History TH</th>
-                      <th width="8%">Name EN</th>
-                      <th width="8%">Name TH</th>
+                      <th width="10%">#</th>
+                      <th width="20%">TITLE</th>
+                      <th width="20%">NAME PRODUCT</th>
+                      <th width="30%">DETEL PRODUCT</th>
 
-                      <th width="8%">Images</th>
-                      <th width="5%">Edit</th>
-                      <th width="5%">Dele</th>
+                      <th width="10%">Edit</th>
+                      <th width="10%">Dele</th>
                     </tr>
                   </thead>
                   <tbody>
-                  @foreach($about as $abouts)
+                  @foreach($lamb as $key => $lambs)
                     <tr>
-                      <th scope="row">{{ $abouts ->id }}</th>
-                      <td>{{ str_limit($abouts ->story_en, $limit = 30, $end = '...') }}</td>
-                      <td>{{ str_limit( $abouts ->story_th, $limit = 30, $end = '...') }}</td>
-                      <td>{{ str_limit( $abouts ->history_en, $limit = 30, $end = '...') }}</td>
-                      <td>{{ str_limit( $abouts ->history_th, $limit = 30, $end = '...') }}</td>
-                      <td>{{ $abouts ->name_en }}</td>
-                      <td>{{ $abouts ->name_th }}</td>
-
-                      <td><a href="../files_upload/About/{{$abouts->images}}"><img src="../files_upload/About/{{$abouts->images}}" width="100px" alt=""></a></td>
-                      <td><a href="{{ route('About.edit', $abouts->id)}}"><button type="button" class="btn btn-warning">Edit</button></a></td>
+                      <th scope="row">{{ $key + 1  }}</th>
+                      <td>{{ str_limit($lambs ->text_title_en, $limit = 30, $end = '...') }}</td>
+                      <td>{{ str_limit( $lambs ->name_product_en, $limit = 30, $end = '...') }}</td>
+                      <td>{{ str_limit( $lambs ->detel_product_en, $limit = 30, $end = '...') }}</td>
+                      <td><a href="{{ route('Lamb.edit', $lambs->id)}}"><button type="button" class="btn btn-warning">Edit</button></a></td>
                       <td>
-                       
-
-                          <form action="{{ route('About.destroy', $abouts->id)}}" method="post">
+                          <form action="{{ route('Lamb.destroy', $lambs->id)}}" method="post">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-danger" type="submit">Delete</button>
@@ -52,7 +42,27 @@
                   @endforeach
                   </tbody>
                 </table>
+<style>
 
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #000 !important;
+    border-color: !important;
+}
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    z-index: 3;
+    color: #fff;
+    cursor: default;
+    background-color: #5a5b5d !important;
+    border-color: #5a5b5d !important;
+}
+</style>
+
+
+                <center>
+                  {{ $lamb->links() }}
+                </center>
         </div>
 <div class="col-1"></div>
 </div>
