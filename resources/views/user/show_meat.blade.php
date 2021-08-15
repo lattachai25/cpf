@@ -28,6 +28,8 @@
     color: white !important;
 }
 </style>
+
+@foreach ($poultry as $poultrys)
 <div class="wrapper">
 
         <!-- ========================  Product ======================== -->
@@ -45,7 +47,7 @@
 
                                 <!-- === product-title === -->
 
-                                <h1 class="title" data-title="Dairy">DAIRY <small>BROWNES DAIRY PRODUCT</small></h1>
+                                <h1 class="title" data-title="Dairy">{{  $poultrys->name_categories }} <small>BROWNES DAIRY PRODUCT</small></h1>
 
                                 <div class="clearfix">
 
@@ -53,7 +55,7 @@
 
                                     <div class="price">
                                         <span class="h3">
-                                        WOODWARD
+                                        {{  $poultrys->name_brand_en }} 
                                         </span>
                                     </div>
                                     <hr />
@@ -62,14 +64,14 @@
 
                                     <div class="info-box">
                                         <span><strong>Brand name</strong></span>
-                                        <span>WOODWARD</span>
+                                        <span>{{  $poultrys->name_brand_en }} </span>
                                     </div>
 
                                     <!-- === info-box === -->
 
                                     <div class="info-box">
                                         <span><strong>Type Product</strong></span>
-                                        <span>MEAT</span>
+                                        <span> {{  $poultrys->name_categories }} </span>
                                     </div>
 
                                     <!-- === info-box === -->
@@ -79,7 +81,7 @@
 
                                     <div class="info-box">
                                         <div class="image">
-                                            <img src="{{ asset('img/Brochure/logoAngus.jpg') }}" alt="Alternate Text" width="80%" />
+                                        <img src="{{ asset('files_upload/Brand/'.$poultrys->images.'') }}" alt="Alternate Text" width="80%" />
                                         </div>
                                     </div>
                                 </div> <!--/clearfix-->
@@ -91,11 +93,15 @@
                             <!-- === product gallery === -->
 
                             <div class="owl-product-gallery open-popup-gallery">
-                            @for($i=1; $i<=2; $i++)
-                                <a href=""><img src="{{ asset('img/Brochure/'.$i.'.jpg') }}" alt="" height="250px" /></a>
-                            @endfor
+                            @php
+                            $meat = explode('|', $poultrys->images_product1);
+                            @endphp
+                            @foreach($meat as $meats)
+                            <a href="{{ URL::to($meats) }}"><img src="{{ URL::to($meats) }}" alt="" height="250px" /></a>  
+                            @endforeach
                             </div>
                         </div>
+                        <a href="/Poultry" class="btn btn-clean" style="margin-top:80px; width:150px; float:right;"> Back </a>
 
                     </div>
                 </div>
@@ -140,13 +146,15 @@
                                             <div class="row">
 
                                                 <!-- === product-item === -->
-                                                @for($i=1; $i<=24; $i++ )
+                                             
+                                            
+
                                                 <div class="col-md-4 col-xs-4">
                                                     <article>
                                                         <div class="figure-grid">
                                                             <div class="image">
                                                                 <a href="#productid1" class="mfp-open">
-                                                                    <img src="{{ asset('img/Angus/'.$i.'.jpg') }}" alt="" width="250px" height="250px" />
+                                                                    <img src="../{{ $poultrys->images_show }}" alt="" width="250px" height="250px" />
                                                                 </a>
                                                             </div>
                                                             <div class="text" style="background: #000000bf; color:#fff;">
@@ -157,7 +165,9 @@
                                                         </div>
                                                     </article>
                                                 </div>
-                                                @endfor
+                                              
+
+
                                             </div> <!--/row-->
                                         </div> <!--/products-->
                                     </div> <!--/content-->
@@ -170,25 +180,21 @@
                                             <div class="col-md-4">
                                                 <h3>Dimensions</h3>
                                                 <p>
-                                                    <img class="full-image" src="{{ asset('img/Brochure/Brownes_Dairy_logo.jpg') }}" alt="Brownes Dairy" width="250" />
+                                                <img class="full-image" src="{{ asset('files_upload/Brand/'.$poultrys->images.'') }}"  width="250" />
+                                                   
                                                 </p>
                                                          
                                                 <div class="icon_right" style="float: right;">
-                                                <b>Read Attachment</b> <i class="icon icon-arrow-right"></i> <a href="#" class="btn btn-main btn-xs"><i class="icon icon-layers"></i></a>
+                                                <b>Read Attachment</b> <i class="icon icon-arrow-right"></i> <a href="../{{ $poultrys->attachment }}" target="_blank"  class="btn btn-main btn-xs" ><i class="icon icon-layers"></i></a>
                                                 </div>
                                                 <br>
                                                 <hr />
 
                                             </div>
                                             <div class="col-md-8">
-                                                <h3>Established in 1886, Brownes Dairy is the oldest</h3>
+                                                <h3>{{  $poultrys->text_title_en }}</h3>
                                                 <p>
-                                                and most established dairy in Australia.
-                                                For 133 years we have been pioneering award winning, great tasting
-                                                and innovative new products. Our natural yoghurt is lovingly made with
-                                                fresh milk sourced from the pristine South-West region of Western Australia.
-                                                All Brownes Dairy cows roam freely and our farmers never produce under intense
-                                                farming conditions. Happy, free range cows mean great tasting milk and yoghurt!
+                                                {{  $poultrys->detel_product_en }}
                                                 </p>
                                             
                                             </div>
@@ -221,9 +227,9 @@
                 <!-- === product gallery === -->
 
                 <div class="owl-product-gallery">
-                    @for($i=1; $i<=4; $i++)
-                    <img src="{{ asset('img/Brochure/'.$i.'.jpg') }}" alt="" width="640" />
-                    @endfor
+  
+                    <img src="../{{  $poultrys->images_show }}" alt="" width="640" />
+      
                 </div>
 
                 <!-- === product-popup-info === -->
@@ -237,7 +243,7 @@
                             <div class="col-sm-6">
                                 <div class="info-box">
                                     <strong>Name</strong>
-                                    <span>Name Product</span>
+                                    <span>{{ $poultrys->name_product_en }}</span>
                                 </div>
                             </div>
 
@@ -247,7 +253,7 @@
                                 <div class="info-box">
                                     <strong>Product details</strong>
                                     <div class="product-colors clearfix">
-
+                                    {{ $poultrys->detel_product_en }}
                                     </div>
                                 </div>
                             </div>
@@ -260,4 +266,6 @@
         </div> <!--popup-main-->
 
 </div>
+@endforeach
+
 @endsection

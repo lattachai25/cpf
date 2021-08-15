@@ -47,6 +47,19 @@ class DairyController extends Controller
     {
         //
          // dd($request->all());
+         $images_show = array();
+         if($files = $request-> file('images_show')){
+             foreach ($files as $file){
+                 $image_name = md5(rand(100, 10000));
+                 $ext = strtolower($file->getClientOriginalExtension());
+                 $image_full_name = $image_name.'.'.$ext;
+                 $upload_path = 'files_upload/Dairy/';
+                 $image_url = $upload_path.$image_full_name;
+                 $file->move($upload_path, $image_full_name);
+                 $images_show[] = $image_url;
+             }
+         }
+         
          $image = array();
          if($files = $request-> file('images_product1')){
              foreach ($files as $file){
@@ -98,6 +111,7 @@ class DairyController extends Controller
  
                  'images_product1' => implode('|', $image),
                  'attachment' => implode('|', $attachment),
+                 'images_show' => implode('|', $images_show),
              ]);
       return redirect('Dairy/show')->with('successfully', 'ได้ทำการเพิ่มข้อมูลเรียบร้อยแล้ว');
     }
@@ -163,6 +177,7 @@ class DairyController extends Controller
 
         $dairy->images_product1 = $request->get('images_product1');
         $dairy->attachment = $request->get('attachment');
+        $dairy->images_show = $request->get('images_show');
 
 
         $image = array();
@@ -178,6 +193,19 @@ class DairyController extends Controller
             }
         }
 
+        $images_show = array();
+        if($files = $request-> file('images_show')){
+            foreach ($files as $file){
+                $image_name = md5(rand(100, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Dairy/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $images_show[] = $image_url;
+            }
+        }
+        
         $attachment = array();
         if($files = $request-> file('attachment')){
             foreach ($files as $file){

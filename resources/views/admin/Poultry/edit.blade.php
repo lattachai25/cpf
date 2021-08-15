@@ -13,7 +13,7 @@
             <h2>Edit  Poulrty</h2>
             <a href="../show"><button type="submit" class="btn btn-primary" style="float:right;">BACK</button></a>
             <br><br>
-            <form action="{{ route('Beef.update', $beef->id) }}"  method="POST" enctype="multipart/form-data">
+            <form action="{{ route('Poultry.update', $Poultry->id) }}"  method="POST" enctype="multipart/form-data">
             @method('PATCH')
             @csrf
 
@@ -25,27 +25,27 @@
 
                             <div class="form-group">
                             <label for="exampleFormControlInput1"><b>Title BAR</b></label>
-                            <input type="text" class="form-control" name="title" value="{{ $beef->title }}">
+                            <input type="text" class="form-control" name="title" value="{{ $Poultry->title }}">
                             </div>
                             <div class="form-group">
                             <label for="exampleFormControlTextarea1"><b>Keywords</b></label>
-                            <input type="text" class="form-control" name="keywords" value="{{ $beef->keywords }}">
+                            <input type="text" class="form-control" name="keywords" value="{{ $Poultry->keywords }}">
                             </div>
                             <div class="form-group">
                             <label for="exampleFormControlTextarea1"><b>Description</b></label>
-                            <input type="text" class="form-control" name="description" value="{{ $beef->description }}">
+                            <input type="text" class="form-control" name="description" value="{{ $Poultry->description }}">
                             </div>
                             <div class="form-group">
                             <label for="exampleFormControlTextarea1"><b>Google Code</b></label>
-                            <input type="text" class="form-control" name="google_code"  value="{{ $beef->google_code }}">
+                            <input type="text" class="form-control" name="google_code"  value="{{ $Poultry->google_code }}">
                             </div>
                             <div class="form-group">
                             <label for="exampleFormControlTextarea1"><b>Fackbook Code</b></label>
-                            <input type="text" class="form-control" name="facrbook_code"  value="{{ $beef->facrbook_code }}">
+                            <input type="text" class="form-control" name="facrbook_code"  value="{{ $Poultry->facrbook_code }}">
                             </div>
                             <div class="form-group">
                             <label for="exampleFormControlTextarea1"><b>Orter Code</b></label>
-                            <input type="text" class="form-control" name="orteh_code" value="{{ $beef->orteh_code }}">
+                            <input type="text" class="form-control" name="orteh_code" value="{{ $Poultry->orteh_code }}">
                             </div>
                 
                         </div>
@@ -83,45 +83,53 @@
             </div>
             <div class="form-group">
               <label for="exampleFormControlInput1"><b>Title</b></label>
-              <input type="test" class="form-control" name="text_title_en" value="{{ $beef->text_title_en }}">
+              <input type="test" class="form-control" name="text_title_en" value="{{ $Poultry->text_title_en }}">
             </div>
             <div class="form-group">
               <label for="exampleFormControlInput1"><b>หัวข้อ</b></label>
-              <input type="test" class="form-control" name="text_title_th" value="{{ $beef->text_title_th }}">
+              <input type="test" class="form-control" name="text_title_th" value="{{ $Poultry->text_title_th }}">
             </div>
 
             <div class="form-group">
               <label for="exampleFormControlInput1"><b>Name Product</b></label>
-              <input type="test" class="form-control" name="name_product_en" value="{{ $beef->name_product_en }}">
+              <input type="test" class="form-control" name="name_product_en" value="{{ $Poultry->name_product_en }}">
             </div>
             <div class="form-group">
               <label for="exampleFormControlInput1"><b>ชื่อสินค้า</b></label>
-              <input type="test" class="form-control" name="name_product_th" value="{{ $beef->name_product_th }}">
+              <input type="test" class="form-control" name="name_product_th" value="{{ $Poultry->name_product_th }}">
             </div>
 
             <div class="form-group">
               <label for="exampleFormControlTextarea1"><b>Detel Product</b></label>
-              <textarea class="form-control" name="detel_product_en">{{ $beef->detel_product_en }}</textarea>
+              <textarea class="form-control" name="detel_product_en">{{ $Poultry->detel_product_en }}</textarea>
             </div>
             <div class="form-group">
               <label for="exampleFormControlTextarea1"><b>รายละเอียดสินค้า</b></label>
-              <textarea class="form-control" name="detel_product_th">{{ $beef->detel_product_th }}</textarea>
+              <textarea class="form-control" name="detel_product_th">{{ $Poultry->detel_product_th }}</textarea>
             </div>
             <div class="form-group">
               <input type="test" hidden class="form-control" name="status" value="1">
             </div>
             <div class="card-header">
                 <h3>UPLOAD IMAGE PRODUCTS</h3>
-                <h4 style="color:red;">*** ต้องใสรูปและ เอกสารให้ครับ ทุกช่อง ถ้าไม่มีรูปให้ใส่รูปที่แนบให้  ***</h4>
-                <div class="card-body">    
+                <h6 style="color:red;">*** กรุณณาใส่รูปตามขนาที่กำหนด ถ้ารูปภาพมีขนาดใหญ่กว่าจะทำให้เปิดช้า และจะทำให้เว็บทำงานช้า ***</h6>
+                <div class="card-body">
+
+                <div class="form-group">
+                    <div class="input-group control-group increment" >
+                    <label for="exampleFormControlTextarea1"><b>รูปโชว์ </b> <b style="color:red;">** 400px X 600px  และขนาดน้อยกว่า 500k **</b></label>
+                        <input type="file" name="images_show[]" class="form-control" value="{{ $Poultry->images_show }}" multiple>
+                    </div>
+                    <br>  
                     <div class="form-group">
                     <div class="input-group control-group increment" >
-                        <input type="file" name="images_product1[]" class="form-control" multiple>
+                    <label for="exampleFormControlTextarea1"><b>รูปรายละเอียด </b> <b style="color:red;">** 400px X 600px และขนาดน้อยกว่า 500k **</b></label>
+                        <input type="file" name="images_product1[]" class="form-control" value="{{ $Poultry->images_product1 }}" multiple>
                     </div>
                     <br>
                     <div class="input-group control-group increment" >
-                    <label for="exampleFormControlTextarea1"><b>เอกสารแนบ</b></label>
-                        <input type="file" name="attachment[]" class="form-control">
+                    <label for="exampleFormControlTextarea1"><b>เอกสารแนบ PDF</b> <b style="color:red;">** MAX SIZE 1Mb**</b></label>
+                        <input type="file" name="attachment[]" value="{{ $Poultry->attachment }}" class="form-control">
                     </div>
 
                     </div>

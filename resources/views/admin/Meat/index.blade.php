@@ -24,15 +24,15 @@
                     </tr>
                   </thead>
                   <tbody>
-                  @foreach($beef as $key => $beefs)
+                  @foreach($meat as $key => $meats)
                     <tr>
                       <th scope="row">{{ $key + 1  }}</th>
-                      <td>{{ str_limit($beefs ->text_title_en, $limit = 30, $end = '...') }}</td>
-                      <td>{{ str_limit( $beefs ->name_product_en, $limit = 30, $end = '...') }}</td>
-                      <td>{{ str_limit( $beefs ->detel_product_en, $limit = 30, $end = '...') }}</td>
-                      <td><a href="{{ route('Beef.edit', $beefs->id)}}"><button type="button" class="btn btn-warning">Edit</button></a></td>
+                      <td>{{ str_limit($meats ->text_title_en, $limit = 30, $end = '...') }}</td>
+                      <td>{{ str_limit( $meats ->name_product_en, $limit = 30, $end = '...') }}</td>
+                      <td>{{ str_limit( $meats ->detel_product_en, $limit = 30, $end = '...') }}</td>
+                      <td><a href="{{ route('Meat.edit', $meats->id)}}"><button type="button" class="btn btn-warning">Edit</button></a></td>
                       <td>
-                          <form action="{{ route('Beef.destroy', $beefs->id)}}" method="post">
+                          <form action="{{ route('Meat.destroy', $meats->id)}}" method="post">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-danger" type="submit">Delete</button>
@@ -61,7 +61,7 @@
 
 
                 <center>
-                  {{ $beef->links() }}
+                  {{ $meat->links() }}
                 </center>
         </div>
 <div class="col-1"></div>

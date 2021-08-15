@@ -1,9 +1,11 @@
 @extends('.user.userlayout.adminpage')
-@section('title', 'POULTRY Product')
-@section('keywords', 'CPFAUSTRALIA')
-@section('description', 'description CPFAUSTRALIA')
-@section('google', 'google')
-@section('facebook', 'Facebook')
+@foreach ($poultry as $poultrys)
+    @section('title', $poultrys->title )
+    @section('keywords', $poultrys->keywords )
+    @section('description', $poultrys->description )
+    @section('google', $poultrys->google_code )
+    @section('facebook', $poultrys->facrbook_code )
+@endforeach
 @section('content')
 
 <div class="wrapper">
@@ -15,28 +17,20 @@
             <div class="owl-slider owl-slider-fullscreen">
 
                 <!-- === slide item === -->
-                @for($i=1; $i<=4; $i++)
-                <div class="item" style="background-image:url({{ asset('img/Brochure/'.$i.'.jpg') }})">
+            @foreach ($poultry as $poultrys)
+                <div class="item" style="background-image:url({{ $poultrys->images_show }})">
                     <div class="box">
                         <div class="container text-center">
-                        <h2 class="title animated h1" data-animation="fadeInDown">THE POULTRY</h2>
-                            <div class="animated" data-animation="fadeInUp">DECADENCE HAS ARRIVED</div>
-                            <div class="animated" data-animation="fadeInUp">Carrara 640 is a perfect
-combination of nature and
-experience. Only Carrara 640
-Wagyu is created to honour the
-magic marble. Displaying an
-intricate, feathery pattern and
-distinguished as the world’s finest.</div>
+                        <h2 class="title animated h1" data-animation="fadeInDown">{{ $poultrys->text_title_en }}</h2>
+                            <div class="animated" data-animation="fadeInUp">{{ $poultrys->text_title_en }}</div>
+                            <div class="animated" data-animation="fadeInUp">{{ $poultrys->detel_product_en }}</div>
                             <div class="animated" data-animation="fadeInUp">
-                                <a href="/Showmeat" class="btn btn-clean">Read more</a>
+                                <a href="/Show_poultry/{{ $poultrys->id }}" class="btn btn-clean">Read more</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                @endfor
-                <!-- === slide item === -->
-
+            @endforeach
             </div> <!--/owl-slider-->
         </section>
 
@@ -62,59 +56,29 @@ distinguished as the world’s finest.</div>
                 <div class="row">
 
                     <!-- === item === -->
-
+                    @foreach ($poultry2 as $poultrys)
                     <div class="col-md-8">
                         <figure>
-                            <figcaption style="background-image:url({{ asset('img/Brochure/1.jpg') }})">
-                                <img src="{{ asset('img/Brochure/1.jpg') }}" alt="" />
+                            <figcaption style="background-image:url({{$poultrys->images_show }})">
+                                <img src="{{$poultrys->images_show }}" alt="" />
                             </figcaption>
-                            <a href="/Showmeat" class="btn btn-clean mfp-open-scrollto">Read more</a>
+                            <a href="/Show_poultry/{{ $poultrys->id }}" class="btn btn-clean mfp-open-scrollto">Read more</a>
                         </figure>
                     </div>
+                    @endforeach
 
                     <!-- === item === -->
-
+                    @foreach ($poultry3 as $poultrys)
                     <div class="col-md-4">
                         <figure>
-                            <figcaption style="background-image:url({{ asset('img/Brochure/2.jpg') }})">
-                                <img src="{{ asset('img/Brochure/1.jpg') }}" alt="" />
+                            <figcaption style="background-image:url({{ $poultrys->images_show }})">
+                                <img src="{{ $poultrys->images_show }}" alt="" />
                             </figcaption>
-                            <a href="/Showmeat" class="btn btn-clean mfp-open-scrollto">Read more</a>
+                            <a href="/Show_poultry/{{ $poultrys->id }}" class="btn btn-clean mfp-open-scrollto">Read more</a>
                         </figure>
                     </div>
-
+                    @endforeach
                     <!-- === item === -->
-
-                    <div class="col-md-4">
-                        <figure>
-                            <figcaption style="background-image:url({{ asset('img/Brochure/3.jpg') }})">
-                                <img src="{{ asset('img/Brochure/1.jpg') }}" alt="" />
-                            </figcaption>
-                            <a href="/Showmeat" class="btn btn-clean mfp-open-scrollto">Read more</a>
-                        </figure>
-                    </div>
-
-                    <!-- === item === -->
-
-                    <div class="col-md-4">
-                        <figure>
-                            <figcaption style="background-image:url({{ asset('img/Brochure/4.jpg') }})">
-                                <img src="{{ asset('img/Brochure/1.jpg') }}" alt="" />
-                            </figcaption>
-                            <a href="/Showmeat" class="btn btn-clean mfp-open-scrollto">Read more</a>
-                        </figure>
-                    </div>
-
-                    <!-- === item === -->
-
-                    <div class="col-md-4">
-                        <figure>
-                            <figcaption style="background-image:url({{ asset('img/Brochure/1.jpg') }})">
-                                <img src="{{ asset('img/Brochure/1.jpg') }}" alt="" />
-                            </figcaption>
-                            <a href="/Showmeat" class="btn btn-clean mfp-open-scrollto">Read more</a>
-                        </figure>
-                    </div>
 
                 </div> <!--/row-->
 
@@ -129,14 +93,15 @@ distinguished as the world’s finest.</div>
                 <div class="owl-icons">
 
                     <!-- === icon item === -->
-                    @for($i=1; $i<=10; $i++)
-                    <a href="/Showmeat">
+
+                    @foreach ($poultry4 as $poultrys)
+                    <a href="/Show_poultry/{{ $poultrys->id }}">
                         <figure style="padding:10px;">
-                            <img src="{{ asset('img/Brochure/logo_carrara.jpg') }}" width="100%" alt="">
-                            <figcaption>CARRARA</figcaption>
+                            <img src="{{ asset('files_upload/Brand/'.$poultrys->images.'') }}" width="100%" alt="">
+                            <figcaption> {{ $poultrys->name_brand_en }}</figcaption>
                         </figure>
                     </a>
-                    @endfor
+                    @endforeach
                 </div> <!--/owl-icons-->
             </div> <!--/container-->
         </section>
@@ -157,45 +122,7 @@ distinguished as the world’s finest.</div>
                             </div>
 
                             <!-- === box filters === -->
-
                             <div id="box-filters" class="box-filters">
-
-                              <!--  
-                                  <figure data-filter=".sofa">
-                                    <figcaption>
-                                    <i class="flaticon-hen" style="font-size:60px;"></i>
-                                        <span>POULTRY</span>
-                                    </figcaption>
-                                </figure>
-
-                                 <figure data-filter=".armchair">
-                                    <figcaption>
-                                    <i class="flaticon-animal" style="font-size:60px;"></i>
-                                        <span>BEEF</span>
-                                    </figcaption>
-                                </figure>
-
-                                <figure data-filter=".chair">
-                                    <figcaption>
-                                    <i class="flaticon-lamb-1" style="font-size:60px;"></i>
-                                        <span>LAMB</span>
-                                    </figcaption>
-                                </figure>
-
-                                <figure data-filter=".bedroom">
-                                    <figcaption>
-                                    <i class="flaticon-deer-1" style="font-size:60px;"></i>
-                                        <span>VENISON</span>
-                                    </figcaption>
-                                </figure>
-
-                                <figure data-filter=".bedroom">
-                                    <figcaption>
-                                    <i class="flaticon-turkey" style="font-size:60px;"></i>
-                                        <span>TURKEY</span>
-                                    </figcaption>
-                                </figure> -->
-
                             </div> <!--/box-filters-->
 
                         </div>
@@ -205,23 +132,23 @@ distinguished as the world’s finest.</div>
                 <div id="box-filters-results" class="row">
 
                     <!-- === product-item === -->
-                    @for($i=1; $i <= 9; $i++)
+
+                    @foreach ($poultry5 as $poultrys)
                     <div class="col-xs-6 col-sm-4 item sofa">
-                        <article>
+                    <article>
                             <div class="figure-grid">
                                 <div class="image">
-                                    <a href="/Showmeat">
-                                        <img src="{{ asset('img/Brochure/1.jpg') }}" alt="" width="360" />
+                                    <a href="/Show_poultry/{{ $poultrys->id }}">
+                                        <img src="{{ $poultrys->images_show }}" alt="" width="360px" height="210px" />
                                     </a>
                                 </div>
                                 <div class="text radius">
-                                    <h2 class="title h4" style="color: #fff !important;">Poultry</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
+                                    <h2 class="title h4" style="color: #fff !important;">{{ $poultrys->name_sub_categories }}</h2>
                                 </div>
                             </div>
                         </article>
                     </div>
-                    @endfor
+                    @endforeach
                     <!-- === product-item === -->
                 </div> <!--/row-->
 

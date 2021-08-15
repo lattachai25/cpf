@@ -18,7 +18,56 @@ class VenisonController extends Controller
      */
     public function index()
     {
-        return view('user.venison');
+        $venison = DB::table('venisons')
+        ->orderBy('id', 'DESC')
+        ->limit(2)
+        ->join('brands', 'venisons.brade', '=', 'brands.id')
+        ->join('categories', 'venisons.category', '=', 'categories.id')
+        ->join('sub_categories', 'venisons.sub_category', '=', 'sub_categories.id')
+        ->select('venisons.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $venison2 = DB::table('venisons')
+        ->orderBy('id', 'DESC')
+        ->limit(1)
+        ->join('brands', 'venisons.brade', '=', 'brands.id')
+        ->join('categories', 'venisons.category', '=', 'categories.id')
+        ->join('sub_categories', 'venisons.sub_category', '=', 'sub_categories.id')
+        ->select('venisons.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $venison3 = DB::table('venisons')
+        ->orderBy('id', 'DESC')
+        ->offset(1)
+        ->limit(4)
+        ->join('brands', 'venisons.brade', '=', 'brands.id')
+        ->join('categories', 'venisons.category', '=', 'categories.id')
+        ->join('sub_categories', 'venisons.sub_category', '=', 'sub_categories.id')
+        ->select('venisons.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+        $venison4 = DB::table('venisons')
+        ->orderBy('id', 'DESC')
+        ->limit(5)
+        ->join('brands', 'venisons.brade', '=', 'brands.id')
+        ->join('categories', 'venisons.category', '=', 'categories.id')
+        ->join('sub_categories', 'venisons.sub_category', '=', 'sub_categories.id')
+        ->select('venisons.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+
+        $venison5 = DB::table('venisons')
+        ->orderBy('id', 'DESC')
+        ->join('brands', 'venisons.brade', '=', 'brands.id')
+        ->join('categories', 'venisons.category', '=', 'categories.id')
+        ->join('sub_categories', 'venisons.sub_category', '=', 'sub_categories.id')
+        ->select('venisons.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        return view('user.venison', compact('venison', 'venison2', 'venison3' , 'venison4' , 'venison5'));
+
     }
 
     /**
@@ -57,7 +106,19 @@ class VenisonController extends Controller
                 $image[] = $image_url;
             }
         }
-
+        $images_show = array();
+        if($files = $request-> file('images_show')){
+            foreach ($files as $file){
+                $image_name = md5(rand(100, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Venison/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $images_show[] = $image_url;
+            }
+        }
+        
         $attachment = array();
         if($files = $request-> file('attachment')){
             foreach ($files as $file){
@@ -96,6 +157,7 @@ class VenisonController extends Controller
 
                 'images_product1' => implode('|', $image),
                 'attachment' => implode('|', $attachment),
+                'images_show' => implode('|', $images_show),
             ]);
      return redirect('Venison/show')->with('successfully', 'ได้ทำการเพิ่มข้อมูลเรียบร้อยแล้ว');
     }
@@ -162,6 +224,7 @@ class VenisonController extends Controller
 
         $venison->images_product1 = $request->get('images_product1');
         $venison->attachment = $request->get('attachment');
+        $venison->images_show = $request->get('images_show');
 
 
         $image = array();
@@ -176,7 +239,19 @@ class VenisonController extends Controller
                 $image[] = $image_url;
             }
         }
-
+        $images_show = array();
+        if($files = $request-> file('images_show')){
+            foreach ($files as $file){
+                $image_name = md5(rand(100, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Venison/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $images_show[] = $image_url;
+            }
+        }
+        
         $attachment = array();
         if($files = $request-> file('attachment')){
             foreach ($files as $file){

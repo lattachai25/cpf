@@ -18,7 +18,57 @@ class TurkeyController extends Controller
      */
     public function index()
     {
-        return view('user.turkey');
+
+        $turkeys = DB::table('turkeys')
+        ->orderBy('id', 'DESC')
+        ->limit(2)
+        ->join('brands', 'turkeys.brade', '=', 'brands.id')
+        ->join('categories', 'turkeys.category', '=', 'categories.id')
+        ->join('sub_categories', 'turkeys.sub_category', '=', 'sub_categories.id')
+        ->select('turkeys.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $turkeys2 = DB::table('turkeys')
+        ->orderBy('id', 'DESC')
+        ->limit(1)
+        ->join('brands', 'turkeys.brade', '=', 'brands.id')
+        ->join('categories', 'turkeys.category', '=', 'categories.id')
+        ->join('sub_categories', 'turkeys.sub_category', '=', 'sub_categories.id')
+        ->select('turkeys.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $turkeys3 = DB::table('turkeys')
+        ->orderBy('id', 'DESC')
+        ->offset(1)
+        ->limit(4)
+        ->join('brands', 'turkeys.brade', '=', 'brands.id')
+        ->join('categories', 'turkeys.category', '=', 'categories.id')
+        ->join('sub_categories', 'turkeys.sub_category', '=', 'sub_categories.id')
+        ->select('turkeys.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+        $turkeys4 = DB::table('turkeys')
+        ->orderBy('id', 'DESC')
+        ->limit(5)
+        ->join('brands', 'turkeys.brade', '=', 'brands.id')
+        ->join('categories', 'turkeys.category', '=', 'categories.id')
+        ->join('sub_categories', 'turkeys.sub_category', '=', 'sub_categories.id')
+        ->select('turkeys.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+
+        $turkeys5 = DB::table('turkeys')
+        ->orderBy('id', 'DESC')
+        ->join('brands', 'turkeys.brade', '=', 'brands.id')
+        ->join('categories', 'turkeys.category', '=', 'categories.id')
+        ->join('sub_categories', 'turkeys.sub_category', '=', 'sub_categories.id')
+        ->select('turkeys.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        return view('user.turkey', compact('turkeys', 'turkeys2', 'turkeys3' , 'turkeys4' , 'turkeys5'));
+
     }
 
     /**
@@ -57,7 +107,19 @@ class TurkeyController extends Controller
                 $image[] = $image_url;
             }
         }
-
+        $images_show = array();
+        if($files = $request-> file('images_show')){
+            foreach ($files as $file){
+                $image_name = md5(rand(100, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Turkey/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $images_show[] = $image_url;
+            }
+        }
+        
         $attachment = array();
         if($files = $request-> file('attachment')){
             foreach ($files as $file){
@@ -96,6 +158,7 @@ class TurkeyController extends Controller
 
                 'images_product1' => implode('|', $image),
                 'attachment' => implode('|', $attachment),
+                'images_show' => implode('|', $images_show),
             ]);
      return redirect('Turkey/show')->with('successfully', 'ได้ทำการเพิ่มข้อมูลเรียบร้อยแล้ว');
     }
@@ -161,6 +224,7 @@ class TurkeyController extends Controller
 
         $turkey->images_product1 = $request->get('images_product1');
         $turkey->attachment = $request->get('attachment');
+        $turkey->images_show = $request->get('images_show');
 
 
         $image = array();
@@ -175,7 +239,19 @@ class TurkeyController extends Controller
                 $image[] = $image_url;
             }
         }
-
+        $images_show = array();
+        if($files = $request-> file('images_show')){
+            foreach ($files as $file){
+                $image_name = md5(rand(100, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Turkey/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $images_show[] = $image_url;
+            }
+        }
+        
         $attachment = array();
         if($files = $request-> file('attachment')){
             foreach ($files as $file){

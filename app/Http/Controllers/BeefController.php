@@ -21,7 +21,56 @@ class BeefController extends Controller
      */
     public function index()
     {
-        return view('user.beef');
+        $beefs = DB::table('beefs')
+        ->orderBy('id', 'DESC')
+        ->limit(3)
+        ->join('brands', 'beefs.brade', '=', 'brands.id')
+        ->join('categories', 'beefs.category', '=', 'categories.id')
+        ->join('sub_categories', 'beefs.sub_category', '=', 'sub_categories.id')
+        ->select('beefs.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $beefs2 = DB::table('beefs')
+        ->orderBy('id', 'DESC')
+        ->limit(1)
+        ->join('brands', 'beefs.brade', '=', 'brands.id')
+        ->join('categories', 'beefs.category', '=', 'categories.id')
+        ->join('sub_categories', 'beefs.sub_category', '=', 'sub_categories.id')
+        ->select('beefs.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $beefs3 = DB::table('beefs')
+        ->orderBy('id', 'DESC')
+        ->offset(1)
+        ->limit(4)
+        ->join('brands', 'beefs.brade', '=', 'brands.id')
+        ->join('categories', 'beefs.category', '=', 'categories.id')
+        ->join('sub_categories', 'beefs.sub_category', '=', 'sub_categories.id')
+        ->select('beefs.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+        $beefs4 = DB::table('beefs')
+        ->orderBy('id', 'DESC')
+        ->limit(5)
+        ->join('brands', 'beefs.brade', '=', 'brands.id')
+        ->join('categories', 'beefs.category', '=', 'categories.id')
+        ->join('sub_categories', 'beefs.sub_category', '=', 'sub_categories.id')
+        ->select('beefs.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+
+        $beefs5 = DB::table('beefs')
+        ->orderBy('id', 'DESC')
+        ->join('brands', 'beefs.brade', '=', 'brands.id')
+        ->join('categories', 'beefs.category', '=', 'categories.id')
+        ->join('sub_categories', 'beefs.sub_category', '=', 'sub_categories.id')
+        ->select('beefs.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        return view('user.Beef', compact('beefs', 'beefs2', 'beefs3' , 'beefs4' , 'beefs5'));
+
     }
 
     /**
@@ -48,6 +97,18 @@ class BeefController extends Controller
     {
 
         // dd($request->all());
+        $images_show = array();
+        if($files = $request-> file('images_show')){
+            foreach ($files as $file){
+                $image_name = md5(rand(100, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Beef/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $images_show[] = $image_url;
+            }
+        }
         $image = array();
         if($files = $request-> file('images_product1')){
             foreach ($files as $file){
@@ -97,6 +158,7 @@ class BeefController extends Controller
                 'status' => $request->status,
 
 
+                'images_show' => implode('|', $images_show),
                 'images_product1' => implode('|', $image),
                 'attachment' => implode('|', $attachment),
             ]);
@@ -184,6 +246,7 @@ class BeefController extends Controller
 
         $beef->images_product1 = $request->get('images_product1');
         $beef->attachment = $request->get('attachment');
+        $beef->images_show = $request->get('images_show');
 
 
         $image = array();
@@ -209,6 +272,18 @@ class BeefController extends Controller
                 $image_url = $upload_path.$image_full_name;
                 $file->move($upload_path, $image_full_name);
                 $attachment[] = $image_url;
+            }
+        }
+        $images_show = array();
+        if($files = $request-> file('images_show')){
+            foreach ($files as $file){
+                $image_name = md5(rand(100, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Beef/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $images_show[] = $image_url;
             }
         }
         $beef->save();

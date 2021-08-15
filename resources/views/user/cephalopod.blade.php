@@ -1,9 +1,11 @@
 @extends('.user.userlayout.adminpage')
-@section('title', 'CEPHALOPOD Product')
-@section('keywords', 'CPFAUSTRALIA')
-@section('description', 'description CPFAUSTRALIA')
-@section('google', 'google')
-@section('facebook', 'Facebook')
+    @foreach ($cephalopods as $cephalopodss)
+        @section('title', $cephalopodss->title )
+        @section('keywords', $cephalopodss->keywords )
+        @section('description', $cephalopodss->description )
+        @section('google', $cephalopodss->google_code )
+        @section('facebook', $cephalopodss->facrbook_code )
+    @endforeach
 @section('content')
 
 <div class="wrapper">
@@ -15,22 +17,20 @@
             <div class="owl-slider owl-slider-fullscreen">
 
                 <!-- === slide item === -->
-                @for($i=1; $i<=3; $i++)
-                <div class="item" style="background-image:url({{ asset('img/FremantleOctopus/'.$i.'.jpg') }})">
+            @foreach ($cephalopods as $cephalopodss)
+                <div class="item" style="background-image:url({{ $cephalopodss->images_show }})">
                     <div class="box">
                         <div class="container text-center">
-                        <h2 class="title animated h1" data-animation="fadeInDown">THE CEPHALOPOD</h2>
-                            <div class="animated" data-animation="fadeInUp">Unlimited Choices. Unbeatable Prices. Free Shipping.</div>
-                            <div class="animated" data-animation="fadeInUp">Furniture category icon fonts!</div>
+                        <h2 class="title animated h1" data-animation="fadeInDown">{{ $cephalopodss->text_title_en }}</h2>
+                            <div class="animated" data-animation="fadeInUp">{{ $cephalopodss->text_title_en }}</div>
+                            <div class="animated" data-animation="fadeInUp">{{ $cephalopodss->detel_product_en }}</div>
                             <div class="animated" data-animation="fadeInUp">
-                                <a href="/Showseafood" class="btn btn-clean">Read more</a>
+                                <a href="/Show_cephalopod/{{ $cephalopodss->id }}" class="btn btn-clean">Read more</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                @endfor
-                <!-- === slide item === -->
-
+            @endforeach
             </div> <!--/owl-slider-->
         </section>
 
@@ -44,7 +44,7 @@
             <header>
                 <div class="row">
                     <div class="col-md-offset-2 col-md-8 text-center">
-                        <h2 class="title" style="color:#fff !important;">NEWS CEPHALOPOD PRODUCT</h2>
+                        <h2 class="title" style="color:#fff !important;">NEWS BEEF PRODUCT</h2>
                         <div class="text">
                             <p>Fresh products delivered to you every day</p>
                         </div>
@@ -56,54 +56,29 @@
                 <div class="row">
 
                     <!-- === item === -->
-
+                    @foreach ($cephalopods2 as $cephalopodss)
                     <div class="col-md-8">
                         <figure>
-                            <figcaption style="background-image:url({{ asset('img/FremantleOctopus/01.jpg') }})">
+                            <figcaption style="background-image:url({{$cephalopodss->images_show }})">
+                                <img src="{{$cephalopodss->images_show }}" alt="" />
                             </figcaption>
-                            <a href="/Showseafood" class="btn btn-clean mfp-open-scrollto">Read more</a>
+                            <a href="/Show_cephalopod/{{ $cephalopodss->id }}" class="btn btn-clean mfp-open-scrollto">Read more</a>
                         </figure>
                     </div>
+                    @endforeach
 
                     <!-- === item === -->
-
+                    @foreach ($cephalopods3 as $cephalopodss)
                     <div class="col-md-4">
                         <figure>
-                            <figcaption style="background-image:url({{ asset('img/FremantleOctopus/02.jpg') }})">
+                            <figcaption style="background-image:url({{ $cephalopodss->images_show }})">
+                                <img src="{{ $cephalopodss->images_show }}" alt="" />
                             </figcaption>
-                            <a href="/Showseafood" class="btn btn-clean mfp-open-scrollto">Read more</a>
+                            <a href="/Show_cephalopod/{{ $cephalopodss->id }}" class="btn btn-clean mfp-open-scrollto">Read more</a>
                         </figure>
                     </div>
-
+                    @endforeach
                     <!-- === item === -->
-
-                    <div class="col-md-4">
-                        <figure>
-                            <figcaption style="background-image:url({{ asset('img/FremantleOctopus/03.jpg') }})">
-                            </figcaption>
-                            <a href="/Showseafood" class="btn btn-clean mfp-open-scrollto">Read more</a>
-                        </figure>
-                    </div>
-
-                    <!-- === item === -->
-
-                    <div class="col-md-4">
-                        <figure>
-                            <figcaption style="background-image:url({{ asset('img/FremantleOctopus/04.jpg') }})">
-                            </figcaption>
-                            <a href="/Showseafood" class="btn btn-clean mfp-open-scrollto">Read more</a>
-                        </figure>
-                    </div>
-
-                    <!-- === item === -->
-
-                    <div class="col-md-4">
-                        <figure>
-                            <figcaption style="background-image:url({{ asset('img/FremantleOctopus/01.jpg') }})">
-                            </figcaption>
-                            <a href="/Showseafood" class="btn btn-clean mfp-open-scrollto">Read more</a>
-                        </figure>
-                    </div>
 
                 </div> <!--/row-->
 
@@ -118,19 +93,20 @@
                 <div class="owl-icons">
 
                     <!-- === icon item === -->
-                    @for($i=1; $i<=10; $i++)
-                    <a href="/Showseafood">
+
+                    @foreach ($cephalopods4 as $cephalopodss)
+                    <a href="/Show_cephalopod/{{ $cephalopodss->id }}">
                         <figure style="padding:10px;">
-                            <img src="{{ asset('img/fremantleoctopus/fremantle_octopus_logo.jpg') }}" width="100%" alt="">
-                            <figcaption>CEPHALOPOD</figcaption>
+                            <img src="{{ asset('files_upload/Brand/'.$cephalopodss->images.'') }}" width="100%" alt="">
+                            <figcaption> {{ $cephalopodss->name_brand_en }}</figcaption>
                         </figure>
                     </a>
-                    @endfor
+                    @endforeach
                 </div> <!--/owl-icons-->
             </div> <!--/container-->
         </section>
 
-        <!-- ========================  POULTRY PRODUCTS ======================== -->
+        <!-- ========================  cephalopods PRODUCTS ======================== -->
         <section id="page-products" class="products" style="background-color:#808080 !important;">
 
             <div class="container">
@@ -140,15 +116,13 @@
                 <header>
                     <div class="row">
                         <div class="col-md-offset-2 col-md-8 text-center">
-                            <h2 class="title" style="color:#000 !important;">CEPHALOPOD products BRAND</h2>
+                            <h2 class="title" style="color:#000 !important;">cephalopods products BRAND</h2>
                             <div class="text" style="color:#3c3b3b !important;">
-                                <p>Our latest CEPHALOPOD Product</p>
+                                <p>Our latest cephalopods Product</p>
                             </div>
 
                             <!-- === box filters === -->
-
                             <div id="box-filters" class="box-filters">
-
                             </div> <!--/box-filters-->
 
                         </div>
@@ -159,173 +133,29 @@
 
                     <!-- === product-item === -->
 
+                    @foreach ($cephalopods5 as $cephalopodss)
                     <div class="col-xs-6 col-sm-4 item sofa">
-                        <article>
+                    <article>
                             <div class="figure-grid">
                                 <div class="image">
-                                    <a href="/Showseafood">
-                                        <img src="{{ asset('img/FremantleOctopus/01.jpg') }}" alt="" width="360" />
+                                    <a href="/Show_cephalopod/{{ $cephalopodss->id }}">
+                                        <img src="{{ $cephalopodss->images_show }}" alt="" width="360px" height="210px" />
                                     </a>
                                 </div>
                                 <div class="text radius">
-                                    <h2 class="title h4" style="color: #fff !important;">CEPHALOPOD</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
+                                    <h2 class="title h4" style="color: #fff !important;">{{ $cephalopodss->name_sub_categories }}</h2>
                                 </div>
                             </div>
                         </article>
                     </div>
-
+                    @endforeach
                     <!-- === product-item === -->
-
-                    <div class="col-xs-6 col-sm-4 item armchair">
-                        <article>
-                            <div class="figure-grid">
-                                <div class="image">
-                                    <a href="/Showseafood">
-                                        <img src="{{ asset('img/FremantleOctopus/02.jpg') }}" alt="" width="360" />
-                                    </a>
-                                </div>
-                                <div class="text radius">
-                                    <h2 class="title h4" style="color: #fff !important;">CEPHALOPOD</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- === product-item === -->
-
-                    <div class="col-xs-6 col-sm-4 item sofa armchair">
-                        <article>
-                            <div class="figure-grid">
-                                <div class="image">
-                                    <a href="/Showseafood">
-                                        <img src="{{ asset('img/FremantleOctopus/01.jpg') }}" alt="" width="360" />
-                                    </a>
-                                </div>
-                                <div class="text radius">
-                                    <h2 class="title h4" style="color: #fff !important;">CEPHALOPOD</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- === product-item === -->
-
-                    <div class="col-xs-6 col-sm-4 item armchair">
-                        <article>
-                            <div class="figure-grid">
-                                <div class="image">
-                                    <a href="/Showseafood">
-                                        <img src="{{ asset('img/FremantleOctopus/02.jpg') }}" alt="" width="360" />
-                                    </a>
-                                </div>
-                                <div class="text radius">
-                                    <h2 class="title h4" style="color: #fff !important;">CEPHALOPOD</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- === product-item === -->
-
-                    <div class="col-xs-6 col-sm-4 item bedroom">
-                        <article>
-                            <div class="figure-grid">
-                                <div class="image">
-                                    <a href="/Showseafood">
-                                        <img src="{{ asset('img/FremantleOctopus/01.jpg') }}" alt="" width="360" />
-                                    </a>
-                                </div>
-                                <div class="text radius">
-                                    <h2 class="title h4" style="color: #fff !important;">CEPHALOPOD</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- === product-item === -->
-
-                    <div class="col-xs-6 col-sm-4 item sofa">
-                        <article>
-                            <div class="figure-grid">
-                                <div class="image">
-                                    <a href="/Showseafood">
-                                        <img src="{{ asset('img/FremantleOctopus/02.jpg') }}" alt="" width="360" />
-                                    </a>
-                                </div>
-                                <div class="text radius">
-                                    <h2 class="title h4" style="color: #fff !important;">CEPHALOPOD</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- === product-item === -->
-
-                    <div class="col-xs-6 col-sm-4 item bedroom">
-                        <article>
-                            <div class="figure-grid">
-                                <div class="image">
-                                    <a href="/Showseafood">
-                                        <img src="{{ asset('img/FremantleOctopus/02.jpg') }}" alt="" width="360" />
-                                    </a>
-                                </div>
-                                <div class="text radius">
-                                    <h2 class="title h4" style="color: #fff !important;">CEPHALOPOD</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- === product-item === -->
-
-                    <div class="col-xs-6 col-sm-4 item chair">
-                        <article>
-                            <div class="figure-grid">
-                                <div class="image">
-                                    <a href="/Showseafood">
-                                        <img src="{{ asset('img/FremantleOctopus/01.jpg') }}" alt="" width="360" />
-                                    </a>
-                                </div>
-                                <div class="text radius">
-                                    <h2 class="title h4" style="color: #fff !important;">CEPHALOPOD</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- === product-item === -->
-
-                    <div class="col-xs-6 col-sm-4 item sofa chair">
-
-                        <article>
-                            <div class="figure-grid">
-                                <div class="image">
-                                    <a href="/Showseafood">
-                                        <img src="{{ asset('img/FremantleOctopus/02.jpg') }}" alt="" width="360" />
-                                    </a>
-                                </div>
-                                <div class="text radius">
-                                    <h2 class="title h4" style="color: #fff !important;">CEPHALOPOD</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
                 </div> <!--/row-->
 
             </div> <!--/container-->
         </section>
 
-        <!-- ========================  POULTRY PRODUCTS ======================== -->
+        <!-- ========================  cephalopods PRODUCTS ======================== -->
 
 </div>
 @endsection

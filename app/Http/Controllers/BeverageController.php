@@ -19,7 +19,56 @@ class BeverageController extends Controller
     public function index()
     {
         //
-        return view('user.beverage');
+        $beverages = DB::table('beverages')
+        ->orderBy('id', 'DESC')
+        ->limit(3)
+        ->join('brands', 'beverages.brade', '=', 'brands.id')
+        ->join('categories', 'beverages.category', '=', 'categories.id')
+        ->join('sub_categories', 'beverages.sub_category', '=', 'sub_categories.id')
+        ->select('beverages.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $beverages2 = DB::table('beverages')
+        ->orderBy('id', 'DESC')
+        ->limit(1)
+        ->join('brands', 'beverages.brade', '=', 'brands.id')
+        ->join('categories', 'beverages.category', '=', 'categories.id')
+        ->join('sub_categories', 'beverages.sub_category', '=', 'sub_categories.id')
+        ->select('beverages.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $beverages3 = DB::table('beverages')
+        ->orderBy('id', 'DESC')
+        ->offset(1)
+        ->limit(4)
+        ->join('brands', 'beverages.brade', '=', 'brands.id')
+        ->join('categories', 'beverages.category', '=', 'categories.id')
+        ->join('sub_categories', 'beverages.sub_category', '=', 'sub_categories.id')
+        ->select('beverages.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+        $beverages4 = DB::table('beverages')
+        ->orderBy('id', 'DESC')
+        ->limit(5)
+        ->join('brands', 'beverages.brade', '=', 'brands.id')
+        ->join('categories', 'beverages.category', '=', 'categories.id')
+        ->join('sub_categories', 'beverages.sub_category', '=', 'sub_categories.id')
+        ->select('beverages.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+
+        $beverages5 = DB::table('beverages')
+        ->orderBy('id', 'DESC')
+        ->join('brands', 'beverages.brade', '=', 'brands.id')
+        ->join('categories', 'beverages.category', '=', 'categories.id')
+        ->join('sub_categories', 'beverages.sub_category', '=', 'sub_categories.id')
+        ->select('beverages.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        return view('user.beverage', compact('beverages', 'beverages2', 'beverages3' , 'beverages4' , 'beverages5'));
+
     }
 
     /**
@@ -47,6 +96,18 @@ class BeverageController extends Controller
     {
         //
           // dd($request->all());
+          $images_show = array();
+          if($files = $request-> file('images_show')){
+              foreach ($files as $file){
+                  $image_name = md5(rand(100, 10000));
+                  $ext = strtolower($file->getClientOriginalExtension());
+                  $image_full_name = $image_name.'.'.$ext;
+                  $upload_path = 'files_upload/Beverage/';
+                  $image_url = $upload_path.$image_full_name;
+                  $file->move($upload_path, $image_full_name);
+                  $images_show[] = $image_url;
+              }
+          }
           $image = array();
           if($files = $request-> file('images_product1')){
               foreach ($files as $file){
@@ -98,6 +159,7 @@ class BeverageController extends Controller
   
                   'images_product1' => implode('|', $image),
                   'attachment' => implode('|', $attachment),
+                  'images_show' => implode('|', $images_show),
               ]);
        return redirect('Beverage/show')->with('successfully', 'ได้ทำการเพิ่มข้อมูลเรียบร้อยแล้ว');
     }
@@ -163,8 +225,20 @@ class BeverageController extends Controller
 
         $beverage->images_product1 = $request->get('images_product1');
         $beverage->attachment = $request->get('attachment');
+        $beverage->images_show = $request->get('images_show');
 
-
+        $images_show = array();
+        if($files = $request-> file('images_show')){
+            foreach ($files as $file){
+                $image_name = md5(rand(100, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Beverage/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $images_show[] = $image_url;
+            }
+        }
         $image = array();
         if($files = $request-> file('images_product1')){
             foreach ($files as $file){

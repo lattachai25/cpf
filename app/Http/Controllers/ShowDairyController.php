@@ -13,12 +13,22 @@ class ShowDairyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-        return view('user.show_dairy');
-    }
+    public function index(){
 
+    }
+    public function show($id)
+    {
+        
+
+        $venisons = DB::table('venisons')->where('venisons.id', $id)
+        ->join('brands', 'venisons.brade', '=', 'brands.id')
+        ->join('categories', 'venisons.category', '=', 'categories.id')
+        ->join('sub_categories', 'venisons.sub_category', '=', 'sub_categories.id')
+        ->select('venisons.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        return view('user.show_turkey', compact('venisons'));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -38,18 +48,6 @@ class ShowDairyController extends Controller
     public function store(Request $request)
     {
         //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\show_dairy  $show_dairy
-     * @return \Illuminate\Http\Response
-     */
-    public function show(show_dairy $show_dairy)
-    {
-        //
-
     }
 
     /**

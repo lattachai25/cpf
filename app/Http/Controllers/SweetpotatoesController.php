@@ -19,7 +19,56 @@ class SweetpotatoesController extends Controller
     public function index()
     {
         //
-        return view('user.sweetpotatoes');
+        $sweetpotatoes = DB::table('sweetpotatoes')
+        ->orderBy('id', 'DESC')
+        ->limit(2)
+        ->join('brands', 'sweetpotatoes.brade', '=', 'brands.id')
+        ->join('categories', 'sweetpotatoes.category', '=', 'categories.id')
+        ->join('sub_categories', 'sweetpotatoes.sub_category', '=', 'sub_categories.id')
+        ->select('sweetpotatoes.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $sweetpotatoes2 = DB::table('sweetpotatoes')
+        ->orderBy('id', 'DESC')
+        ->limit(1)
+        ->join('brands', 'sweetpotatoes.brade', '=', 'brands.id')
+        ->join('categories', 'sweetpotatoes.category', '=', 'categories.id')
+        ->join('sub_categories', 'sweetpotatoes.sub_category', '=', 'sub_categories.id')
+        ->select('sweetpotatoes.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $sweetpotatoes3 = DB::table('sweetpotatoes')
+        ->orderBy('id', 'DESC')
+        ->offset(1)
+        ->limit(4)
+        ->join('brands', 'sweetpotatoes.brade', '=', 'brands.id')
+        ->join('categories', 'sweetpotatoes.category', '=', 'categories.id')
+        ->join('sub_categories', 'sweetpotatoes.sub_category', '=', 'sub_categories.id')
+        ->select('sweetpotatoes.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+        $sweetpotatoes4 = DB::table('sweetpotatoes')
+        ->orderBy('id', 'DESC')
+        ->limit(5)
+        ->join('brands', 'sweetpotatoes.brade', '=', 'brands.id')
+        ->join('categories', 'sweetpotatoes.category', '=', 'categories.id')
+        ->join('sub_categories', 'sweetpotatoes.sub_category', '=', 'sub_categories.id')
+        ->select('sweetpotatoes.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+
+        $sweetpotatoes5 = DB::table('sweetpotatoes')
+        ->orderBy('id', 'DESC')
+        ->join('brands', 'sweetpotatoes.brade', '=', 'brands.id')
+        ->join('categories', 'sweetpotatoes.category', '=', 'categories.id')
+        ->join('sub_categories', 'sweetpotatoes.sub_category', '=', 'sub_categories.id')
+        ->select('sweetpotatoes.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        return view('user.sweetpotatoes', compact('sweetpotatoes', 'sweetpotatoes2', 'sweetpotatoes3' , 'sweetpotatoes4' , 'sweetpotatoes5'));
+
     }
 
     /**
@@ -59,7 +108,19 @@ class SweetpotatoesController extends Controller
                              $image[] = $image_url;
                          }
                      }
-             
+                     $images_show = array();
+        if($files = $request-> file('images_show')){
+            foreach ($files as $file){
+                $image_name = md5(rand(100, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Sweetpotatoes/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $images_show[] = $image_url;
+            }
+        }
+        
                      $attachment = array();
                      if($files = $request-> file('attachment')){
                          foreach ($files as $file){
@@ -98,6 +159,7 @@ class SweetpotatoesController extends Controller
              
                              'images_product1' => implode('|', $image),
                              'attachment' => implode('|', $attachment),
+                             'images_show' => implode('|', $images_show),
                          ]);
                   return redirect('Sweetpotatoes/show')->with('successfully', 'ได้ทำการเพิ่มข้อมูลเรียบร้อยแล้ว');
     }
@@ -163,6 +225,7 @@ class SweetpotatoesController extends Controller
 
         $sweetpotatoes->images_product1 = $request->get('images_product1');
         $sweetpotatoes->attachment = $request->get('attachment');
+        $sweetpotatoes->images_show = $request->get('images_show');
 
 
         $image = array();
@@ -177,7 +240,19 @@ class SweetpotatoesController extends Controller
                 $image[] = $image_url;
             }
         }
-
+        $images_show = array();
+        if($files = $request-> file('images_show')){
+            foreach ($files as $file){
+                $image_name = md5(rand(100, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Sweetpotatoes/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $images_show[] = $image_url;
+            }
+        }
+        
         $attachment = array();
         if($files = $request-> file('attachment')){
             foreach ($files as $file){

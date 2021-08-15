@@ -19,7 +19,55 @@ class FishController extends Controller
     public function index()
     {
         //
-        return view('user.fish');
+        $fish = DB::table('fish')
+        ->orderBy('id', 'DESC')
+        ->limit(3)
+        ->join('brands', 'fish.brade', '=', 'brands.id')
+        ->join('categories', 'fish.category', '=', 'categories.id')
+        ->join('sub_categories', 'fish.sub_category', '=', 'sub_categories.id')
+        ->select('fish.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $fish2 = DB::table('fish')
+        ->orderBy('id', 'DESC')
+        ->limit(1)
+        ->join('brands', 'fish.brade', '=', 'brands.id')
+        ->join('categories', 'fish.category', '=', 'categories.id')
+        ->join('sub_categories', 'fish.sub_category', '=', 'sub_categories.id')
+        ->select('fish.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $fish3 = DB::table('fish')
+        ->orderBy('id', 'DESC')
+        ->offset(1)
+        ->limit(4)
+        ->join('brands', 'fish.brade', '=', 'brands.id')
+        ->join('categories', 'fish.category', '=', 'categories.id')
+        ->join('sub_categories', 'fish.sub_category', '=', 'sub_categories.id')
+        ->select('fish.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+        $fish4 = DB::table('fish')
+        ->orderBy('id', 'DESC')
+        ->limit(5)
+        ->join('brands', 'fish.brade', '=', 'brands.id')
+        ->join('categories', 'fish.category', '=', 'categories.id')
+        ->join('sub_categories', 'fish.sub_category', '=', 'sub_categories.id')
+        ->select('fish.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+
+        $fish5 = DB::table('fish')
+        ->orderBy('id', 'DESC')
+        ->join('brands', 'fish.brade', '=', 'brands.id')
+        ->join('categories', 'fish.category', '=', 'categories.id')
+        ->join('sub_categories', 'fish.sub_category', '=', 'sub_categories.id')
+        ->select('fish.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        return view('user.fish', compact('fish', 'fish2', 'fish3' , 'fish4' , 'fish5'));
     }
 
     /**
@@ -59,7 +107,19 @@ class FishController extends Controller
                              $image[] = $image_url;
                          }
                      }
-             
+                     $images_show = array();
+        if($files = $request-> file('images_show')){
+            foreach ($files as $file){
+                $image_name = md5(rand(100, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Fish/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $images_show[] = $image_url;
+            }
+        }
+        
                      $attachment = array();
                      if($files = $request-> file('attachment')){
                          foreach ($files as $file){
@@ -98,6 +158,7 @@ class FishController extends Controller
              
                              'images_product1' => implode('|', $image),
                              'attachment' => implode('|', $attachment),
+                             'images_show' => implode('|', $images_show),
                          ]);
                   return redirect('Fish/show')->with('successfully', 'ได้ทำการเพิ่มข้อมูลเรียบร้อยแล้ว');
     }
@@ -164,6 +225,7 @@ class FishController extends Controller
 
         $fish->images_product1 = $request->get('images_product1');
         $fish->attachment = $request->get('attachment');
+        $fish->images_show = $request->get('images_show');
 
 
         $image = array();
@@ -178,7 +240,18 @@ class FishController extends Controller
                 $image[] = $image_url;
             }
         }
-
+        $images_show = array();
+        if($files = $request-> file('images_show')){
+            foreach ($files as $file){
+                $image_name = md5(rand(100, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Fish/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $images_show[] = $image_url;
+            }
+        }
         $attachment = array();
         if($files = $request-> file('attachment')){
             foreach ($files as $file){

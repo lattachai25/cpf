@@ -19,7 +19,55 @@ class WhiteonionController extends Controller
     public function index()
     {
         //
-        return view('user.whiteonion');
+        $whiteonions = DB::table('whiteonions')
+        ->orderBy('id', 'DESC')
+        ->limit(3)
+        ->join('brands', 'whiteonions.brade', '=', 'brands.id')
+        ->join('categories', 'whiteonions.category', '=', 'categories.id')
+        ->join('sub_categories', 'whiteonions.sub_category', '=', 'sub_categories.id')
+        ->select('whiteonions.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $whiteonions2 = DB::table('whiteonions')
+        ->orderBy('id', 'DESC')
+        ->limit(1)
+        ->join('brands', 'whiteonions.brade', '=', 'brands.id')
+        ->join('categories', 'whiteonions.category', '=', 'categories.id')
+        ->join('sub_categories', 'whiteonions.sub_category', '=', 'sub_categories.id')
+        ->select('whiteonions.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $whiteonions3 = DB::table('whiteonions')
+        ->orderBy('id', 'DESC')
+        ->offset(1)
+        ->limit(4)
+        ->join('brands', 'whiteonions.brade', '=', 'brands.id')
+        ->join('categories', 'whiteonions.category', '=', 'categories.id')
+        ->join('sub_categories', 'whiteonions.sub_category', '=', 'sub_categories.id')
+        ->select('whiteonions.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+        $whiteonions4 = DB::table('whiteonions')
+        ->orderBy('id', 'DESC')
+        ->limit(5)
+        ->join('brands', 'whiteonions.brade', '=', 'brands.id')
+        ->join('categories', 'whiteonions.category', '=', 'categories.id')
+        ->join('sub_categories', 'whiteonions.sub_category', '=', 'sub_categories.id')
+        ->select('whiteonions.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+
+        $whiteonions5 = DB::table('whiteonions')
+        ->orderBy('id', 'DESC')
+        ->join('brands', 'whiteonions.brade', '=', 'brands.id')
+        ->join('categories', 'whiteonions.category', '=', 'categories.id')
+        ->join('sub_categories', 'whiteonions.sub_category', '=', 'sub_categories.id')
+        ->select('whiteonions.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        return view('user.whiteonion', compact('whiteonions', 'whiteonions2', 'whiteonions3' , 'whiteonions4' , 'whiteonions5'));
     }
 
     /**
@@ -60,7 +108,18 @@ class WhiteonionController extends Controller
                      $image[] = $image_url;
                  }
              }
-     
+             $images_show = array();
+            if($files = $request-> file('images_show')){
+                foreach ($files as $file){
+                    $image_name = md5(rand(100, 10000));
+                    $ext = strtolower($file->getClientOriginalExtension());
+                    $image_full_name = $image_name.'.'.$ext;
+                    $upload_path = 'files_upload/Whiteonion/';
+                    $image_url = $upload_path.$image_full_name;
+                    $file->move($upload_path, $image_full_name);
+                    $images_show[] = $image_url;
+                }
+            }
              $attachment = array();
              if($files = $request-> file('attachment')){
                  foreach ($files as $file){
@@ -99,6 +158,7 @@ class WhiteonionController extends Controller
      
                      'images_product1' => implode('|', $image),
                      'attachment' => implode('|', $attachment),
+                     'images_show' => implode('|', $images_show),
                  ]);
           return redirect('Whiteonion/show')->with('successfully', 'ได้ทำการเพิ่มข้อมูลเรียบร้อยแล้ว');
 
@@ -165,6 +225,7 @@ class WhiteonionController extends Controller
 
         $whiteonion->images_product1 = $request->get('images_product1');
         $whiteonion->attachment = $request->get('attachment');
+        $whiteonion->images_show = $request->get('images_show');
 
 
         $image = array();
@@ -179,7 +240,19 @@ class WhiteonionController extends Controller
                 $image[] = $image_url;
             }
         }
-
+        $images_show = array();
+        if($files = $request-> file('images_show')){
+            foreach ($files as $file){
+                $image_name = md5(rand(100, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Whiteonion/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $images_show[] = $image_url;
+            }
+        }
+        
         $attachment = array();
         if($files = $request-> file('attachment')){
             foreach ($files as $file){

@@ -19,7 +19,55 @@ class AppleController extends Controller
     public function index()
     {
         //
-        return view('user.apple');
+        $apples = DB::table('apples')
+        ->orderBy('id', 'DESC')
+        ->limit(3)
+        ->join('brands', 'apples.brade', '=', 'brands.id')
+        ->join('categories', 'apples.category', '=', 'categories.id')
+        ->join('sub_categories', 'apples.sub_category', '=', 'sub_categories.id')
+        ->select('apples.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $apples2 = DB::table('apples')
+        ->orderBy('id', 'DESC')
+        ->limit(1)
+        ->join('brands', 'apples.brade', '=', 'brands.id')
+        ->join('categories', 'apples.category', '=', 'categories.id')
+        ->join('sub_categories', 'apples.sub_category', '=', 'sub_categories.id')
+        ->select('apples.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $apples3 = DB::table('apples')
+        ->orderBy('id', 'DESC')
+        ->offset(1)
+        ->limit(4)
+        ->join('brands', 'apples.brade', '=', 'brands.id')
+        ->join('categories', 'apples.category', '=', 'categories.id')
+        ->join('sub_categories', 'apples.sub_category', '=', 'sub_categories.id')
+        ->select('apples.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+        $apples4 = DB::table('apples')
+        ->orderBy('id', 'DESC')
+        ->limit(5)
+        ->join('brands', 'apples.brade', '=', 'brands.id')
+        ->join('categories', 'apples.category', '=', 'categories.id')
+        ->join('sub_categories', 'apples.sub_category', '=', 'sub_categories.id')
+        ->select('apples.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+
+        $apples5 = DB::table('apples')
+        ->orderBy('id', 'DESC')
+        ->join('brands', 'apples.brade', '=', 'brands.id')
+        ->join('categories', 'apples.category', '=', 'categories.id')
+        ->join('sub_categories', 'apples.sub_category', '=', 'sub_categories.id')
+        ->select('apples.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        return view('user.apple', compact('apples', 'apples2', 'apples3' , 'apples4' , 'apples5'));
     }
 
     /**
@@ -48,6 +96,19 @@ class AppleController extends Controller
     {
         //
                      // dd($request->all());
+                     $images_show = array();
+                     if($files = $request-> file('images_show')){
+                         foreach ($files as $file){
+                             $image_name = md5(rand(100, 10000));
+                             $ext = strtolower($file->getClientOriginalExtension());
+                             $image_full_name = $image_name.'.'.$ext;
+                             $upload_path = 'files_upload/Apple/';
+                             $image_url = $upload_path.$image_full_name;
+                             $file->move($upload_path, $image_full_name);
+                             $images_show[] = $image_url;
+                         }
+                     }
+
                      $image = array();
                      if($files = $request-> file('images_product1')){
                          foreach ($files as $file){
@@ -96,7 +157,7 @@ class AppleController extends Controller
              
                              'status' => $request->status,
              
-             
+                             'images_show' => implode('|', $images_show),
                              'images_product1' => implode('|', $image),
                              'attachment' => implode('|', $attachment),
                          ]);
@@ -162,9 +223,23 @@ class AppleController extends Controller
 
         $apple->status = $request->get('status');
 
+        $apple->images_show = $request->get('images_show');
         $apple->images_product1 = $request->get('images_product1');
         $apple->attachment = $request->get('attachment');
 
+
+        $images_show = array();
+        if($files = $request-> file('images_show')){
+            foreach ($files as $file){
+                $image_name = md5(rand(100, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Apple/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $images_show[] = $image_url;
+            }
+        }
 
         $image = array();
         if($files = $request-> file('images_product1')){

@@ -18,7 +18,19 @@ class MeatController extends Controller
      */
     public function index()
     {
-        return view('user.meat');
+        // $meat = Meat::where("status", 1)->orderBy('id', 'desc')->take(5)->first();
+        // $meats1 = Meat::orderBy('id', 'desc')->take(5)->first();
+        // $meat = explode('|', $meats1->images_product1);
+        
+        $meat = DB::table('meats')
+        ->join('brands', 'meats.brade', '=', 'brands.id')
+        ->join('categories', 'meats.category', '=', 'categories.id')
+        ->join('sub_categories', 'meats.sub_category', '=', 'sub_categories.id')
+        ->select('meats.*', 'brands.name_brand_en', 'brands.name_brand_th', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+        return view('user.meat', compact('meat'));
     }
 
     /**
@@ -45,7 +57,19 @@ class MeatController extends Controller
     public function store(Request $request)
     {
         //
-                     // dd($request->all());
+
+                    $images_show = array();
+                    if($files = $request-> file('images_show')){
+                        foreach ($files as $file){
+                            $image_name = md5(rand(100, 10000));
+                            $ext = strtolower($file->getClientOriginalExtension());
+                            $image_full_name = $image_name.'.'.$ext;
+                            $upload_path = 'files_upload/Meat/';
+                            $image_url = $upload_path.$image_full_name;
+                            $file->move($upload_path, $image_full_name);
+                            $images_show[] = $image_url;
+                        }
+                    }
                      $image = array();
                      if($files = $request-> file('images_product1')){
                          foreach ($files as $file){
@@ -93,8 +117,8 @@ class MeatController extends Controller
                              'detel_product_th' => $request->detel_product_th,
              
                              'status' => $request->status,
-             
-             
+            
+                             'images_show' => implode('|', $images_show),
                              'images_product1' => implode('|', $image),
                              'attachment' => implode('|', $attachment),
                          ]);
@@ -162,6 +186,7 @@ class MeatController extends Controller
 
         $meat->images_product1 = $request->get('images_product1');
         $meat->attachment = $request->get('attachment');
+        $meat->images_show = $request->get('images_show');
 
 
         $image = array();
@@ -176,7 +201,18 @@ class MeatController extends Controller
                 $image[] = $image_url;
             }
         }
-
+        $images_show = array();
+        if($files = $request-> file('images_show')){
+            foreach ($files as $file){
+                $image_name = md5(rand(100, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Meat/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $images_show[] = $image_url;
+            }
+        }
         $attachment = array();
         if($files = $request-> file('attachment')){
             foreach ($files as $file){
@@ -199,7 +235,7 @@ class MeatController extends Controller
      * @param  \App\Meat  $meat
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Meat $meat)
+    public function destroy(Meat $meat, $id)
     {
         //
         $Meat = Meat::find($id);

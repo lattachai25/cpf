@@ -19,7 +19,56 @@ class CheeseController extends Controller
     public function index()
     {
         //
-        return view('user.cheese');
+
+        $cheeses = DB::table('cheeses')
+        ->orderBy('id', 'DESC')
+        ->limit(3)
+        ->join('brands', 'cheeses.brade', '=', 'brands.id')
+        ->join('categories', 'cheeses.category', '=', 'categories.id')
+        ->join('sub_categories', 'cheeses.sub_category', '=', 'sub_categories.id')
+        ->select('cheeses.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $cheeses2 = DB::table('cheeses')
+        ->orderBy('id', 'DESC')
+        ->limit(1)
+        ->join('brands', 'cheeses.brade', '=', 'brands.id')
+        ->join('categories', 'cheeses.category', '=', 'categories.id')
+        ->join('sub_categories', 'cheeses.sub_category', '=', 'sub_categories.id')
+        ->select('cheeses.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $cheeses3 = DB::table('cheeses')
+        ->orderBy('id', 'DESC')
+        ->offset(1)
+        ->limit(4)
+        ->join('brands', 'cheeses.brade', '=', 'brands.id')
+        ->join('categories', 'cheeses.category', '=', 'categories.id')
+        ->join('sub_categories', 'cheeses.sub_category', '=', 'sub_categories.id')
+        ->select('cheeses.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+        $cheeses4 = DB::table('cheeses')
+        ->orderBy('id', 'DESC')
+        ->limit(5)
+        ->join('brands', 'cheeses.brade', '=', 'brands.id')
+        ->join('categories', 'cheeses.category', '=', 'categories.id')
+        ->join('sub_categories', 'cheeses.sub_category', '=', 'sub_categories.id')
+        ->select('cheeses.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+
+        $cheeses5 = DB::table('cheeses')
+        ->orderBy('id', 'DESC')
+        ->join('brands', 'cheeses.brade', '=', 'brands.id')
+        ->join('categories', 'cheeses.category', '=', 'categories.id')
+        ->join('sub_categories', 'cheeses.sub_category', '=', 'sub_categories.id')
+        ->select('cheeses.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        return view('user.cheese', compact('cheeses', 'cheeses2', 'cheeses3' , 'cheeses4' , 'cheeses5'));
     }
 
     /**
@@ -72,6 +121,18 @@ class CheeseController extends Controller
                 $attachment[] = $image_url;
             }
         }
+        $images_show = array();
+        if($files = $request-> file('images_show')){
+            foreach ($files as $file){
+                $image_name = md5(rand(100, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Cheese/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $images_show[] = $image_url;
+            }
+        }
         Cheese::insert([
                 'title' => $request->title,
                 'keywords' => $request->keywords,
@@ -98,6 +159,7 @@ class CheeseController extends Controller
 
                 'images_product1' => implode('|', $image),
                 'attachment' => implode('|', $attachment),
+                'images_show' => implode('|', $images_show),
             ]);
      return redirect('Cheese/show')->with('successfully', 'ได้ทำการเพิ่มข้อมูลเรียบร้อยแล้ว');
     }
@@ -163,6 +225,7 @@ class CheeseController extends Controller
 
         $cheese->images_product1 = $request->get('images_product1');
         $cheese->attachment = $request->get('attachment');
+        $cheese->images_show = $request->get('images_show');
 
 
         $image = array();
@@ -188,6 +251,18 @@ class CheeseController extends Controller
                 $image_url = $upload_path.$image_full_name;
                 $file->move($upload_path, $image_full_name);
                 $attachment[] = $image_url;
+            }
+        }
+        $images_show = array();
+        if($files = $request-> file('images_show')){
+            foreach ($files as $file){
+                $image_name = md5(rand(100, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Cheese/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $images_show[] = $image_url;
             }
         }
         $cheese->save();

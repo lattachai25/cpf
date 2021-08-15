@@ -19,7 +19,57 @@ class YogurtController extends Controller
     public function index()
     {
         //
-        return view('user.yogurt');
+        
+        $yogurts = DB::table('yogurts')
+        ->orderBy('id', 'DESC')
+        ->limit(2)
+        ->join('brands', 'yogurts.brade', '=', 'brands.id')
+        ->join('categories', 'yogurts.category', '=', 'categories.id')
+        ->join('sub_categories', 'yogurts.sub_category', '=', 'sub_categories.id')
+        ->select('yogurts.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $yogurts2 = DB::table('yogurts')
+        ->orderBy('id', 'DESC')
+        ->limit(1)
+        ->join('brands', 'yogurts.brade', '=', 'brands.id')
+        ->join('categories', 'yogurts.category', '=', 'categories.id')
+        ->join('sub_categories', 'yogurts.sub_category', '=', 'sub_categories.id')
+        ->select('yogurts.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $yogurts3 = DB::table('yogurts')
+        ->orderBy('id', 'DESC')
+        ->offset(1)
+        ->limit(4)
+        ->join('brands', 'yogurts.brade', '=', 'brands.id')
+        ->join('categories', 'yogurts.category', '=', 'categories.id')
+        ->join('sub_categories', 'yogurts.sub_category', '=', 'sub_categories.id')
+        ->select('yogurts.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+        $yogurts4 = DB::table('yogurts')
+        ->orderBy('id', 'DESC')
+        ->limit(5)
+        ->join('brands', 'yogurts.brade', '=', 'brands.id')
+        ->join('categories', 'yogurts.category', '=', 'categories.id')
+        ->join('sub_categories', 'yogurts.sub_category', '=', 'sub_categories.id')
+        ->select('yogurts.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+
+        $yogurts5 = DB::table('yogurts')
+        ->orderBy('id', 'DESC')
+        ->join('brands', 'yogurts.brade', '=', 'brands.id')
+        ->join('categories', 'yogurts.category', '=', 'categories.id')
+        ->join('sub_categories', 'yogurts.sub_category', '=', 'sub_categories.id')
+        ->select('yogurts.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        return view('user.yogurt', compact('yogurts', 'yogurts2', 'yogurts3' , 'yogurts4' , 'yogurts5'));
+
     }
 
     /**
@@ -72,6 +122,19 @@ class YogurtController extends Controller
                   $attachment[] = $image_url;
               }
           }
+          $images_show = array();
+          if($files = $request-> file('images_show')){
+              foreach ($files as $file){
+                  $image_name = md5(rand(100, 10000));
+                  $ext = strtolower($file->getClientOriginalExtension());
+                  $image_full_name = $image_name.'.'.$ext;
+                  $upload_path = 'files_upload/Yogurt/';
+                  $image_url = $upload_path.$image_full_name;
+                  $file->move($upload_path, $image_full_name);
+                  $images_show[] = $image_url;
+              }
+          }
+          
           Yogurt::insert([
                   'title' => $request->title,
                   'keywords' => $request->keywords,
@@ -98,6 +161,7 @@ class YogurtController extends Controller
   
                   'images_product1' => implode('|', $image),
                   'attachment' => implode('|', $attachment),
+                  'images_show' => implode('|', $images_show),
               ]);
        return redirect('Yogurt/show')->with('successfully', 'ได้ทำการเพิ่มข้อมูลเรียบร้อยแล้ว');
     }
@@ -164,6 +228,7 @@ class YogurtController extends Controller
 
         $yogurt->images_product1 = $request->get('images_product1');
         $yogurt->attachment = $request->get('attachment');
+        $yogurt->images_show = $request->get('images_show');
 
 
         $image = array();
@@ -178,7 +243,19 @@ class YogurtController extends Controller
                 $image[] = $image_url;
             }
         }
-
+        $images_show = array();
+        if($files = $request-> file('images_show')){
+            foreach ($files as $file){
+                $image_name = md5(rand(100, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Apple/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $images_show[] = $image_url;
+            }
+        }
+        
         $attachment = array();
         if($files = $request-> file('attachment')){
             foreach ($files as $file){

@@ -26,6 +26,7 @@ class Yogurt extends Model
 
       'detel_product_en',
       'detel_product_th',
+      'images_shows',
       'images_product1',
       'attachment',
       'status'

@@ -10,12 +10,12 @@
 </div>
         <div class="col-9">
           <br><br><br>
-            <h2>Create  Beef</h2>
+            <h2>Create  Meat</h2>
             <a href="show"><button type="submit" class="btn btn-primary" style="float:right;">BACK</button></a>
             <br><br>
             <!-- <form action="{{ route('Poultry.store') }}" method="POST" enctype="multipart/form-data">
             @csrf -->
-            <form method="post" action="{{ route('Beef.store') }}" enctype="multipart/form-data">
+            <form method="post" action="{{ route('Meat.store') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="card">
                 <div class="card-header">
@@ -112,15 +112,23 @@
             </div>
             <div class="card-header">
                 <h3>UPLOAD IMAGE PRODUCTS</h3>
-                <h4 style="color:red;">*** ต้องใสรูปและ เอกสารให้ครับ ทุกช่อง ถ้าไม่มีรูปให้ใส่รูปที่แนบให้  ***</h4>
-                <div class="card-body">    
+                <h6 style="color:red;">*** กรุณณาใส่รูปตามขนาที่กำหนด ถ้ารูปภาพมีขนาดใหญ่กว่าจะทำให้เปิดช้า และจะทำให้เว็บทำงานช้า ***</h6>
+                <div class="card-body">
+
+                <div class="form-group">
+                    <div class="input-group control-group increment" >
+                    <label for="exampleFormControlTextarea1"><b>รูปโชว์ </b> <b style="color:red;">** 400px X 600px  และขนาดน้อยกว่า 500k **</b></label>
+                        <input type="file" name="images_show[]" class="form-control" multiple>
+                    </div>
+                    <br>  
                     <div class="form-group">
                     <div class="input-group control-group increment" >
+                    <label for="exampleFormControlTextarea1"><b>รูปรายละเอียด </b> <b style="color:red;">** 400px X 600px และขนาดน้อยกว่า 500k **</b></label>
                         <input type="file" name="images_product1[]" class="form-control" multiple>
                     </div>
                     <br>
                     <div class="input-group control-group increment" >
-                    <label for="exampleFormControlTextarea1"><b>เอกสารแนบ</b></label>
+                    <label for="exampleFormControlTextarea1"><b>เอกสารแนบ PDF</b> <b style="color:red;">** MAX SIZE 1Mb**</b></label>
                         <input type="file" name="attachment[]" class="form-control">
                     </div>
 
@@ -131,7 +139,7 @@
             <div class="cal-12">
                         <center>
                                 <button type="submit" class="btn btn-success">SAVE</button>
-                                <a href="/Beef/show" class="btn btn-primary">BACK</a>    
+                                <a href="/Meat/show" class="btn btn-primary">BACK</a>    
                         </center>
             </div>
             </form>      

@@ -18,7 +18,56 @@ class LambController extends Controller
      */
     public function index()
     {
-        return view('user.lamb');
+        $lamb = DB::table('lambs')
+        ->orderBy('id', 'DESC')
+        ->limit(2)
+        ->join('brands', 'lambs.brade', '=', 'brands.id')
+        ->join('categories', 'lambs.category', '=', 'categories.id')
+        ->join('sub_categories', 'lambs.sub_category', '=', 'sub_categories.id')
+        ->select('lambs.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $lamb2 = DB::table('lambs')
+        ->orderBy('id', 'DESC')
+        ->limit(1)
+        ->join('brands', 'lambs.brade', '=', 'brands.id')
+        ->join('categories', 'lambs.category', '=', 'categories.id')
+        ->join('sub_categories', 'lambs.sub_category', '=', 'sub_categories.id')
+        ->select('lambs.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $lamb3 = DB::table('lambs')
+        ->orderBy('id', 'DESC')
+        ->offset(1)
+        ->limit(4)
+        ->join('brands', 'lambs.brade', '=', 'brands.id')
+        ->join('categories', 'lambs.category', '=', 'categories.id')
+        ->join('sub_categories', 'lambs.sub_category', '=', 'sub_categories.id')
+        ->select('lambs.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+        $lamb4 = DB::table('lambs')
+        ->orderBy('id', 'DESC')
+        ->limit(5)
+        ->join('brands', 'lambs.brade', '=', 'brands.id')
+        ->join('categories', 'lambs.category', '=', 'categories.id')
+        ->join('sub_categories', 'lambs.sub_category', '=', 'sub_categories.id')
+        ->select('lambs.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+
+        $lamb5 = DB::table('lambs')
+        ->orderBy('id', 'DESC')
+        ->join('brands', 'lambs.brade', '=', 'brands.id')
+        ->join('categories', 'lambs.category', '=', 'categories.id')
+        ->join('sub_categories', 'lambs.sub_category', '=', 'sub_categories.id')
+        ->select('lambs.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        return view('user.lamb', compact('lamb', 'lamb2', 'lamb3' , 'lamb4' , 'lamb5'));
+
     }
 
     /**
@@ -58,7 +107,19 @@ class LambController extends Controller
                      $image[] = $image_url;
                  }
              }
-     
+             $images_show = array();
+        if($files = $request-> file('images_show')){
+            foreach ($files as $file){
+                $image_name = md5(rand(100, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Lamb/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $images_show[] = $image_url;
+            }
+        }
+        
              $attachment = array();
              if($files = $request-> file('attachment')){
                  foreach ($files as $file){
@@ -97,6 +158,7 @@ class LambController extends Controller
      
                      'images_product1' => implode('|', $image),
                      'attachment' => implode('|', $attachment),
+                     'images_show' => implode('|', $images_show),
                  ]);
           return redirect('Lamb/show')->with('successfully', 'ได้ทำการเพิ่มข้อมูลเรียบร้อยแล้ว');
     }
@@ -162,6 +224,7 @@ class LambController extends Controller
 
         $lamb->images_product1 = $request->get('images_product1');
         $lamb->attachment = $request->get('attachment');
+        $lamb->images_show = $request->get('images_show');
 
 
         $image = array();
@@ -176,7 +239,19 @@ class LambController extends Controller
                 $image[] = $image_url;
             }
         }
-
+        $images_show = array();
+        if($files = $request-> file('images_show')){
+            foreach ($files as $file){
+                $image_name = md5(rand(100, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Lamb/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $images_show[] = $image_url;
+            }
+        }
+        
         $attachment = array();
         if($files = $request-> file('attachment')){
             foreach ($files as $file){

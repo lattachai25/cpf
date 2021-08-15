@@ -27,6 +27,7 @@ class Lamb extends Model
       'detel_product_en',
       'detel_product_th',
       'images_product1',
+      'images_show',
       'attachment',
       'status'
             ];

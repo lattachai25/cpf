@@ -18,7 +18,55 @@ class BeetrootController extends Controller
      */
     public function index()
     {
-        return view('user.beetroot');
+        $beetroots = DB::table('beetroots')
+        ->orderBy('id', 'DESC')
+        ->limit(3)
+        ->join('brands', 'beetroots.brade', '=', 'brands.id')
+        ->join('categories', 'beetroots.category', '=', 'categories.id')
+        ->join('sub_categories', 'beetroots.sub_category', '=', 'sub_categories.id')
+        ->select('beetroots.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $beetroots2 = DB::table('beetroots')
+        ->orderBy('id', 'DESC')
+        ->limit(1)
+        ->join('brands', 'beetroots.brade', '=', 'brands.id')
+        ->join('categories', 'beetroots.category', '=', 'categories.id')
+        ->join('sub_categories', 'beetroots.sub_category', '=', 'sub_categories.id')
+        ->select('beetroots.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $beetroots3 = DB::table('beetroots')
+        ->orderBy('id', 'DESC')
+        ->offset(1)
+        ->limit(4)
+        ->join('brands', 'beetroots.brade', '=', 'brands.id')
+        ->join('categories', 'beetroots.category', '=', 'categories.id')
+        ->join('sub_categories', 'beetroots.sub_category', '=', 'sub_categories.id')
+        ->select('beetroots.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+        $beetroots4 = DB::table('beetroots')
+        ->orderBy('id', 'DESC')
+        ->limit(5)
+        ->join('brands', 'beetroots.brade', '=', 'brands.id')
+        ->join('categories', 'beetroots.category', '=', 'categories.id')
+        ->join('sub_categories', 'beetroots.sub_category', '=', 'sub_categories.id')
+        ->select('beetroots.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+
+        $beetroots5 = DB::table('beetroots')
+        ->orderBy('id', 'DESC')
+        ->join('brands', 'beetroots.brade', '=', 'brands.id')
+        ->join('categories', 'beetroots.category', '=', 'categories.id')
+        ->join('sub_categories', 'beetroots.sub_category', '=', 'sub_categories.id')
+        ->select('beetroots.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        return view('user.beetroot', compact('beetroots', 'beetroots2', 'beetroots3' , 'beetroots4' , 'beetroots5'));
     }
 
     /**
@@ -46,6 +94,18 @@ class BeetrootController extends Controller
     {
         //
                              // dd($request->all());
+                             $images_show = array();
+                             if($files = $request-> file('images_show')){
+                                 foreach ($files as $file){
+                                     $image_name = md5(rand(100, 10000));
+                                     $ext = strtolower($file->getClientOriginalExtension());
+                                     $image_full_name = $image_name.'.'.$ext;
+                                     $upload_path = 'files_upload/Beetroot/';
+                                     $image_url = $upload_path.$image_full_name;
+                                     $file->move($upload_path, $image_full_name);
+                                     $images_show[] = $image_url;
+                                 }
+                             }
                              $image = array();
                              if($files = $request-> file('images_product1')){
                                  foreach ($files as $file){
@@ -97,6 +157,7 @@ class BeetrootController extends Controller
                      
                                      'images_product1' => implode('|', $image),
                                      'attachment' => implode('|', $attachment),
+                                     'images_show' => implode('|', $images_show),
                                  ]);
                           return redirect('Beetroot/show')->with('successfully', 'ได้ทำการเพิ่มข้อมูลเรียบร้อยแล้ว');
 
@@ -163,7 +224,21 @@ class BeetrootController extends Controller
 
         $beetroot->images_product1 = $request->get('images_product1');
         $beetroot->attachment = $request->get('attachment');
+        $beetroot->images_show = $request->get('images_show');
 
+
+        $images_show = array();
+        if($files = $request-> file('images_show')){
+            foreach ($files as $file){
+                $image_name = md5(rand(100, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Beetroot/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $images_show[] = $image_url;
+            }
+        }
 
         $image = array();
         if($files = $request-> file('images_product1')){

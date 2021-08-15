@@ -59,7 +59,19 @@ class VegetableController extends Controller
                     $image[] = $image_url;
                 }
             }
-    
+            $images_show = array();
+        if($files = $request-> file('images_show')){
+            foreach ($files as $file){
+                $image_name = md5(rand(100, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Vegetable/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $images_show[] = $image_url;
+            }
+        }
+        
             $attachment = array();
             if($files = $request-> file('attachment')){
                 foreach ($files as $file){
@@ -98,6 +110,7 @@ class VegetableController extends Controller
     
                     'images_product1' => implode('|', $image),
                     'attachment' => implode('|', $attachment),
+                    'images_show' => implode('|', $images_show),
                 ]);
          return redirect('Vegetable/show')->with('successfully', 'ได้ทำการเพิ่มข้อมูลเรียบร้อยแล้ว');
     }
@@ -163,6 +176,7 @@ class VegetableController extends Controller
 
         $vegetable->images_product1 = $request->get('images_product1');
         $vegetable->attachment = $request->get('attachment');
+        $vegetable->images_show = $request->get('images_show');
 
 
         $image = array();
@@ -177,7 +191,19 @@ class VegetableController extends Controller
                 $image[] = $image_url;
             }
         }
-
+        $images_show = array();
+        if($files = $request-> file('images_show')){
+            foreach ($files as $file){
+                $image_name = md5(rand(100, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Vegetable/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $images_show[] = $image_url;
+            }
+        }
+        
         $attachment = array();
         if($files = $request-> file('attachment')){
             foreach ($files as $file){

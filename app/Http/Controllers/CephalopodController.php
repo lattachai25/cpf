@@ -19,7 +19,55 @@ class CephalopodController extends Controller
     public function index()
     {
         //
-        return view('user.cephalopod');
+        $cephalopods = DB::table('cephalopods')
+        ->orderBy('id', 'DESC')
+        ->limit(3)
+        ->join('brands', 'cephalopods.brade', '=', 'brands.id')
+        ->join('categories', 'cephalopods.category', '=', 'categories.id')
+        ->join('sub_categories', 'cephalopods.sub_category', '=', 'sub_categories.id')
+        ->select('cephalopods.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $cephalopods2 = DB::table('cephalopods')
+        ->orderBy('id', 'DESC')
+        ->limit(1)
+        ->join('brands', 'cephalopods.brade', '=', 'brands.id')
+        ->join('categories', 'cephalopods.category', '=', 'categories.id')
+        ->join('sub_categories', 'cephalopods.sub_category', '=', 'sub_categories.id')
+        ->select('cephalopods.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $cephalopods3 = DB::table('cephalopods')
+        ->orderBy('id', 'DESC')
+        ->offset(1)
+        ->limit(4)
+        ->join('brands', 'cephalopods.brade', '=', 'brands.id')
+        ->join('categories', 'cephalopods.category', '=', 'categories.id')
+        ->join('sub_categories', 'cephalopods.sub_category', '=', 'sub_categories.id')
+        ->select('cephalopods.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+        $cephalopods4 = DB::table('cephalopods')
+        ->orderBy('id', 'DESC')
+        ->limit(5)
+        ->join('brands', 'cephalopods.brade', '=', 'brands.id')
+        ->join('categories', 'cephalopods.category', '=', 'categories.id')
+        ->join('sub_categories', 'cephalopods.sub_category', '=', 'sub_categories.id')
+        ->select('cephalopods.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+
+        $cephalopods5 = DB::table('cephalopods')
+        ->orderBy('id', 'DESC')
+        ->join('brands', 'cephalopods.brade', '=', 'brands.id')
+        ->join('categories', 'cephalopods.category', '=', 'categories.id')
+        ->join('sub_categories', 'cephalopods.sub_category', '=', 'sub_categories.id')
+        ->select('cephalopods.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        return view('user.cephalopod', compact('cephalopods', 'cephalopods2', 'cephalopods3' , 'cephalopods4' , 'cephalopods5'));
     }
 
     /**
@@ -72,6 +120,18 @@ class CephalopodController extends Controller
                              $attachment[] = $image_url;
                          }
                      }
+                     $images_show = array();
+                     if($files = $request-> file('images_show')){
+                         foreach ($files as $file){
+                             $image_name = md5(rand(100, 10000));
+                             $ext = strtolower($file->getClientOriginalExtension());
+                             $image_full_name = $image_name.'.'.$ext;
+                             $upload_path = 'files_upload/Cephalopod/';
+                             $image_url = $upload_path.$image_full_name;
+                             $file->move($upload_path, $image_full_name);
+                             $images_show[] = $image_url;
+                         }
+                     }
                      Cephalopod::insert([
                              'title' => $request->title,
                              'keywords' => $request->keywords,
@@ -98,6 +158,7 @@ class CephalopodController extends Controller
              
                              'images_product1' => implode('|', $image),
                              'attachment' => implode('|', $attachment),
+                             'images_show' => implode('|', $images_show),
                          ]);
                   return redirect('Cephalopod/show')->with('successfully', 'ได้ทำการเพิ่มข้อมูลเรียบร้อยแล้ว');
     }
@@ -163,6 +224,7 @@ class CephalopodController extends Controller
 
         $cephalopod->images_product1 = $request->get('images_product1');
         $cephalopod->attachment = $request->get('attachment');
+        $cephalopod->images_show = $request->get('images_show');
 
 
         $image = array();
@@ -190,6 +252,19 @@ class CephalopodController extends Controller
                 $attachment[] = $image_url;
             }
         }
+        $images_show = array();
+        if($files = $request-> file('images_show')){
+            foreach ($files as $file){
+                $image_name = md5(rand(100, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Cephalopod/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $images_show[] = $image_url;
+            }
+        }
+
         $cephalopod->save();
       return redirect('Cephalopod/show')->with('success', 'ได้ทำการแก้ไขข้อมูลเรียบร้อยแล้ว');
     }

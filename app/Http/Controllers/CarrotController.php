@@ -6,6 +6,7 @@ use App\Carrot;
 use App\Brand;
 use App\Category;
 use App\SubCategory;
+use DB;
 use Illuminate\Http\Request;
 
 class CarrotController extends Controller
@@ -18,7 +19,55 @@ class CarrotController extends Controller
     public function index()
     {
         //
-        return view('user.carrot');
+        $carrots = DB::table('carrots')
+        ->orderBy('id', 'DESC')
+        ->limit(3)
+        ->join('brands', 'carrots.brade', '=', 'brands.id')
+        ->join('categories', 'carrots.category', '=', 'categories.id')
+        ->join('sub_categories', 'carrots.sub_category', '=', 'sub_categories.id')
+        ->select('carrots.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $carrots2 = DB::table('carrots')
+        ->orderBy('id', 'DESC')
+        ->limit(1)
+        ->join('brands', 'carrots.brade', '=', 'brands.id')
+        ->join('categories', 'carrots.category', '=', 'categories.id')
+        ->join('sub_categories', 'carrots.sub_category', '=', 'sub_categories.id')
+        ->select('carrots.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $carrots3 = DB::table('carrots')
+        ->orderBy('id', 'DESC')
+        ->offset(1)
+        ->limit(4)
+        ->join('brands', 'carrots.brade', '=', 'brands.id')
+        ->join('categories', 'carrots.category', '=', 'categories.id')
+        ->join('sub_categories', 'carrots.sub_category', '=', 'sub_categories.id')
+        ->select('carrots.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+        $carrots4 = DB::table('carrots')
+        ->orderBy('id', 'DESC')
+        ->limit(5)
+        ->join('brands', 'carrots.brade', '=', 'brands.id')
+        ->join('categories', 'carrots.category', '=', 'categories.id')
+        ->join('sub_categories', 'carrots.sub_category', '=', 'sub_categories.id')
+        ->select('carrots.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+
+        $carrots5 = DB::table('carrots')
+        ->orderBy('id', 'DESC')
+        ->join('brands', 'carrots.brade', '=', 'brands.id')
+        ->join('categories', 'carrots.category', '=', 'categories.id')
+        ->join('sub_categories', 'carrots.sub_category', '=', 'sub_categories.id')
+        ->select('carrots.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        return view('user.carrot', compact('carrots', 'carrots2', 'carrots3' , 'carrots4' , 'carrots5'));
     }
 
     /**
@@ -71,6 +120,18 @@ class CarrotController extends Controller
                 $attachment[] = $image_url;
             }
         }
+        $images_show = array();
+        if($files = $request-> file('images_show')){
+            foreach ($files as $file){
+                $image_name = md5(rand(100, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Carrot/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $images_show[] = $image_url;
+            }
+        }
         Carrot::insert([
                 'title' => $request->title,
                 'keywords' => $request->keywords,
@@ -97,6 +158,7 @@ class CarrotController extends Controller
 
                 'images_product1' => implode('|', $image),
                 'attachment' => implode('|', $attachment),
+                'images_show' => implode('|', $images_show),
             ]);
      return redirect('Carrot/show')->with('successfully', 'ได้ทำการเพิ่มข้อมูลเรียบร้อยแล้ว');
     }
@@ -162,6 +224,7 @@ class CarrotController extends Controller
 
         $carrot->images_product1 = $request->get('images_product1');
         $carrot->attachment = $request->get('attachment');
+        $carrot->images_show = $request->get('images_show');
 
 
         $image = array();
@@ -187,6 +250,18 @@ class CarrotController extends Controller
                 $image_url = $upload_path.$image_full_name;
                 $file->move($upload_path, $image_full_name);
                 $attachment[] = $image_url;
+            }
+        }
+        $images_show = array();
+        if($files = $request-> file('images_show')){
+            foreach ($files as $file){
+                $image_name = md5(rand(100, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Carrot/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $images_show[] = $image_url;
             }
         }
         $carrot->save();

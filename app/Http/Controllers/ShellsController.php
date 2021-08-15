@@ -18,8 +18,55 @@ class ShellsController extends Controller
      */
     public function index()
     {
-        //
-        return view('user.shells');
+        $shells = DB::table('shells')
+        ->orderBy('id', 'DESC')
+        ->limit(3)
+        ->join('brands', 'shells.brade', '=', 'brands.id')
+        ->join('categories', 'shells.category', '=', 'categories.id')
+        ->join('sub_categories', 'shells.sub_category', '=', 'sub_categories.id')
+        ->select('shells.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $shells2 = DB::table('shells')
+        ->orderBy('id', 'DESC')
+        ->limit(1)
+        ->join('brands', 'shells.brade', '=', 'brands.id')
+        ->join('categories', 'shells.category', '=', 'categories.id')
+        ->join('sub_categories', 'shells.sub_category', '=', 'sub_categories.id')
+        ->select('shells.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $shells3 = DB::table('shells')
+        ->orderBy('id', 'DESC')
+        ->offset(1)
+        ->limit(4)
+        ->join('brands', 'shells.brade', '=', 'brands.id')
+        ->join('categories', 'shells.category', '=', 'categories.id')
+        ->join('sub_categories', 'shells.sub_category', '=', 'sub_categories.id')
+        ->select('shells.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+        $shells4 = DB::table('shells')
+        ->orderBy('id', 'DESC')
+        ->limit(5)
+        ->join('brands', 'shells.brade', '=', 'brands.id')
+        ->join('categories', 'shells.category', '=', 'categories.id')
+        ->join('sub_categories', 'shells.sub_category', '=', 'sub_categories.id')
+        ->select('shells.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+
+        $shells5 = DB::table('shells')
+        ->orderBy('id', 'DESC')
+        ->join('brands', 'shells.brade', '=', 'brands.id')
+        ->join('categories', 'shells.category', '=', 'categories.id')
+        ->join('sub_categories', 'shells.sub_category', '=', 'sub_categories.id')
+        ->select('shells.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        return view('user.shells', compact('shells', 'shells2', 'shells3' , 'shells4' , 'shells5'));
     }
 
     /**
@@ -72,6 +119,20 @@ class ShellsController extends Controller
                              $attachment[] = $image_url;
                          }
                      }
+                     $images_show = array();
+                     if($files = $request-> file('images_show')){
+                         foreach ($files as $file){
+                             $image_name = md5(rand(100, 10000));
+                             $ext = strtolower($file->getClientOriginalExtension());
+                             $image_full_name = $image_name.'.'.$ext;
+                             $upload_path = 'files_upload/Shells/';
+                             $image_url = $upload_path.$image_full_name;
+                             $file->move($upload_path, $image_full_name);
+                             $images_show[] = $image_url;
+                         }
+                     }
+                     
+
                      Shells::insert([
                              'title' => $request->title,
                              'keywords' => $request->keywords,
@@ -98,6 +159,7 @@ class ShellsController extends Controller
              
                              'images_product1' => implode('|', $image),
                              'attachment' => implode('|', $attachment),
+                             'images_show' => implode('|', $images_show),
                          ]);
                   return redirect('Shells/show')->with('successfully', 'ได้ทำการเพิ่มข้อมูลเรียบร้อยแล้ว');
     }
@@ -163,6 +225,7 @@ class ShellsController extends Controller
 
         $shells->images_product1 = $request->get('images_product1');
         $shells->attachment = $request->get('attachment');
+        $shells->images_show = $request->get('images_show');
 
 
         $image = array();
@@ -177,7 +240,19 @@ class ShellsController extends Controller
                 $image[] = $image_url;
             }
         }
-
+        $images_show = array();
+        if($files = $request-> file('images_show')){
+            foreach ($files as $file){
+                $image_name = md5(rand(100, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Shells/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $images_show[] = $image_url;
+            }
+        }
+        
         $attachment = array();
         if($files = $request-> file('attachment')){
             foreach ($files as $file){

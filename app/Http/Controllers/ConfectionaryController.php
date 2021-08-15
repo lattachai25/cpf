@@ -19,7 +19,56 @@ class ConfectionaryController extends Controller
     public function index()
     {
         //
-        return view('user.confectionary');
+        $confectionaries = DB::table('confectionaries')
+        ->orderBy('id', 'DESC')
+        ->limit(3)
+        ->join('brands', 'confectionaries.brade', '=', 'brands.id')
+        ->join('categories', 'confectionaries.category', '=', 'categories.id')
+        ->join('sub_categories', 'confectionaries.sub_category', '=', 'sub_categories.id')
+        ->select('confectionaries.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $confectionaries2 = DB::table('confectionaries')
+        ->orderBy('id', 'DESC')
+        ->limit(1)
+        ->join('brands', 'confectionaries.brade', '=', 'brands.id')
+        ->join('categories', 'confectionaries.category', '=', 'categories.id')
+        ->join('sub_categories', 'confectionaries.sub_category', '=', 'sub_categories.id')
+        ->select('confectionaries.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $confectionaries3 = DB::table('confectionaries')
+        ->orderBy('id', 'DESC')
+        ->offset(1)
+        ->limit(4)
+        ->join('brands', 'confectionaries.brade', '=', 'brands.id')
+        ->join('categories', 'confectionaries.category', '=', 'categories.id')
+        ->join('sub_categories', 'confectionaries.sub_category', '=', 'sub_categories.id')
+        ->select('confectionaries.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+        $confectionaries4 = DB::table('confectionaries')
+        ->orderBy('id', 'DESC')
+        ->limit(5)
+        ->join('brands', 'confectionaries.brade', '=', 'brands.id')
+        ->join('categories', 'confectionaries.category', '=', 'categories.id')
+        ->join('sub_categories', 'confectionaries.sub_category', '=', 'sub_categories.id')
+        ->select('confectionaries.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+
+        $confectionaries5 = DB::table('confectionaries')
+        ->orderBy('id', 'DESC')
+        ->join('brands', 'confectionaries.brade', '=', 'brands.id')
+        ->join('categories', 'confectionaries.category', '=', 'categories.id')
+        ->join('sub_categories', 'confectionaries.sub_category', '=', 'sub_categories.id')
+        ->select('confectionaries.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        return view('user.confectionary', compact('confectionaries', 'confectionaries2', 'confectionaries3' , 'confectionaries4' , 'confectionaries5'));
+
     }
 
     /**
@@ -72,6 +121,20 @@ class ConfectionaryController extends Controller
                  $attachment[] = $image_url;
              }
          }
+
+         $images_show = array();
+         if($files = $request-> file('images_show')){
+             foreach ($files as $file){
+                 $image_name = md5(rand(100, 10000));
+                 $ext = strtolower($file->getClientOriginalExtension());
+                 $image_full_name = $image_name.'.'.$ext;
+                 $upload_path = 'files_upload/Confectionary/';
+                 $image_url = $upload_path.$image_full_name;
+                 $file->move($upload_path, $image_full_name);
+                 $images_show[] = $image_url;
+             }
+         }
+         
          Confectionary::insert([
                  'title' => $request->title,
                  'keywords' => $request->keywords,
@@ -98,6 +161,7 @@ class ConfectionaryController extends Controller
  
                  'images_product1' => implode('|', $image),
                  'attachment' => implode('|', $attachment),
+                 'images_show' => implode('|', $images_show),
              ]);
       return redirect('Confectionary/show')->with('successfully', 'ได้ทำการเพิ่มข้อมูลเรียบร้อยแล้ว');
     }
@@ -163,6 +227,7 @@ class ConfectionaryController extends Controller
 
         $confectionary->images_product1 = $request->get('images_product1');
         $confectionary->attachment = $request->get('attachment');
+        $confectionary->images_show = $request->get('images_show');
 
 
         $image = array();
@@ -190,6 +255,19 @@ class ConfectionaryController extends Controller
                 $attachment[] = $image_url;
             }
         }
+        $images_show = array();
+        if($files = $request-> file('images_show')){
+            foreach ($files as $file){
+                $image_name = md5(rand(100, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Confectionary/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $images_show[] = $image_url;
+            }
+        }
+        
         $confectionary->save();
       return redirect('Confectionary/show')->with('success', 'ได้ทำการแก้ไขข้อมูลเรียบร้อยแล้ว');
     }

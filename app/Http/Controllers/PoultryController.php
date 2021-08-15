@@ -21,7 +21,56 @@ class PoultryController extends Controller
     public function index()
     {
         //
-        return view('user.poultry');
+      
+        $poultry = DB::table('poultries')
+        ->orderBy('id', 'DESC')
+        ->limit(2)
+        ->join('brands', 'poultries.brade', '=', 'brands.id')
+        ->join('categories', 'poultries.category', '=', 'categories.id')
+        ->join('sub_categories', 'poultries.sub_category', '=', 'sub_categories.id')
+        ->select('poultries.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $poultry2 = DB::table('poultries')
+        ->orderBy('id', 'DESC')
+        ->limit(1)
+        ->join('brands', 'poultries.brade', '=', 'brands.id')
+        ->join('categories', 'poultries.category', '=', 'categories.id')
+        ->join('sub_categories', 'poultries.sub_category', '=', 'sub_categories.id')
+        ->select('poultries.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $poultry3 = DB::table('poultries')
+        ->orderBy('id', 'DESC')
+        ->offset(1)
+        ->limit(4)
+        ->join('brands', 'poultries.brade', '=', 'brands.id')
+        ->join('categories', 'poultries.category', '=', 'categories.id')
+        ->join('sub_categories', 'poultries.sub_category', '=', 'sub_categories.id')
+        ->select('poultries.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+        $poultry4 = DB::table('poultries')
+        ->orderBy('id', 'DESC')
+        ->limit(5)
+        ->join('brands', 'poultries.brade', '=', 'brands.id')
+        ->join('categories', 'poultries.category', '=', 'categories.id')
+        ->join('sub_categories', 'poultries.sub_category', '=', 'sub_categories.id')
+        ->select('poultries.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+
+        $poultry5 = DB::table('poultries')
+        ->orderBy('id', 'DESC')
+        ->join('brands', 'poultries.brade', '=', 'brands.id')
+        ->join('categories', 'poultries.category', '=', 'categories.id')
+        ->join('sub_categories', 'poultries.sub_category', '=', 'sub_categories.id')
+        ->select('poultries.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        return view('user.poultry', compact('poultry', 'poultry2', 'poultry3' , 'poultry4' , 'poultry5'));
     }
 
     /**
@@ -55,20 +104,32 @@ class PoultryController extends Controller
                 $image_name = md5(rand(100, 10000));
                 $ext = strtolower($file->getClientOriginalExtension());
                 $image_full_name = $image_name.'.'.$ext;
-                $upload_path = 'files_upload/Beef/';
+                $upload_path = 'files_upload/Poultry/';
                 $image_url = $upload_path.$image_full_name;
                 $file->move($upload_path, $image_full_name);
                 $image[] = $image_url;
             }
         }
-
+        $images_show = array();
+        if($files = $request-> file('images_show')){
+            foreach ($files as $file){
+                $image_name = md5(rand(100, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Poultry/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $images_show[] = $image_url;
+            }
+        }
+        
         $attachment = array();
         if($files = $request-> file('attachment')){
             foreach ($files as $file){
                 $image_name = md5(rand(1000, 10000));
                 $ext = strtolower($file->getClientOriginalExtension());
                 $image_full_name = $image_name.'.'.$ext;
-                $upload_path = 'files_upload/Beef/';
+                $upload_path = 'files_upload/Poultry/';
                 $image_url = $upload_path.$image_full_name;
                 $file->move($upload_path, $image_full_name);
                 $attachment[] = $image_url;
@@ -97,9 +158,9 @@ class PoultryController extends Controller
 
                 'status' => $request->status,
 
-
                 'images_product1' => implode('|', $image),
                 'attachment' => implode('|', $attachment),
+                'images_show' => implode('|', $images_show),
             ]);
      return redirect('Poultry/show')->with('successfully', 'ได้ทำการเพิ่มข้อมูลเรียบร้อยแล้ว');
 
@@ -120,7 +181,7 @@ class PoultryController extends Controller
         //
 
         $poultry = poultry::orderBy('id', 'DESC')->paginate(20);
-        return view('admin/poultry/index', compact('poultry'));
+        return view('admin/Poultry/index', compact('poultry'));
     }
 
     /**
@@ -132,11 +193,11 @@ class PoultryController extends Controller
     public function edit(Poultry $poultry, $id)
     {
         //
-        $beef = poultry::find($id);
+        $Poultry = poultry::find($id);
         $brand = Brand::all();
         $category = Category::all();
         $subcategory = SubCategory::all();
-        return view('admin/Poultry/edit', compact('beef','brand','category','subcategory'));
+        return view('admin/Poultry/edit', compact('Poultry','brand','category','subcategory'));
 
     }
 
@@ -180,7 +241,7 @@ class PoultryController extends Controller
                 $image_name = md5(rand(100, 10000));
                 $ext = strtolower($file->getClientOriginalExtension());
                 $image_full_name = $image_name.'.'.$ext;
-                $upload_path = 'files_upload/Beef/';
+                $upload_path = 'files_upload/Poultry/';
                 $image_url = $upload_path.$image_full_name;
                 $file->move($upload_path, $image_full_name);
                 $image[] = $image_url;
@@ -193,7 +254,7 @@ class PoultryController extends Controller
                 $image_name = md5(rand(1000, 10000));
                 $ext = strtolower($file->getClientOriginalExtension());
                 $image_full_name = $image_name.'.'.$ext;
-                $upload_path = 'files_upload/Beef/';
+                $upload_path = 'files_upload/Poultry/';
                 $image_url = $upload_path.$image_full_name;
                 $file->move($upload_path, $image_full_name);
                 $attachment[] = $image_url;

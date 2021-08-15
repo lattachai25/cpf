@@ -9,35 +9,27 @@
 <div class="wrapper">
 
         <!-- ========================  Header content ======================== -->
-
+            
         <section id="page-home" class="header-content">
+        <div class="owl-slider owl-slider-fullscreen">
 
-            <div class="owl-slider owl-slider-fullscreen">
-
-                <!-- === slide item === -->
-                @for($i=1; $i<=3; $i++)
-                <div class="item" style="background-image:url({{ asset('img/Brochure/'.$i.'.jpg') }})">
-                    <div class="box">
-                        <div class="container text-center">
-                        <h2 class="title animated h1" data-animation="fadeInDown">THE MAGIC MARBLE</h2>
-                            <div class="animated" data-animation="fadeInUp">DECADENCE HAS ARRIVED</div>
-                            <div class="animated" data-animation="fadeInUp">Carrara 640 is a perfect
-combination of nature and
-experience. Only Carrara 640
-Wagyu is created to honour the
-magic marble. Displaying an
-intricate, feathery pattern and
-distinguished as the world’s finest.</div>
-                            <div class="animated" data-animation="fadeInUp">
-                                <a href="/Showmeat" class="btn btn-clean">Read more</a>
+            @foreach ($meat as $meats)
+                <div class="item" style="background-image:url({{ $meats->images_show }})">
+                        <div class="box">
+                            <div class="container text-center">
+                            <h2 class="title animated h1" data-animation="fadeInDown">{{ $meats->text_title_en }}</h2>
+                                <div class="animated" data-animation="fadeInUp">{{ $meats->text_title_en }}</div>
+                                <div class="animated" data-animation="fadeInUp">{{ $meats->detel_product_en }}</div>
+                                <div class="animated" data-animation="fadeInUp">
+                                    <a href="/Showmeat/{{ $meats->id }}" class="btn btn-clean">Read more</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
+            
                 </div>
-                @endfor
-                <!-- === slide item === -->
-
-            </div> <!--/owl-slider-->
+            @endforeach 
+   
+        </div> <!--/owl-slider-->
         </section>
 
 
@@ -65,56 +57,27 @@ distinguished as the world’s finest.</div>
 
                     <div class="col-md-8">
                         <figure>
-                            <figcaption style="background-image:url({{ asset('img/Brochure/1.jpg') }})">
-                                <img src="{{ asset('img/Brochure/1.jpg') }}" alt="" />
+                            <figcaption style="background-image:url({{ $meats->images_show }})">
+                                <img src="{{ $meats->images_show }}" alt="" />
                             </figcaption>
-                            <a href="/Showmeat" class="btn btn-clean mfp-open-scrollto">Read more</a>
+                            <a href="/Showmeat/{{ $meats->id }}" class="btn btn-clean mfp-open-scrollto">Read more</a>
                         </figure>
                     </div>
-
                     <!-- === item === -->
-
+                    @foreach ($meat as $meats)
                     <div class="col-md-4">
                         <figure>
-                            <figcaption style="background-image:url({{ asset('img/Brochure/2.jpg') }})">
-                                <img src="{{ asset('img/Brochure/1.jpg') }}" alt="" />
+                            <figcaption style="background-image:url({{ $meats->images_show }})">
+                                <img src="{{ $meats->images_show }}" alt="" />
                             </figcaption>
-                            <a href="/Showmeat" class="btn btn-clean mfp-open-scrollto">Read more</a>
+                            <a href="/Showmeat/{{ $meats->id }}" class="btn btn-clean mfp-open-scrollto">Read more</a>
                         </figure>
                     </div>
-
+                    @endforeach 
                     <!-- === item === -->
 
-                    <div class="col-md-4">
-                        <figure>
-                            <figcaption style="background-image:url({{ asset('img/Brochure/3.jpg') }})">
-                                <img src="{{ asset('img/Brochure/1.jpg') }}" alt="" />
-                            </figcaption>
-                            <a href="/Showmeat" class="btn btn-clean mfp-open-scrollto">Read more</a>
-                        </figure>
-                    </div>
+                
 
-                    <!-- === item === -->
-
-                    <div class="col-md-4">
-                        <figure>
-                            <figcaption style="background-image:url({{ asset('img/Brochure/4.jpg') }})">
-                                <img src="{{ asset('img/Brochure/1.jpg') }}" alt="" />
-                            </figcaption>
-                            <a href="/Showmeat" class="btn btn-clean mfp-open-scrollto">Read more</a>
-                        </figure>
-                    </div>
-
-                    <!-- === item === -->
-
-                    <div class="col-md-4">
-                        <figure>
-                            <figcaption style="background-image:url({{ asset('img/Brochure/5.jpg') }})">
-                                <img src="{{ asset('img/Brochure/5.jpg') }}" alt="" />
-                            </figcaption>
-                            <a href="/Showmeat" class="btn btn-clean mfp-open-scrollto">Read more</a>
-                        </figure>
-                    </div>
 
                     <!-- ========================  Article info popup - quick view ======================== -->
                 </div> <!--/row-->
@@ -142,35 +105,35 @@ distinguished as the world’s finest.</div>
 
                             <div id="box-filters" class="box-filters">
 
-                                <figure data-filter=".poultry">
+                                <figure data-filter=".POULTRY">
                                     <figcaption>
                                     <i class="flaticon-hen" style="font-size:60px;"></i>
                                         <span>POULTRY</span>
                                     </figcaption>
                                 </figure>
 
-                                <figure data-filter=".beef">
+                                <figure data-filter=".BEEF">
                                     <figcaption>
                                     <i class="flaticon-animal" style="font-size:60px;"></i>
                                         <span>BEEF</span>
                                     </figcaption>
                                 </figure>
 
-                                <figure data-filter=".lamb">
+                                <figure data-filter=".LAMB">
                                     <figcaption>
                                     <i class="flaticon-lamb-1" style="font-size:60px;"></i>
                                         <span>LAMB</span>
                                     </figcaption>
                                 </figure>
 
-                                <figure data-filter=".venison">
+                                <figure data-filter=".VENISON">
                                     <figcaption>
                                     <i class="flaticon-deer-1" style="font-size:60px;"></i>
                                         <span>VENISON</span>
                                     </figcaption>
                                 </figure>
 
-                                <figure data-filter=".turkey">
+                                <figure data-filter=".TURKEY">
                                     <figcaption>
                                     <i class="flaticon-turkey" style="font-size:60px;"></i>
                                         <span>TURKEY</span>
@@ -186,201 +149,23 @@ distinguished as the world’s finest.</div>
                 <div id="box-filters-results" class="row">
 
                     <!-- === product-item === -->
-
-                    <div class="col-xs-6 col-sm-4 item poultry">
+                    @foreach ($meat as $meats)
+                    <div class="col-xs-6 col-sm-4 item {{ $meats->id }} {{ $meats->name_sub_categories }}">
                         <article>
                             <div class="figure-grid">
                                 <div class="image">
-                                    <a href="/Showmeat">
-                                        <img src="{{ asset('img/Brochure/logoAngus.jpg') }}" alt="" width="360" />
+                                    <a href="/Showmeat/{{ $meats->id }}">
+                                        <img src="{{ $meats->images_show }}" alt="" width="360" />
                                     </a>
                                 </div>
                                 <div class="text radius">
-                                    <h2 class="title h4" style="color: #fff !important;">poultry</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
+                                    <h2 class="title h4" style="color: #fff !important;">{{ $meats->name_sub_categories }}</h2>
                                 </div>
                             </div>
                         </article>
                     </div>
-
+                    @endforeach 
                     <!-- === product-item === -->
-
-                    <div class="col-xs-6 col-sm-4 item poultry">
-                        <article>
-                            <div class="figure-grid">
-                                <div class="image">
-                                    <a href/Showmeat">
-                                        <img src="{{ asset('img/Brochure/logoAngus.jpg') }}" alt="" width="360" />
-                                    </a>
-                                </div>
-                                <div class="text radius">
-                                    <h2 class="title h4" style="color: #fff !important;">poultry</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- === product-item === -->
-
-                    <div class="col-xs-6 col-sm-4 item sofa beef">
-                        <article>
-                            <div class="figure-grid">
-                                <div class="image">
-                                    <a href="/Showmeat">
-                                        <img src="{{ asset('img/Brochure/logoAngus.jpg') }}" alt="" width="360" />
-                                    </a>
-                                </div>
-                                <div class="text radius">
-                                    <h2 class="title h4" style="color: #fff !important;">beef</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- === product-item === -->
-
-                    <div class="col-xs-6 col-sm-4 item beef">
-                        <article>
-                            <div class="figure-grid">
-                                <div class="image">
-                                    <a href="/Showmeat">
-                                        <img src="{{ asset('img/Brochure/logoAngus.jpg') }}" alt="" width="360" />
-                                    </a>
-                                </div>
-                                <div class="text radius">
-                                    <h2 class="title h4" style="color: #fff !important;">beef</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- === product-item === -->
-
-                    <div class="col-xs-6 col-sm-4 item lamb">
-                        <article>
-                            <div class="figure-grid">
-                                <div class="image">
-                                    <a href="/Showmeat">
-                                        <img src="{{ asset('img/Brochure/logoAngus.jpg') }}" alt="" width="360" />
-                                    </a>
-                                </div>
-                                <div class="text radius">
-                                    <h2 class="title h4" style="color: #fff !important;">lamb</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- === product-item === -->
-
-                    <div class="col-xs-6 col-sm-4 item lamb">
-                        <article>
-                            <div class="figure-grid">
-                                <div class="image">
-                                    <a href="/Showmeat">
-                                        <img src="{{ asset('img/Brochure/logoAngus.jpg') }}" alt="" width="360" />
-                                    </a>
-                                </div>
-                                <div class="text radius">
-                                    <h2 class="title h4" style="color: #fff !important;">lamb</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- === product-item === -->
-
-                    <div class="col-xs-6 col-sm-4 item venison">
-                        <article>
-                            <div class="figure-grid">
-                                <div class="image">
-                                    <a href="/Showmeat">
-                                        <img src="{{ asset('img/Brochure/logoAngus.jpg') }}" alt="" width="360" />
-                                    </a>
-                                </div>
-                                <div class="text radius">
-                                    <h2 class="title h4" style="color: #fff !important;">venison</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- === product-item === -->
-
-                    <div class="col-xs-6 col-sm-4 item turkey">
-                        <article>
-                            <div class="figure-grid">
-                                <div class="image">
-                                    <a href="/Showmeat">
-                                        <img src="{{ asset('img/Brochure/logoAngus.jpg') }}" alt="" width="360" />
-                                    </a>
-                                </div>
-                                <div class="text radius">
-                                    <h2 class="title h4" style="color: #fff !important;">turkey</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- === product-item === -->
-
-                    <div class="col-xs-6 col-sm-4 item sofa turkey">
-
-                        <article>
-                            <div class="figure-grid">
-                                <div class="image">
-                                    <a href="/Showmeat">
-                                        <img src="{{ asset('img/Brochure/logoAngus.jpg') }}" alt="" width="360" />
-                                    </a>
-                                </div>
-                                <div class="text radius">
-                                    <h2 class="title h4" style="color: #fff !important;">turkey</h2>
-                                    <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                </div> <!--/row-->
-                <!-- ========================  Product info popup - quick view ======================== -->
-
-                <div class="popup-main mfp-hide" id="productid1">
-
-                    <!-- === product popup === -->
-
-                    <div class="product">
-
-                        <!-- === popup-title === -->
-
-                        <div class="popup-title">
-                            <div class="h1 title">Green corner</div>
-                        </div>
-
-                        <!-- === product gallery === -->
-
-                        <div class="owl-product-gallery">
-                            <img src="{{ asset('img/Brochure/1.jpg') }}" alt="" width="640" />
-                            <img src="{{ asset('img/Brochure/2.jpg') }}" alt="" width="640" />
-                            <img src="{{ asset('img/Brochure/3.jpg') }}" alt="" width="640" />
-                        </div>
-
-                        <!-- === product-popup-footer === -->
-
-                        <div class="popup-table">
-                            <div class="popup-cell">
-                                <div class="price price-single">
-                                    <span class="h6">Pure Australian meat, satisfying meat-lovers worldwide. As one of Australia's largest meat producers and distributors with hubs in Brisbane, Sydney, Adelaide and Swan Hill, Victoria,
-we are dedicated to upholding the highest quality standards across our entire network.</span>
-                                </div>
-                            </div>
-                        </div>
 
                     </div> <!--/product-->
                 </div> <!--popup-main-->

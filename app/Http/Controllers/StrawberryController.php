@@ -19,7 +19,55 @@ class StrawberryController extends Controller
     public function index()
     {
         //
-        return view('user.strawberry');
+        $strawberries = DB::table('strawberries')
+        ->orderBy('id', 'DESC')
+        ->limit(3)
+        ->join('brands', 'strawberries.brade', '=', 'brands.id')
+        ->join('categories', 'strawberries.category', '=', 'categories.id')
+        ->join('sub_categories', 'strawberries.sub_category', '=', 'sub_categories.id')
+        ->select('strawberries.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $strawberries2 = DB::table('strawberries')
+        ->orderBy('id', 'DESC')
+        ->limit(1)
+        ->join('brands', 'strawberries.brade', '=', 'brands.id')
+        ->join('categories', 'strawberries.category', '=', 'categories.id')
+        ->join('sub_categories', 'strawberries.sub_category', '=', 'sub_categories.id')
+        ->select('strawberries.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $strawberries3 = DB::table('strawberries')
+        ->orderBy('id', 'DESC')
+        ->offset(1)
+        ->limit(4)
+        ->join('brands', 'strawberries.brade', '=', 'brands.id')
+        ->join('categories', 'strawberries.category', '=', 'categories.id')
+        ->join('sub_categories', 'strawberries.sub_category', '=', 'sub_categories.id')
+        ->select('strawberries.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+        $strawberries4 = DB::table('strawberries')
+        ->orderBy('id', 'DESC')
+        ->limit(5)
+        ->join('brands', 'strawberries.brade', '=', 'brands.id')
+        ->join('categories', 'strawberries.category', '=', 'categories.id')
+        ->join('sub_categories', 'strawberries.sub_category', '=', 'sub_categories.id')
+        ->select('strawberries.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+
+        $strawberries5 = DB::table('strawberries')
+        ->orderBy('id', 'DESC')
+        ->join('brands', 'strawberries.brade', '=', 'brands.id')
+        ->join('categories', 'strawberries.category', '=', 'categories.id')
+        ->join('sub_categories', 'strawberries.sub_category', '=', 'sub_categories.id')
+        ->select('strawberries.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        return view('user.strawberry', compact('strawberries', 'strawberries2', 'strawberries3' , 'strawberries4' , 'strawberries5'));
     }
 
     /**
@@ -59,7 +107,19 @@ class StrawberryController extends Controller
                    $image[] = $image_url;
                }
            }
-   
+           $images_show = array();
+        if($files = $request-> file('images_show')){
+            foreach ($files as $file){
+                $image_name = md5(rand(100, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Strawberry/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $images_show[] = $image_url;
+            }
+        }
+        
            $attachment = array();
            if($files = $request-> file('attachment')){
                foreach ($files as $file){
@@ -98,6 +158,7 @@ class StrawberryController extends Controller
    
                    'images_product1' => implode('|', $image),
                    'attachment' => implode('|', $attachment),
+                   'images_show' => implode('|', $images_show),
                ]);
         return redirect('Strawberry/show')->with('successfully', 'ได้ทำการเพิ่มข้อมูลเรียบร้อยแล้ว');
     }
@@ -163,6 +224,7 @@ class StrawberryController extends Controller
 
         $strawberry->images_product1 = $request->get('images_product1');
         $strawberry->attachment = $request->get('attachment');
+        $strawberry->images_show = $request->get('images_show');
 
 
         $image = array();
@@ -177,7 +239,19 @@ class StrawberryController extends Controller
                 $image[] = $image_url;
             }
         }
-
+        $images_show = array();
+        if($files = $request-> file('images_show')){
+            foreach ($files as $file){
+                $image_name = md5(rand(100, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Strawberry/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $images_show[] = $image_url;
+            }
+        }
+        
         $attachment = array();
         if($files = $request-> file('attachment')){
             foreach ($files as $file){

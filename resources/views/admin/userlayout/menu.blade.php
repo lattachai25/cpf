@@ -41,7 +41,10 @@
             </a>
             <div class="sidebar-submenu">
               <ul>
-              <li>
+                <li>
+                  <a href="/Meat/show">MEAT</a>
+                </li>
+                <li>
                   <a href="/Poultry/show">POULTR</a>
                 </li>
                 <li>

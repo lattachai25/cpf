@@ -19,7 +19,55 @@ class CherriesController extends Controller
     public function index()
     {
         //
-        return view('user.cherries');
+        $cherries = DB::table('cherries')
+        ->orderBy('id', 'DESC')
+        ->limit(3)
+        ->join('brands', 'cherries.brade', '=', 'brands.id')
+        ->join('categories', 'cherries.category', '=', 'categories.id')
+        ->join('sub_categories', 'cherries.sub_category', '=', 'sub_categories.id')
+        ->select('cherries.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $cherries2 = DB::table('cherries')
+        ->orderBy('id', 'DESC')
+        ->limit(1)
+        ->join('brands', 'cherries.brade', '=', 'brands.id')
+        ->join('categories', 'cherries.category', '=', 'categories.id')
+        ->join('sub_categories', 'cherries.sub_category', '=', 'sub_categories.id')
+        ->select('cherries.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $cherries3 = DB::table('cherries')
+        ->orderBy('id', 'DESC')
+        ->offset(1)
+        ->limit(4)
+        ->join('brands', 'cherries.brade', '=', 'brands.id')
+        ->join('categories', 'cherries.category', '=', 'categories.id')
+        ->join('sub_categories', 'cherries.sub_category', '=', 'sub_categories.id')
+        ->select('cherries.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+        $cherries4 = DB::table('cherries')
+        ->orderBy('id', 'DESC')
+        ->limit(5)
+        ->join('brands', 'cherries.brade', '=', 'brands.id')
+        ->join('categories', 'cherries.category', '=', 'categories.id')
+        ->join('sub_categories', 'cherries.sub_category', '=', 'sub_categories.id')
+        ->select('cherries.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+
+        $cherries5 = DB::table('cherries')
+        ->orderBy('id', 'DESC')
+        ->join('brands', 'cherries.brade', '=', 'brands.id')
+        ->join('categories', 'cherries.category', '=', 'categories.id')
+        ->join('sub_categories', 'cherries.sub_category', '=', 'sub_categories.id')
+        ->select('cherries.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        return view('user.cherries', compact('cherries', 'cherries2', 'cherries3' , 'cherries4' , 'cherries5'));
     }
 
     /**
@@ -72,6 +120,18 @@ class CherriesController extends Controller
                              $attachment[] = $image_url;
                          }
                      }
+                     $images_show = array();
+                     if($files = $request-> file('images_show')){
+                         foreach ($files as $file){
+                             $image_name = md5(rand(100, 10000));
+                             $ext = strtolower($file->getClientOriginalExtension());
+                             $image_full_name = $image_name.'.'.$ext;
+                             $upload_path = 'files_upload/Cherries/';
+                             $image_url = $upload_path.$image_full_name;
+                             $file->move($upload_path, $image_full_name);
+                             $images_show[] = $image_url;
+                         }
+                     }
                      Cherries::insert([
                              'title' => $request->title,
                              'keywords' => $request->keywords,
@@ -98,6 +158,7 @@ class CherriesController extends Controller
              
                              'images_product1' => implode('|', $image),
                              'attachment' => implode('|', $attachment),
+                             'images_show' => implode('|', $images_show),
                          ]);
                   return redirect('Cherries/show')->with('successfully', 'ได้ทำการเพิ่มข้อมูลเรียบร้อยแล้ว');
     }
@@ -163,6 +224,7 @@ class CherriesController extends Controller
 
         $cherries->images_product1 = $request->get('images_product1');
         $cherries->attachment = $request->get('attachment');
+        $cherries->images_show = $request->get('images_show');
 
 
         $image = array();
@@ -190,6 +252,20 @@ class CherriesController extends Controller
                 $attachment[] = $image_url;
             }
         }
+
+        $images_show = array();
+        if($files = $request-> file('images_show')){
+            foreach ($files as $file){
+                $image_name = md5(rand(100, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Cherries/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $images_show[] = $image_url;
+            }
+        }
+        
         $cherries->save();
       return redirect('Cherries/show')->with('success', 'ได้ทำการแก้ไขข้อมูลเรียบร้อยแล้ว');
 

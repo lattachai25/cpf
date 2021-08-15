@@ -6,6 +6,8 @@ use App\Butter;
 use App\Brand;
 use App\Category;
 use App\SubCategory;
+use DB;
+
 use Illuminate\Http\Request;
 
 class ButterController extends Controller
@@ -18,7 +20,56 @@ class ButterController extends Controller
     public function index()
     {
         //
-        return view('user.butter');
+        $butter = DB::table('butter')
+        ->orderBy('id', 'DESC')
+        ->limit(3)
+        ->join('brands', 'butter.brade', '=', 'brands.id')
+        ->join('categories', 'butter.category', '=', 'categories.id')
+        ->join('sub_categories', 'butter.sub_category', '=', 'sub_categories.id')
+        ->select('butter.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $butter2 = DB::table('butter')
+        ->orderBy('id', 'DESC')
+        ->limit(1)
+        ->join('brands', 'butter.brade', '=', 'brands.id')
+        ->join('categories', 'butter.category', '=', 'categories.id')
+        ->join('sub_categories', 'butter.sub_category', '=', 'sub_categories.id')
+        ->select('butter.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        $butter3 = DB::table('butter')
+        ->orderBy('id', 'DESC')
+        ->offset(1)
+        ->limit(4)
+        ->join('brands', 'butter.brade', '=', 'brands.id')
+        ->join('categories', 'butter.category', '=', 'categories.id')
+        ->join('sub_categories', 'butter.sub_category', '=', 'sub_categories.id')
+        ->select('butter.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+        $butter4 = DB::table('butter')
+        ->orderBy('id', 'DESC')
+        ->limit(5)
+        ->join('brands', 'butter.brade', '=', 'brands.id')
+        ->join('categories', 'butter.category', '=', 'categories.id')
+        ->join('sub_categories', 'butter.sub_category', '=', 'sub_categories.id')
+        ->select('butter.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+
+
+        $butter5 = DB::table('butter')
+        ->orderBy('id', 'DESC')
+        ->join('brands', 'butter.brade', '=', 'brands.id')
+        ->join('categories', 'butter.category', '=', 'categories.id')
+        ->join('sub_categories', 'butter.sub_category', '=', 'sub_categories.id')
+        ->select('butter.*', 'brands.name_brand_en', 'brands.name_brand_th', 'brands.images', 'categories.name_categories', 'sub_categories.name_sub_categories')
+        ->get();
+
+        return view('user.butter', compact('butter', 'butter2', 'butter3' , 'butter4' , 'butter5'));
+
     }
 
     /**
@@ -71,6 +122,18 @@ class ButterController extends Controller
                              $attachment[] = $image_url;
                          }
                      }
+                     $images_show = array();
+                     if($files = $request-> file('images_show')){
+                         foreach ($files as $file){
+                             $image_name = md5(rand(100, 10000));
+                             $ext = strtolower($file->getClientOriginalExtension());
+                             $image_full_name = $image_name.'.'.$ext;
+                             $upload_path = 'files_upload/Butter/';
+                             $image_url = $upload_path.$image_full_name;
+                             $file->move($upload_path, $image_full_name);
+                             $images_show[] = $image_url;
+                         }
+                     }
                      Butter::insert([
                              'title' => $request->title,
                              'keywords' => $request->keywords,
@@ -97,6 +160,7 @@ class ButterController extends Controller
              
                              'images_product1' => implode('|', $image),
                              'attachment' => implode('|', $attachment),
+                             'images_show' => implode('|', $images_show),
                          ]);
                   return redirect('Butter/show')->with('successfully', 'ได้ทำการเพิ่มข้อมูลเรียบร้อยแล้ว');
     }
@@ -162,6 +226,7 @@ class ButterController extends Controller
 
         $butter->images_product1 = $request->get('images_product1');
         $butter->attachment = $request->get('attachment');
+        $butter->images_show = $request->get('images_show');
 
 
         $image = array();
@@ -187,6 +252,19 @@ class ButterController extends Controller
                 $image_url = $upload_path.$image_full_name;
                 $file->move($upload_path, $image_full_name);
                 $attachment[] = $image_url;
+            }
+        }
+
+        $images_show = array();
+        if($files = $request-> file('images_show')){
+            foreach ($files as $file){
+                $image_name = md5(rand(100, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'files_upload/Butter/';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $images_show[] = $image_url;
             }
         }
         $butter->save();
