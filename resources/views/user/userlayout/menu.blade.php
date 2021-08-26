@@ -17,10 +17,10 @@
                         <!--Language selector-->
 
                         <li class="nav-settings">
-                            <a href="javascript:void(0);" class="nav-settings-value"> ENG</a>
+                            <a href="javascript:void(0);" class="nav-settings-value">{{ __('customlang.lang') }}</a>
                             <ul class="nav-settings-list">
-                                <li>ENG</li>
-                                <li>TH</li>
+                                <li><a href="lang/en" style="color: #89d907;">EN</a></li>
+                                <li><a href="lang/th" style="color: #89d907;">TH</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -49,11 +49,11 @@
                         </div>
 
                         <ul>
-                            <li><a href="/main">Home</a></li>
+                            <li><a href="/main"> {{ __('customlang.home') }}</a></li>
                             
                             <!-- Start Meat -->
                             <li>
-                                <a href="/Meat">MEAT <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
+                                <a href="/Meat">{{ __('customlang.meat') }} <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
                                 <div class="navbar-dropdown">
                                     <div class="navbar-box">
 
@@ -75,7 +75,7 @@
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <ul>
-                                                            <li class="label">MEAT</li>
+                                                            <li class="label">{{ __('customlang.meat') }}</li>
                                                             <li><a href="/Poultry">Poultry</a></li>
                                                             <li><a href="/Beef">Beef</a></li>
                                                             <li><a href="/Lamb">Lamb</a></li>
@@ -92,7 +92,7 @@
                             <!--End Meat -->
                             <!-- Start SEAFOOD -->
                             <li>
-                                <a href="/Seafood">SEAFOOD <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
+                                <a href="/Seafood">{{ __('customlang.seafood') }} <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
                                 <div class="navbar-dropdown">
                                     <div class="navbar-box">
 
@@ -117,7 +117,7 @@ Seafood is any form of sea life regarded as food by humans, prominently includin
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <ul>
-                                                            <li class="label">SEAFOOD</li>
+                                                            <li class="label">{{ __('customlang.seafood') }}</li>
                                                             <li><a href="/Fish">Fish</a></li>
                                                             <li><a href="/Shells">Shells</a></li>
                                                             <li><a href="/Cephalopod">Cephalopod</a></li>
@@ -133,7 +133,7 @@ Seafood is any form of sea life regarded as food by humans, prominently includin
                             <!--End SEAFOOD -->
                             <!-- Start Fruit -->
                             <li>
-                                <a href="/Fruit">Fruit <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
+                                <a href="/Fruit">{{ __('customlang.fruit') }} <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
                                 <div class="navbar-dropdown">
                                     <div class="navbar-box">
 
@@ -155,7 +155,7 @@ Seafood is any form of sea life regarded as food by humans, prominently includin
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <ul>
-                                                            <li class="label">Fruit</li>
+                                                            <li class="label">{{ __('customlang.fruit') }}</li>
                                                             <li><a href="/Apple">Apple</a></li>
                                                             <li><a href="/Cherries">Cherries</a></li>
                                                             <li><a href="/Stonefruit">Stone Fruit</a></li>
@@ -172,7 +172,7 @@ Seafood is any form of sea life regarded as food by humans, prominently includin
                             <!--End Fruit -->  
                             <!-- Start Vegetable -->
                             <li>
-                                <a href="/Vegetable">Vegetable <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
+                                <a href="/Vegetable">{{ __('customlang.vegetable') }} <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
                                 <div class="navbar-dropdown">
                                     <div class="navbar-box">
 
@@ -194,7 +194,7 @@ Seafood is any form of sea life regarded as food by humans, prominently includin
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <ul>
-                                                            <li class="label">Vegetable</li>
+                                                            <li class="label">{{ __('customlang.vegetable') }}</li>
                                                             <li><a href="/Carrot">Carrot</a></li>
                                                             <li><a href="/Beetroot">Beetroot</a></li>
                                                             <li><a href="/Whiteonion">White Onion</a></li>
@@ -210,7 +210,7 @@ Seafood is any form of sea life regarded as food by humans, prominently includin
                             <!--End Vegetable -->  
                             <!-- Start Dairy -->
                             <li>
-                                <a href="/Dairy">Dairy <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
+                                <a href="/Dairy">{{ __('customlang.dairy') }} <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
                                 <div class="navbar-dropdown">
                                     <div class="navbar-box">
 
@@ -232,7 +232,7 @@ Seafood is any form of sea life regarded as food by humans, prominently includin
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <ul>
-                                                            <li class="label">Dairy</li>
+                                                            <li class="label">{{ __('customlang.dairy') }}</li>
                                                             <li><a href="/Yogurt">Yogurt</a></li>
                                                             <li><a href="/Cheese">Cheese</a></li>
                                                             <li><a href="/Butter">Butter</a></li>
@@ -247,7 +247,7 @@ Seafood is any form of sea life regarded as food by humans, prominently includin
                             <!--End Dairy -->  
                             <!-- Start Others -->
                             <li>
-                                <a href="/Others">Others <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
+                                <a href="/Others">  {{ __('customlang.others') }} <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
                                 <div class="navbar-dropdown">
                                     <div class="navbar-box">
 
@@ -269,7 +269,7 @@ Seafood is any form of sea life regarded as food by humans, prominently includin
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <ul>
-                                                            <li class="label">Others</li>
+                                                            <li class="label">{{ __('customlang.others') }}</li>
                                                             <li><a href="/Processedfood">Processed Foods</a></li>
                                                             <li><a href="/Beverage">Beverage</a></li>
                                                             <li><a href="/Confectionary">Confectionary</a></li>
@@ -283,7 +283,7 @@ Seafood is any form of sea life regarded as food by humans, prominently includin
                                 </div> <!--/navbar-dropdown-->
                             </li>
                             <!--End Others -->  
-                            <li class="label"><a href="/Contact">CONTACT US</a></li>
+                            <li class="label"><a href="/Contact">{{ __('customlang.contact') }}</a></li>
                            
                         </ul>
                     </div> <!--/floating-menu-->

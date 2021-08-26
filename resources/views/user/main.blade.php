@@ -19,7 +19,7 @@
                 <div class="item" style="background-image:url({{asset('assets/img/0'.$i.'.jpg') }})">
                     <div class="box">
                         <div class="container">
-                            <h2 class="title animated h1" data-animation="fadeInDown">Meat is animal flesh that is eaten as food.</h2>
+                            <h2 class="title animated h1" data-animation="fadeInDown">{{ __('customlang.text') }}</h2>
                             <div class="animated" data-animation="fadeInUp">
                             Meat is animal flesh that is eaten as food.[1] Humans have hunted and killed animals for meat since prehistoric times.
                             </div>

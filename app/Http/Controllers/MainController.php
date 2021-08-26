@@ -14,6 +14,7 @@ class MainController extends Controller
      */
     public function index()
     {
+
         $slide = 1;
         return view('user.main', compact('slide'));
     }

@@ -1,10 +1,11 @@
 <?php
-//Change language
-Route::get('lang/{locale}', function ($locale) {
-    //App::setLocale($locale);
-    Session::put('locale', $locale);
-    return redirect()->back();
-    });
+
+Route::get('lang/{locale}', function($locale){
+        session()->put('locale', $locale);
+        return redirect()->back();
+});
+
+
 
 Auth::routes();
 
